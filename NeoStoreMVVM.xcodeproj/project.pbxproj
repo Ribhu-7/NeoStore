@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69532C328BA8002A5425 /* AppDelegate.swift */; };
 		18BC69562C328BA8002A5425 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69552C328BA8002A5425 /* SceneDelegate.swift */; };
-		18BC69582C328BA8002A5425 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69572C328BA8002A5425 /* ViewController.swift */; };
 		18BC695B2C328BA8002A5425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BC69592C328BA8002A5425 /* Main.storyboard */; };
 		18BC695E2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18BC695C2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld */; };
 		18BC69602C328BAA002A5425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BC695F2C328BAA002A5425 /* Assets.xcassets */; };
 		18BC69632C328BAA002A5425 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BC69612C328BAA002A5425 /* LaunchScreen.storyboard */; };
+		18BC69762C328CD5002A5425 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69752C328CD5002A5425 /* LoginViewController.swift */; };
+		18BC69792C32ABCD002A5425 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69782C32ABCC002A5425 /* UITextFieldExtension.swift */; };
+		18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC697A2C32B0AB002A5425 /* ButtonExtension.swift */; };
+		18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69822C32BA76002A5425 /* ForgetPassViewController.swift */; };
+		18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69882C32C37C002A5425 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18BC69502C328BA8002A5425 /* NeoStoreMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoStoreMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BC69532C328BA8002A5425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BC69552C328BA8002A5425 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18BC69572C328BA8002A5425 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18BC695A2C328BA8002A5425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18BC695D2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NeoStoreMVVM.xcdatamodel; sourceTree = "<group>"; };
 		18BC695F2C328BAA002A5425 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18BC69622C328BAA002A5425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18BC69642C328BAA002A5425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BC69752C328CD5002A5425 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		18BC69782C32ABCC002A5425 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		18BC697A2C32B0AB002A5425 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
+		18BC69822C32BA76002A5425 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
+		18BC69882C32C37C002A5425 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,164 @@
 		18BC69522C328BA8002A5425 /* NeoStoreMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				18BC69532C328BA8002A5425 /* AppDelegate.swift */,
-				18BC69552C328BA8002A5425 /* SceneDelegate.swift */,
-				18BC69572C328BA8002A5425 /* ViewController.swift */,
-				18BC69592C328BA8002A5425 /* Main.storyboard */,
-				18BC695F2C328BAA002A5425 /* Assets.xcassets */,
-				18BC69612C328BAA002A5425 /* LaunchScreen.storyboard */,
-				18BC69642C328BAA002A5425 /* Info.plist */,
+				18BC696A2C328BB1002A5425 /* Application */,
+				18BC696D2C328BCD002A5425 /* Helper */,
+				18BC69702C328C86002A5425 /* Screens */,
+				18BC696F2C328BF0002A5425 /* Storyboard */,
+				18BC696E2C328BD3002A5425 /* Extensions */,
+				18BC696C2C328BC5002A5425 /* Resources */,
 				18BC695C2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld */,
+				18BC69642C328BAA002A5425 /* Info.plist */,
 			);
 			path = NeoStoreMVVM;
+			sourceTree = "<group>";
+		};
+		18BC696A2C328BB1002A5425 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				18BC69532C328BA8002A5425 /* AppDelegate.swift */,
+				18BC69552C328BA8002A5425 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		18BC696C2C328BC5002A5425 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18BC695F2C328BAA002A5425 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		18BC696D2C328BCD002A5425 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		18BC696E2C328BD3002A5425 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18BC69782C32ABCC002A5425 /* UITextFieldExtension.swift */,
+				18BC697A2C32B0AB002A5425 /* ButtonExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		18BC696F2C328BF0002A5425 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				18BC69592C328BA8002A5425 /* Main.storyboard */,
+				18BC69612C328BAA002A5425 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		18BC69702C328C86002A5425 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				18BC69842C32C340002A5425 /* Register */,
+				18BC697C2C32B9D2002A5425 /* ForgetPassword */,
+				18BC69712C328CA6002A5425 /* Login */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		18BC69712C328CA6002A5425 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				18BC69742C328CB8002A5425 /* View Model */,
+				18BC69732C328CB3002A5425 /* Model */,
+				18BC69722C328CAE002A5425 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		18BC69722C328CAE002A5425 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18BC69752C328CD5002A5425 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18BC69732C328CB3002A5425 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18BC69742C328CB8002A5425 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		18BC697C2C32B9D2002A5425 /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				18BC697F2C32B9F8002A5425 /* View */,
+				18BC697E2C32B9F2002A5425 /* Model */,
+				18BC697D2C32B9E7002A5425 /* View Model */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
+		18BC697D2C32B9E7002A5425 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		18BC697E2C32B9F2002A5425 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18BC697F2C32B9F8002A5425 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18BC69822C32BA76002A5425 /* ForgetPassViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18BC69842C32C340002A5425 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				18BC69872C32C367002A5425 /* Model */,
+				18BC69862C32C360002A5425 /* ViewModel */,
+				18BC69852C32C359002A5425 /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		18BC69852C32C359002A5425 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18BC69882C32C37C002A5425 /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18BC69862C32C360002A5425 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18BC69872C32C367002A5425 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +297,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BC69582C328BA8002A5425 /* ViewController.swift in Sources */,
+				18BC69792C32ABCD002A5425 /* UITextFieldExtension.swift in Sources */,
+				18BC69762C328CD5002A5425 /* LoginViewController.swift in Sources */,
 				18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */,
+				18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */,
+				18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */,
+				18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */,
 				18BC695E2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld in Sources */,
 				18BC69562C328BA8002A5425 /* SceneDelegate.swift in Sources */,
 			);
