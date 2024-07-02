@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828FC4E2C35102A007DB450 /* RegisterViewModel.swift */; };
+		183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183089FB2C33FB1500C62ABD /* APIManager.swift */; };
+		18308A022C33FE1600C62ABD /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A012C33FE1600C62ABD /* EndPointType.swift */; };
+		18308A042C33FF3800C62ABD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A032C33FF3800C62ABD /* Register.swift */; };
+		18308A062C33FFC600C62ABD /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A052C33FFC600C62ABD /* Login.swift */; };
+		18308A092C34009A00C62ABD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 18308A082C34009A00C62ABD /* Alamofire */; };
+		1886C4BF2C351E840082CA62 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886C4BE2C351E840082CA62 /* LoginViewModel.swift */; };
 		18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69532C328BA8002A5425 /* AppDelegate.swift */; };
 		18BC69562C328BA8002A5425 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69552C328BA8002A5425 /* SceneDelegate.swift */; };
 		18BC695B2C328BA8002A5425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BC69592C328BA8002A5425 /* Main.storyboard */; };
@@ -21,6 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1828FC4E2C35102A007DB450 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		183089FB2C33FB1500C62ABD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		18308A012C33FE1600C62ABD /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		18308A032C33FF3800C62ABD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		18308A052C33FFC600C62ABD /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		1886C4BE2C351E840082CA62 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		18BC69502C328BA8002A5425 /* NeoStoreMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoStoreMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BC69532C328BA8002A5425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BC69552C328BA8002A5425 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,12 +54,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18308A092C34009A00C62ABD /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18308A002C33FDDC00C62ABD /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				18308A012C33FE1600C62ABD /* EndPointType.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		18BC69472C328BA8002A5425 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				18BC696A2C328BB1002A5425 /* Application */,
+				18308A002C33FDDC00C62ABD /* Utility */,
 				18BC696D2C328BCD002A5425 /* Helper */,
 				18BC69702C328C86002A5425 /* Screens */,
 				18BC696F2C328BF0002A5425 /* Storyboard */,
@@ -98,6 +121,7 @@
 		18BC696D2C328BCD002A5425 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				183089FB2C33FB1500C62ABD /* APIManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -151,6 +175,7 @@
 		18BC69732C328CB3002A5425 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18308A052C33FFC600C62ABD /* Login.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +183,7 @@
 		18BC69742C328CB8002A5425 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				1886C4BE2C351E840082CA62 /* LoginViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -215,6 +241,7 @@
 		18BC69862C32C360002A5425 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1828FC4E2C35102A007DB450 /* RegisterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -222,6 +249,7 @@
 		18BC69872C32C367002A5425 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18308A032C33FF3800C62ABD /* Register.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +270,9 @@
 			dependencies = (
 			);
 			name = NeoStoreMVVM;
+			packageProductDependencies = (
+				18308A082C34009A00C62ABD /* Alamofire */,
+			);
 			productName = NeoStoreMVVM;
 			productReference = 18BC69502C328BA8002A5425 /* NeoStoreMVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -270,6 +301,9 @@
 				Base,
 			);
 			mainGroup = 18BC69472C328BA8002A5425;
+			packageReferences = (
+				18308A072C34009A00C62ABD /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 18BC69512C328BA8002A5425 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,11 +333,17 @@
 			files = (
 				18BC69792C32ABCD002A5425 /* UITextFieldExtension.swift in Sources */,
 				18BC69762C328CD5002A5425 /* LoginViewController.swift in Sources */,
+				18308A062C33FFC600C62ABD /* Login.swift in Sources */,
 				18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */,
+				1886C4BF2C351E840082CA62 /* LoginViewModel.swift in Sources */,
+				183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */,
 				18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */,
+				18308A022C33FE1600C62ABD /* EndPointType.swift in Sources */,
+				18308A042C33FF3800C62ABD /* Register.swift in Sources */,
 				18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */,
 				18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */,
 				18BC695E2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld in Sources */,
+				1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */,
 				18BC69562C328BA8002A5425 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +560,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18308A072C34009A00C62ABD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18308A082C34009A00C62ABD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18308A072C34009A00C62ABD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		18BC695C2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld */ = {

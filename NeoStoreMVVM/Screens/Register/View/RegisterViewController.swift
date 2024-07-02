@@ -8,8 +8,8 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
-   
+    
+    
     @IBOutlet weak var firstName: UITextField!
     
     @IBOutlet weak var lastName: UITextField!
@@ -22,23 +22,24 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var phoneNumber: UITextField!
     
-    
     @IBOutlet weak var btnMale: UIButton!
     
     @IBOutlet weak var btnFemale: UIButton!
+    
+    @IBOutlet weak var checkBtn: UIButton!
     
     @IBOutlet weak var registerBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Register"
         configuration()
     }
     
-
+    
     func configuration(){
+        
         firstName.setContent("First Name", "username_icon")
         lastName.setContent("Last Name", "username_icon")
         emailTxt.setContent("Email", "email_icon")
@@ -50,10 +51,14 @@ class RegisterViewController: UIViewController {
         btnFemale.setImage(UIImage.init(named: "chkn"), for: .normal)
         btnMale.setImage(UIImage.init(named: "chky"), for: .selected)
         btnFemale.setImage(UIImage.init(named: "chky"), for: .selected)
+        checkBtn.setImage(UIImage.init(systemName: "square"), for: .normal)
+        checkBtn.setImage(UIImage.init(named: "checked_icon"), for: .selected)
         registerBtn.layer.cornerRadius = 20
+        
     }
     
     @IBAction func btnSelect(_ sender: UIButton) {
+        
         if sender === btnMale{
             btnMale.isSelected = true
             btnFemale.isSelected = false
@@ -62,5 +67,42 @@ class RegisterViewController: UIViewController {
             btnMale.isSelected = false
         }
     }
-   
+    
+    @IBAction func checkClicked(_ sender: UIButton) {
+        if checkBtn.isSelected == true {
+            checkBtn.isSelected = false
+        } else if checkBtn.isSelected == false {
+            checkBtn.isSelected = true
+        }
+        
+    }
+    
+    @IBAction func registerClick(_ sender: Any) {
+        guard let fname = self.firstName.text else {return}
+        guard let lname = self.lastName.text else {return}
+        guard let email = self.emailTxt.text else {return}
+        guard let passw = self.passwordField.text else {return}
+        guard let confpass = self.passwordField.text else {return}
+        guard let pnumber = self.phoneNumber.text else {return}
+        
+        var gender: String?
+        if btnMale.isSelected {
+            gender = "M"
+        } else if btnFemale.isSelected {
+            gender = "F"
+        } else {
+            gender = ""
+        }
+        
+        if(fname.isValidName && lname.isValidName && email.isValidEmail && passw.isValidPassword && passw == confpass && gender != "" && pnumber.isPhoneNumber && checkBtn.isSelected){
+            
+            let regs = RegistrationData(gender: gender ,password: passw,confirm_password: confpass, last_name: lname , email: email , phone_no: pnumber ,   first_name: fname )
+            self.postRequest(regs: regs)
+        }
+        else {
+            self.showAlert(message: "Invalid details")
+        }
+    }
 }
+
+
