@@ -20,10 +20,27 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        navigationItem.backButtonTitle = ""
+        configuration()
+    }
+    
+    func configuration(){
         usernameField.setContent("Username", "username_icon")
         passField.setContent("Password", "password_icon")
         loginBtn.changeView()
-        navigationItem.backButtonTitle = ""
+    }
+    
+    @IBAction func loginClick(_ sender: Any) {
+        
+        guard let emailId = usernameField.text else {return}
+        guard let password = passField.text else {return}
+        if (emailId.isValidEmail && password.isValidPassword){
+            let logs = LoginModel(email: emailId, password: password)
+            self.getRequest(logs: logs)
+        } else {
+            self.showAlert(message: "Invalid details")
+        }
         
     }
     

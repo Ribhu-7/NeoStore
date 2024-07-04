@@ -14,7 +14,7 @@ enum DataError: Error {
     case invalidDecoding
     case invalidURL
     case invalidData
-    case network(_ error: Error?)
+    case network(String)
 }
 
 typealias Handler<T> = (Result<T,DataError>) -> Void
@@ -23,19 +23,19 @@ final class APIManager {
     static let shared = APIManager()
     private init() {}
     
-    func request<T: Codable>(
+    func manager<T: Codable , U: Codable>(
         modelType: T.Type,
         type: EndPointType,
-        register: RegistrationData,
-        completion: @escaping (Bool, String) -> ()
+        requestModel: U,
+        completion: @escaping Handler<Any>
     )
     {
         guard let url = type.url else{
-            completion(false ,"invalid url")
+            //            completion(false ,"invalid url")
             return
         }
         
-        AF.request(url , method: .post,parameters: register,encoder: URLEncodedFormParameterEncoder.default, headers: nil).response{
+        AF.request(url , method: .post,parameters: requestModel,encoder: URLEncodedFormParameterEncoder.default, headers: nil).response{
             response in
             debugPrint(response)
             
@@ -46,17 +46,17 @@ final class APIManager {
                         let jsonData = try JSONSerialization.jsonObject(with: data!,options: [])
                         print(jsonData)
                         
-                        completion(true,"Success!")
+                        completion(.success(jsonData))
                     } else if response.response?.statusCode == 200 {
-                        completion(false,"Unsuccesfull")
+                        completion(.failure(.invalidResponse))
                     }
                     
                 } catch{
-                    completion(false,"Unsucessful")
+                    completion(.failure(.invalidData))
                     print(error.localizedDescription)
                 }
             case .failure:
-                completion(false , "Unsuccessful")
+                completion(.failure(.network("invalid")))
             }
         }
     }
