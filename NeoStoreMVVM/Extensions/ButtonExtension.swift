@@ -11,7 +11,7 @@ import UIKit
 extension UIButton {
     func changeView(){
 //        self.layer.borderWidth
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 20
     }
 
 }

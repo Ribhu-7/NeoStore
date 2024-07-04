@@ -7,24 +7,32 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController{
+    
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    
+    var sliderImages = ["slider_img1", "slider_img2","slider_img3","slider_img4"]
+    @IBOutlet weak var navBar: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationItem.title = "NeoSTORE"
+        self.navigationItem.hidesBackButton = true
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   @objc func menuTapped(){
+        
     }
-    */
 
+    @objc func playTapped(){
+        
+    }
 }

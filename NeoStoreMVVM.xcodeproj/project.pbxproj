@@ -16,6 +16,9 @@
 		18308A042C33FF3800C62ABD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A032C33FF3800C62ABD /* Register.swift */; };
 		18308A062C33FFC600C62ABD /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A052C33FFC600C62ABD /* Login.swift */; };
 		18308A092C34009A00C62ABD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 18308A082C34009A00C62ABD /* Alamofire */; };
+		187807212C36CFCD006B2097 /* HomeVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187807202C36CFCD006B2097 /* HomeVCExtension.swift */; };
+		187807282C36D0B7006B2097 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187807262C36D0B7006B2097 /* MyCollectionViewCell.swift */; };
+		187807292C36D0B7006B2097 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187807272C36D0B7006B2097 /* MyCollectionViewCell.xib */; };
 		1886C4BF2C351E840082CA62 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886C4BE2C351E840082CA62 /* LoginViewModel.swift */; };
 		18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69532C328BA8002A5425 /* AppDelegate.swift */; };
 		18BC69562C328BA8002A5425 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69552C328BA8002A5425 /* SceneDelegate.swift */; };
@@ -39,6 +42,9 @@
 		18308A012C33FE1600C62ABD /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		18308A032C33FF3800C62ABD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		18308A052C33FFC600C62ABD /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		187807202C36CFCD006B2097 /* HomeVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCExtension.swift; sourceTree = "<group>"; };
+		187807262C36D0B7006B2097 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		187807272C36D0B7006B2097 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 		1886C4BE2C351E840082CA62 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		18BC69502C328BA8002A5425 /* NeoStoreMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoStoreMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BC69532C328BA8002A5425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				180B1C8D2C366F2C00607EB9 /* HomeViewController.swift */,
+				187807262C36D0B7006B2097 /* MyCollectionViewCell.swift */,
+				187807272C36D0B7006B2097 /* MyCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -95,6 +103,7 @@
 		180B1C8C2C366F1400607EB9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				187807202C36CFCD006B2097 /* HomeVCExtension.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -361,6 +370,7 @@
 			files = (
 				18BC69632C328BAA002A5425 /* LaunchScreen.storyboard in Resources */,
 				18BC69602C328BAA002A5425 /* Assets.xcassets in Resources */,
+				187807292C36D0B7006B2097 /* MyCollectionViewCell.xib in Resources */,
 				18BC695B2C328BA8002A5425 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +387,7 @@
 				180B1C862C3660E700607EB9 /* StringExtension.swift in Sources */,
 				180B1C8E2C366F2C00607EB9 /* HomeViewController.swift in Sources */,
 				18308A062C33FFC600C62ABD /* Login.swift in Sources */,
+				187807212C36CFCD006B2097 /* HomeVCExtension.swift in Sources */,
 				18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */,
 				1886C4BF2C351E840082CA62 /* LoginViewModel.swift in Sources */,
 				183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */,
@@ -386,6 +397,7 @@
 				18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */,
 				18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */,
 				18BC695E2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld in Sources */,
+				187807282C36D0B7006B2097 /* MyCollectionViewCell.swift in Sources */,
 				180B1C882C36615900607EB9 /* AlertFieldExtension.swift in Sources */,
 				1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */,
 				18BC69562C328BA8002A5425 /* SceneDelegate.swift in Sources */,

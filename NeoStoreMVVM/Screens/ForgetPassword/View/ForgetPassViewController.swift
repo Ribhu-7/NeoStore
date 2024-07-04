@@ -11,8 +11,6 @@ class ForgetPassViewController: UIViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     
-    @IBOutlet weak var passwordField: UITextField!
-    
     @IBOutlet weak var loginBtn: UIButton!
     
     override func viewDidLoad() {
@@ -21,7 +19,6 @@ class ForgetPassViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         usernameField.setContent("Username", "username_icon")
-        passwordField.setContent("Password", "password_icon")
         loginBtn.changeView()
     }
     

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 extension LoginViewController {
     
     func getRequest(logs: LoginModel) {
@@ -21,9 +22,9 @@ extension LoginViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
                     self.showHome()
                 }
-            case .failure(let error):
-                self.showAlert(message: error.localizedDescription)
-                print(error.localizedDescription)
+            case .failure(_):
+                self.showAlert(message: "Invalid Credentials")
+                print("Error:")
             }
         }
         

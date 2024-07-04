@@ -31,7 +31,7 @@ final class APIManager {
     )
     {
         guard let url = type.url else{
-            //            completion(false ,"invalid url")
+            completion(.failure(.invalidURL))
             return
         }
         
@@ -47,7 +47,7 @@ final class APIManager {
                         print(jsonData)
                         
                         completion(.success(jsonData))
-                    } else if response.response?.statusCode == 200 {
+                    } else if response.response?.statusCode != 200 {
                         completion(.failure(.invalidResponse))
                     }
                     

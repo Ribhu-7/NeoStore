@@ -24,6 +24,8 @@ extension UITextField {
                 imageViewContainer.addSubview(imageView)
                 leftView = imageViewContainer
                 leftViewMode = .always
+        self.autocorrectionType = .no
+        self.spellCheckingType = .no
     }
     
 }
