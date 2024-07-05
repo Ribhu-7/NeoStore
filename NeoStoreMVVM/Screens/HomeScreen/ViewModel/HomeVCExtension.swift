@@ -8,16 +8,29 @@
 import Foundation
 import UIKit
 
-extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
+//    var currentIndex = 0
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sliderImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectionViewCell", for: indexPath) as! MyCollectionViewCell
         
-        cell.myImage.image = UIImage(named: sliderImages[indexPath.row])
+        cell.imgView.image = UIImage(named: sliderImages[indexPath.row])
+        
+//        if currentIndex < sliderImages.count -1
+//        myPageControl.currentPage = indexPath.row
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.myPageControl.currentPage = indexPath.row
+        
     }
 }

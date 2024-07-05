@@ -196,9 +196,9 @@
 		18BC69702C328C86002A5425 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				180B1C892C366EFD00607EB9 /* HomeScreen */,
 				18BC69842C32C340002A5425 /* Register */,
 				18BC697C2C32B9D2002A5425 /* ForgetPassword */,
+				180B1C892C366EFD00607EB9 /* HomeScreen */,
 				18BC69712C328CA6002A5425 /* Login */,
 			);
 			path = Screens;
