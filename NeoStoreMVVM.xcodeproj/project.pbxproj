@@ -31,6 +31,11 @@
 		18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC697A2C32B0AB002A5425 /* ButtonExtension.swift */; };
 		18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69822C32BA76002A5425 /* ForgetPassViewController.swift */; };
 		18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69882C32C37C002A5425 /* RegisterViewController.swift */; };
+		18DA70EA2C37F2B0008A2B96 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70E92C37F2B0008A2B96 /* SideViewController.swift */; };
+		18DA70ED2C37F808008A2B96 /* SideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70EB2C37F808008A2B96 /* SideTableViewCell.swift */; };
+		18DA70EE2C37F808008A2B96 /* SideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DA70EC2C37F808008A2B96 /* SideTableViewCell.xib */; };
+		18DA70F02C37FD55008A2B96 /* SideVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70EF2C37FD55008A2B96 /* SideVCExtension.swift */; };
+		18DA70F22C38009A008A2B96 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70F12C38009A008A2B96 /* ImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +64,11 @@
 		18BC697A2C32B0AB002A5425 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		18BC69822C32BA76002A5425 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
 		18BC69882C32C37C002A5425 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		18DA70E92C37F2B0008A2B96 /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
+		18DA70EB2C37F808008A2B96 /* SideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideTableViewCell.swift; sourceTree = "<group>"; };
+		18DA70EC2C37F808008A2B96 /* SideTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideTableViewCell.xib; sourceTree = "<group>"; };
+		18DA70EF2C37FD55008A2B96 /* SideVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideVCExtension.swift; sourceTree = "<group>"; };
+		18DA70F12C38009A008A2B96 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,9 @@
 				180B1C8D2C366F2C00607EB9 /* HomeViewController.swift */,
 				187807262C36D0B7006B2097 /* MyCollectionViewCell.swift */,
 				187807272C36D0B7006B2097 /* MyCollectionViewCell.xib */,
+				18DA70E92C37F2B0008A2B96 /* SideViewController.swift */,
+				18DA70EB2C37F808008A2B96 /* SideTableViewCell.swift */,
+				18DA70EC2C37F808008A2B96 /* SideTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -104,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				187807202C36CFCD006B2097 /* HomeVCExtension.swift */,
+				18DA70EF2C37FD55008A2B96 /* SideVCExtension.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -180,6 +194,7 @@
 				18BC697A2C32B0AB002A5425 /* ButtonExtension.swift */,
 				180B1C852C3660E700607EB9 /* StringExtension.swift */,
 				180B1C872C36615900607EB9 /* AlertFieldExtension.swift */,
+				18DA70F12C38009A008A2B96 /* ImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -368,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DA70EE2C37F808008A2B96 /* SideTableViewCell.xib in Resources */,
 				18BC69632C328BAA002A5425 /* LaunchScreen.storyboard in Resources */,
 				18BC69602C328BAA002A5425 /* Assets.xcassets in Resources */,
 				187807292C36D0B7006B2097 /* MyCollectionViewCell.xib in Resources */,
@@ -389,6 +405,7 @@
 				18308A062C33FFC600C62ABD /* Login.swift in Sources */,
 				187807212C36CFCD006B2097 /* HomeVCExtension.swift in Sources */,
 				18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */,
+				18DA70F02C37FD55008A2B96 /* SideVCExtension.swift in Sources */,
 				1886C4BF2C351E840082CA62 /* LoginViewModel.swift in Sources */,
 				183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */,
 				18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */,
@@ -397,9 +414,12 @@
 				18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */,
 				18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */,
 				18BC695E2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld in Sources */,
+				18DA70ED2C37F808008A2B96 /* SideTableViewCell.swift in Sources */,
+				18DA70EA2C37F2B0008A2B96 /* SideViewController.swift in Sources */,
 				187807282C36D0B7006B2097 /* MyCollectionViewCell.swift in Sources */,
 				180B1C882C36615900607EB9 /* AlertFieldExtension.swift in Sources */,
 				1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */,
+				18DA70F22C38009A008A2B96 /* ImageExtension.swift in Sources */,
 				18BC69562C328BA8002A5425 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
