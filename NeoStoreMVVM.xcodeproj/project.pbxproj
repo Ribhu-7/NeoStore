@@ -36,6 +36,13 @@
 		18DA70EE2C37F808008A2B96 /* SideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DA70EC2C37F808008A2B96 /* SideTableViewCell.xib */; };
 		18DA70F02C37FD55008A2B96 /* SideVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70EF2C37FD55008A2B96 /* SideVCExtension.swift */; };
 		18DA70F22C38009A008A2B96 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70F12C38009A008A2B96 /* ImageExtension.swift */; };
+		18EA75C02C3BBA03009E3179 /* TableProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75BF2C3BBA03009E3179 /* TableProdViewController.swift */; };
+		18EA75C22C3BBD35009E3179 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75C12C3BBD35009E3179 /* CustomView.swift */; };
+		18EA75C42C3BC05B009E3179 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75C32C3BC05B009E3179 /* UIViewExtension.swift */; };
+		18EA75C62C3BC330009E3179 /* HomeViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75C52C3BC330009E3179 /* HomeViewExtension.swift */; };
+		18EA75CC2C3BC792009E3179 /* SofaProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */; };
+		18EA75D22C3BC818009E3179 /* ChairProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */; };
+		18EA75D82C3BC85D009E3179 /* CupboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D72C3BC85D009E3179 /* CupboardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +76,13 @@
 		18DA70EC2C37F808008A2B96 /* SideTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideTableViewCell.xib; sourceTree = "<group>"; };
 		18DA70EF2C37FD55008A2B96 /* SideVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideVCExtension.swift; sourceTree = "<group>"; };
 		18DA70F12C38009A008A2B96 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		18EA75BF2C3BBA03009E3179 /* TableProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProdViewController.swift; sourceTree = "<group>"; };
+		18EA75C12C3BBD35009E3179 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		18EA75C32C3BC05B009E3179 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		18EA75C52C3BC330009E3179 /* HomeViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewExtension.swift; sourceTree = "<group>"; };
+		18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaProdViewController.swift; sourceTree = "<group>"; };
+		18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairProdViewController.swift; sourceTree = "<group>"; };
+		18EA75D72C3BC85D009E3179 /* CupboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupboardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +132,7 @@
 			children = (
 				187807202C36CFCD006B2097 /* HomeVCExtension.swift */,
 				18DA70EF2C37FD55008A2B96 /* SideVCExtension.swift */,
+				18EA75C52C3BC330009E3179 /* HomeViewExtension.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -195,6 +210,8 @@
 				180B1C852C3660E700607EB9 /* StringExtension.swift */,
 				180B1C872C36615900607EB9 /* AlertFieldExtension.swift */,
 				18DA70F12C38009A008A2B96 /* ImageExtension.swift */,
+				18EA75C12C3BBD35009E3179 /* CustomView.swift */,
+				18EA75C32C3BC05B009E3179 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -211,6 +228,10 @@
 		18BC69702C328C86002A5425 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				18EA75D32C3BC82C009E3179 /* CupboardVC */,
+				18EA75CD2C3BC7E7009E3179 /* ChairVC */,
+				18EA75C72C3BC74F009E3179 /* SofaVC */,
+				18EA75BB2C3BB9A1009E3179 /* TableVC */,
 				18BC69842C32C340002A5425 /* Register */,
 				18BC697C2C32B9D2002A5425 /* ForgetPassword */,
 				180B1C892C366EFD00607EB9 /* HomeScreen */,
@@ -319,6 +340,134 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		18EA75BB2C3BB9A1009E3179 /* TableVC */ = {
+			isa = PBXGroup;
+			children = (
+				18EA75BE2C3BB9D5009E3179 /* ViewModel */,
+				18EA75BD2C3BB9C8009E3179 /* Model */,
+				18EA75BC2C3BB9B1009E3179 /* View */,
+			);
+			path = TableVC;
+			sourceTree = "<group>";
+		};
+		18EA75BC2C3BB9B1009E3179 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18EA75BF2C3BBA03009E3179 /* TableProdViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18EA75BD2C3BB9C8009E3179 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18EA75BE2C3BB9D5009E3179 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18EA75C72C3BC74F009E3179 /* SofaVC */ = {
+			isa = PBXGroup;
+			children = (
+				18EA75CA2C3BC77D009E3179 /* View */,
+				18EA75C92C3BC777009E3179 /* Model */,
+				18EA75C82C3BC766009E3179 /* ViewModel */,
+			);
+			path = SofaVC;
+			sourceTree = "<group>";
+		};
+		18EA75C82C3BC766009E3179 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18EA75C92C3BC777009E3179 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18EA75CA2C3BC77D009E3179 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18EA75CD2C3BC7E7009E3179 /* ChairVC */ = {
+			isa = PBXGroup;
+			children = (
+				18EA75D02C3BC7FF009E3179 /* View */,
+				18EA75CF2C3BC7FA009E3179 /* Model */,
+				18EA75CE2C3BC7F3009E3179 /* ViewModel */,
+			);
+			path = ChairVC;
+			sourceTree = "<group>";
+		};
+		18EA75CE2C3BC7F3009E3179 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18EA75CF2C3BC7FA009E3179 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18EA75D02C3BC7FF009E3179 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18EA75D32C3BC82C009E3179 /* CupboardVC */ = {
+			isa = PBXGroup;
+			children = (
+				18EA75D62C3BC845009E3179 /* ViewModel */,
+				18EA75D52C3BC83F009E3179 /* Model */,
+				18EA75D42C3BC838009E3179 /* View */,
+			);
+			path = CupboardVC;
+			sourceTree = "<group>";
+		};
+		18EA75D42C3BC838009E3179 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18EA75D72C3BC85D009E3179 /* CupboardViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18EA75D52C3BC83F009E3179 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18EA75D62C3BC845009E3179 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -398,18 +547,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EA75D82C3BC85D009E3179 /* CupboardViewController.swift in Sources */,
 				18BC69792C32ABCD002A5425 /* UITextFieldExtension.swift in Sources */,
 				18BC69762C328CD5002A5425 /* LoginViewController.swift in Sources */,
 				180B1C862C3660E700607EB9 /* StringExtension.swift in Sources */,
 				180B1C8E2C366F2C00607EB9 /* HomeViewController.swift in Sources */,
 				18308A062C33FFC600C62ABD /* Login.swift in Sources */,
 				187807212C36CFCD006B2097 /* HomeVCExtension.swift in Sources */,
+				18EA75D22C3BC818009E3179 /* ChairProdViewController.swift in Sources */,
 				18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */,
 				18DA70F02C37FD55008A2B96 /* SideVCExtension.swift in Sources */,
+				18EA75CC2C3BC792009E3179 /* SofaProdViewController.swift in Sources */,
 				1886C4BF2C351E840082CA62 /* LoginViewModel.swift in Sources */,
 				183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */,
 				18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */,
 				18308A022C33FE1600C62ABD /* EndPointType.swift in Sources */,
+				18EA75C62C3BC330009E3179 /* HomeViewExtension.swift in Sources */,
 				18308A042C33FF3800C62ABD /* Register.swift in Sources */,
 				18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */,
 				18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */,
@@ -418,6 +571,9 @@
 				18DA70EA2C37F2B0008A2B96 /* SideViewController.swift in Sources */,
 				187807282C36D0B7006B2097 /* MyCollectionViewCell.swift in Sources */,
 				180B1C882C36615900607EB9 /* AlertFieldExtension.swift in Sources */,
+				18EA75C22C3BBD35009E3179 /* CustomView.swift in Sources */,
+				18EA75C02C3BBA03009E3179 /* TableProdViewController.swift in Sources */,
+				18EA75C42C3BC05B009E3179 /* UIViewExtension.swift in Sources */,
 				1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */,
 				18DA70F22C38009A008A2B96 /* ImageExtension.swift in Sources */,
 				18BC69562C328BA8002A5425 /* SceneDelegate.swift in Sources */,

@@ -7,9 +7,13 @@
 
 import UIKit
 
+protocol SideViewControllerDelegate {
+    func hideSideMenu()
+}
+
 class SideViewController: UIViewController {
     
-    
+    var delegate: SideViewControllerDelegate?
 
     var sideItems = ["My Cart","Tables","Sofas","Chairs","Cupboards","My Account","Store Locator","My Orders","Logout"]
     var sideImgItems = ["shoppingcart_icon","tables_icon","sofa_icon","chair_icon","cupboard_icon","username_icon","storelocator_icon","myorders_icon","logout_icon"]
@@ -32,6 +36,9 @@ class SideViewController: UIViewController {
         
     }
     
+//    @IBAction func clickOnButton(_ sender: Any){
+//        self.delegate?.hideSideMenu()
+//    }
 
 
 }

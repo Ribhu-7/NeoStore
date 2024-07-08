@@ -7,69 +7,79 @@
 
 import UIKit
 
-class HomeViewController: UIViewController{
+class HomeViewController: UIViewController, SideViewControllerDelegate{
     
-
+    @IBOutlet weak var tableProdView: UIView!
+    @IBOutlet weak var sofaProdView: UIView!
+    @IBOutlet weak var chairProdView: UIView!
+    
+    @IBOutlet weak var cupboardView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var sideUIView: UIView!
     @IBOutlet var parentView: UIView!
-    
-    
-    //    @IBOutlet weak var sideView: UIView!
-    var sliderImages = ["slider_img1", "slider_img2","slider_img3","slider_img4"]
-
     @IBOutlet weak var myPageControl: UIPageControl!
-    var currentIndex = 0
-    var timer: Timer?
-    @IBOutlet weak var navBar: UINavigationBar!
+    
+    let sb = UIStoryboard(name: "Main", bundle: nil)
+    
+    var sliderImages = ["slider_img1", "slider_img2","slider_img3","slider_img4"]
+    
+    var sideViewController: SideViewController?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "sideMenuSegue"){
+            if let controller = segue.destination as? SideViewController {
+                self.sideViewController = controller
+                self.sideViewController?.delegate = self
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = true
-//        parentView.bringSubviewToFront(sideView)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu_icon"), style: .plain, target: self, action: #selector(showMenu))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
+        //        parentView.bringSubviewToFront(sideView)
         let nib = UINib(nibName: "MyCollectionViewCell", bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: "MyCollectionViewCell")
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        sideUIView.isHidden = true
-        
-//        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(sliderPage), userInfo: nil, repeats: true)
+        sideUIView.alpha = 0
         myPageControl.numberOfPages = sliderImages.count
         myPageControl.currentPage = 0
     }
-
-//    @objc func sliderPage(){
-//
-//        if currentIndex < sliderImages.count - 1 {
-//            currentIndex = currentIndex + 1
-//        } else {
-//            currentIndex = 0
-//        }
-//    }
     
-   @objc func menuTapped(){
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationItem.backButtonTitle = ""
+    }
+    
+    func hideSideMenu() {
+        UIView.animate(withDuration: 0.1) {
+            self.sideUIView.alpha = 0
+        }
+    }
+    
+    @objc func showMenu() {
+        if sideUIView.alpha == 0 {
+            UIView.animate(withDuration: 0.1) {
+                self.sideUIView.alpha = 0.8
+            }
+        } else {
+            self.hideSideMenu()
+        }
+    }
+    
+    @objc func searchClicked(){
         
     }
-
-    @objc func playTapped(){
-        
+    
+    @IBAction func tapGestureClicked(_ sender: Any) {
+        self.hideSideMenu()
     }
     
-    @IBAction func menuBtnClick(_ sender: UIButton) {
-        sideUIView.isHidden = false
-    }
     
-//    @IBAction func backButton(_ sender: UIButton) {
-//        sideUIView.isHidden = true
-//        print("back pressed")
-//    }
-    
-    @IBAction func searchPressed(_ sender: UIButton) {
-        sideUIView.isHidden = true
-    }
     
 }

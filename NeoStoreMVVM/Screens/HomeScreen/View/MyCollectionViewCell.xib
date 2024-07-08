@@ -10,25 +10,26 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCollectionViewCell" id="gTV-IL-0wX" customClass="MyCollectionViewCell" customModule="NeoStoreMVVM" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="280"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="320"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="393" height="280"/>
+                <rect key="frame" x="0.0" y="0.0" width="393" height="320"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ywV-UJ-4Lg">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="280"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="320"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CEv-r1-faP">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="280"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_img1" translatesAutoresizingMaskIntoConstraints="NO" id="CEv-r1-faP">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="320"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="DIM-K0-0Ed"/>
                                     <constraint firstAttribute="width" constant="393" id="Kv5-6Y-M39"/>
-                                    <constraint firstAttribute="height" constant="280" id="k3R-0w-Jpb"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="CEv-r1-faP" secondAttribute="bottom" id="CaT-xZ-VyB"/>
+                            <constraint firstAttribute="height" constant="320" id="GMh-Na-1Kt"/>
                             <constraint firstAttribute="trailing" secondItem="CEv-r1-faP" secondAttribute="trailing" id="OnQ-Hs-n5y"/>
                             <constraint firstItem="CEv-r1-faP" firstAttribute="top" secondItem="ywV-UJ-4Lg" secondAttribute="top" id="bg7-wu-999"/>
                             <constraint firstItem="CEv-r1-faP" firstAttribute="leading" secondItem="ywV-UJ-4Lg" secondAttribute="leading" id="heE-yr-7L3"/>
@@ -43,11 +44,14 @@
                 <constraint firstItem="ywV-UJ-4Lg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hhv-eD-Llu"/>
                 <constraint firstAttribute="bottom" secondItem="ywV-UJ-4Lg" secondAttribute="bottom" id="skK-3e-QQo"/>
             </constraints>
-            <size key="customSize" width="305" height="183"/>
+            <size key="customSize" width="305" height="223"/>
             <connections>
                 <outlet property="imgView" destination="CEv-r1-faP" id="xIa-TH-DaY"/>
             </connections>
-            <point key="canvasLocation" x="208.3969465648855" y="67.25352112676056"/>
+            <point key="canvasLocation" x="208.3969465648855" y="80.985915492957744"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="slider_img1" width="393" height="197"/>
+    </resources>
 </document>
