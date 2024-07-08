@@ -42,20 +42,22 @@ final class APIManager {
             
             switch response.result {
             case .success(let data):
-                do{
-                    if response.response?.statusCode == 200 {
-                        let jsonData = try JSONSerialization.jsonObject(with: data!,options: [])
-                        print(jsonData)
+                
+                    do{
+                        if response.response?.statusCode == 200 {
+                            let jsonData = try JSONSerialization.jsonObject(with: data!,options: [])
+                            print(jsonData)
+                            
+                            completion(.success(jsonData))
+                        }
                         
-                        completion(.success(jsonData))
-                    } else if response.response?.statusCode != 200 {
-                        completion(.failure(.invalidResponse))
+                    } catch{
+                        completion(.failure(.invalidData))
+                        print(error.localizedDescription)
                     }
-                    
-                } catch{
-                    completion(.failure(.invalidData))
-                    print(error.localizedDescription)
-                }
+                
+                
+                
             case .failure:
                 completion(.failure(.network("invalid")))
             }

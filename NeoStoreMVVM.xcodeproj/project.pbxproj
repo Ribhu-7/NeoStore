@@ -12,7 +12,7 @@
 		180B1C8E2C366F2C00607EB9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B1C8D2C366F2C00607EB9 /* HomeViewController.swift */; };
 		1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828FC4E2C35102A007DB450 /* RegisterViewModel.swift */; };
 		183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183089FB2C33FB1500C62ABD /* APIManager.swift */; };
-		18308A022C33FE1600C62ABD /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A012C33FE1600C62ABD /* EndPointType.swift */; };
+		18308A022C33FE1600C62ABD /* UserEndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A012C33FE1600C62ABD /* UserEndPointType.swift */; };
 		18308A042C33FF3800C62ABD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A032C33FF3800C62ABD /* Register.swift */; };
 		18308A062C33FFC600C62ABD /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A052C33FFC600C62ABD /* Login.swift */; };
 		18308A092C34009A00C62ABD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 18308A082C34009A00C62ABD /* Alamofire */; };
@@ -43,6 +43,11 @@
 		18EA75CC2C3BC792009E3179 /* SofaProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */; };
 		18EA75D22C3BC818009E3179 /* ChairProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */; };
 		18EA75D82C3BC85D009E3179 /* CupboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D72C3BC85D009E3179 /* CupboardViewController.swift */; };
+		18EA75DA2C3BDBA6009E3179 /* ProductEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D92C3BDBA6009E3179 /* ProductEndPoint.swift */; };
+		18EA75DC2C3BE1C9009E3179 /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75DB2C3BE1C9009E3179 /* TableModel.swift */; };
+		18EA75DE2C3BE25E009E3179 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75DD2C3BE25E009E3179 /* TableViewModel.swift */; };
+		18EA75E12C3BE53D009E3179 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 18EA75E02C3BE53D009E3179 /* Kingfisher */; };
+		18EA75E32C3BF04A009E3179 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75E22C3BF049009E3179 /* APIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +56,7 @@
 		180B1C8D2C366F2C00607EB9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1828FC4E2C35102A007DB450 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		183089FB2C33FB1500C62ABD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		18308A012C33FE1600C62ABD /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		18308A012C33FE1600C62ABD /* UserEndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPointType.swift; sourceTree = "<group>"; };
 		18308A032C33FF3800C62ABD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		18308A052C33FFC600C62ABD /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		187807202C36CFCD006B2097 /* HomeVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCExtension.swift; sourceTree = "<group>"; };
@@ -83,6 +88,10 @@
 		18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaProdViewController.swift; sourceTree = "<group>"; };
 		18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairProdViewController.swift; sourceTree = "<group>"; };
 		18EA75D72C3BC85D009E3179 /* CupboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupboardViewController.swift; sourceTree = "<group>"; };
+		18EA75D92C3BDBA6009E3179 /* ProductEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEndPoint.swift; sourceTree = "<group>"; };
+		18EA75DB2C3BE1C9009E3179 /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
+		18EA75DD2C3BE25E009E3179 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		18EA75E22C3BF049009E3179 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EA75E12C3BE53D009E3179 /* Kingfisher in Frameworks */,
 				18308A092C34009A00C62ABD /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +150,8 @@
 		18308A002C33FDDC00C62ABD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				18308A012C33FE1600C62ABD /* EndPointType.swift */,
+				18308A012C33FE1600C62ABD /* UserEndPointType.swift */,
+				18EA75D92C3BDBA6009E3179 /* ProductEndPoint.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -198,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				183089FB2C33FB1500C62ABD /* APIManager.swift */,
+				18EA75E22C3BF049009E3179 /* APIHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -361,6 +373,7 @@
 		18EA75BD2C3BB9C8009E3179 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18EA75DB2C3BE1C9009E3179 /* TableModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,6 +381,7 @@
 		18EA75BE2C3BB9D5009E3179 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				18EA75DD2C3BE25E009E3179 /* TableViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -486,6 +500,7 @@
 			name = NeoStoreMVVM;
 			packageProductDependencies = (
 				18308A082C34009A00C62ABD /* Alamofire */,
+				18EA75E02C3BE53D009E3179 /* Kingfisher */,
 			);
 			productName = NeoStoreMVVM;
 			productReference = 18BC69502C328BA8002A5425 /* NeoStoreMVVM.app */;
@@ -517,6 +532,7 @@
 			mainGroup = 18BC69472C328BA8002A5425;
 			packageReferences = (
 				18308A072C34009A00C62ABD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				18EA75DF2C3BE53D009E3179 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 18BC69512C328BA8002A5425 /* Products */;
 			projectDirPath = "";
@@ -547,12 +563,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EA75DA2C3BDBA6009E3179 /* ProductEndPoint.swift in Sources */,
 				18EA75D82C3BC85D009E3179 /* CupboardViewController.swift in Sources */,
 				18BC69792C32ABCD002A5425 /* UITextFieldExtension.swift in Sources */,
 				18BC69762C328CD5002A5425 /* LoginViewController.swift in Sources */,
+				18EA75DC2C3BE1C9009E3179 /* TableModel.swift in Sources */,
 				180B1C862C3660E700607EB9 /* StringExtension.swift in Sources */,
 				180B1C8E2C366F2C00607EB9 /* HomeViewController.swift in Sources */,
 				18308A062C33FFC600C62ABD /* Login.swift in Sources */,
+				18EA75E32C3BF04A009E3179 /* APIHelper.swift in Sources */,
 				187807212C36CFCD006B2097 /* HomeVCExtension.swift in Sources */,
 				18EA75D22C3BC818009E3179 /* ChairProdViewController.swift in Sources */,
 				18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */,
@@ -561,7 +580,7 @@
 				1886C4BF2C351E840082CA62 /* LoginViewModel.swift in Sources */,
 				183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */,
 				18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */,
-				18308A022C33FE1600C62ABD /* EndPointType.swift in Sources */,
+				18308A022C33FE1600C62ABD /* UserEndPointType.swift in Sources */,
 				18EA75C62C3BC330009E3179 /* HomeViewExtension.swift in Sources */,
 				18308A042C33FF3800C62ABD /* Register.swift in Sources */,
 				18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */,
@@ -569,6 +588,7 @@
 				18BC695E2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld in Sources */,
 				18DA70ED2C37F808008A2B96 /* SideTableViewCell.swift in Sources */,
 				18DA70EA2C37F2B0008A2B96 /* SideViewController.swift in Sources */,
+				18EA75DE2C3BE25E009E3179 /* TableViewModel.swift in Sources */,
 				187807282C36D0B7006B2097 /* MyCollectionViewCell.swift in Sources */,
 				180B1C882C36615900607EB9 /* AlertFieldExtension.swift in Sources */,
 				18EA75C22C3BBD35009E3179 /* CustomView.swift in Sources */,
@@ -802,6 +822,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		18EA75DF2C3BE53D009E3179 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -809,6 +837,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 18308A072C34009A00C62ABD /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		18EA75E02C3BE53D009E3179 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18EA75DF2C3BE53D009E3179 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 
