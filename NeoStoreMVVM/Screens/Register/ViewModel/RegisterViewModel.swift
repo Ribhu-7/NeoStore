@@ -12,7 +12,7 @@ import UIKit
 extension RegisterViewController {
     
     func postRequest(regs: RegistrationData) {
-        APIManager.shared.manager(modelType: RegisterModel.self, type: EndPointItems.register, requestModel: regs) {
+        APIManager.shared.manager(modelType: RegisterModel.self, type: EndPointItems.register, requestModel: regs , method: .post) {
             result in
             switch result {
             case .success(let jsonData):

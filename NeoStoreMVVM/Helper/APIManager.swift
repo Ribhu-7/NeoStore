@@ -27,6 +27,7 @@ final class APIManager {
         modelType: T.Type,
         type: EndPointType,
         requestModel: U,
+        method: HTTPMethod,
         completion: @escaping Handler<Any>
     )
     {
@@ -35,7 +36,7 @@ final class APIManager {
             return
         }
         
-        AF.request(url , method: .post,parameters: requestModel,encoder: URLEncodedFormParameterEncoder.default, headers: nil).response{
+        AF.request(url , method: method,parameters: requestModel,encoder: URLEncodedFormParameterEncoder.default, headers: nil).response{
             response in
             debugPrint(response)
             

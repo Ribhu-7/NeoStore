@@ -13,7 +13,7 @@ extension LoginViewController {
     
     func getRequest(logs: LoginModel) {
         
-        APIManager.shared.manager(modelType: LoginModel.self, type: EndPointItems.login, requestModel: logs){
+        APIManager.shared.manager(modelType: LoginModel.self, type: EndPointItems.login, requestModel: logs , method: .post){
             result in
             switch result {
             case .success(let jsonData):
