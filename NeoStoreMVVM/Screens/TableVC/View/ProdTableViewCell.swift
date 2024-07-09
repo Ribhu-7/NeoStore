@@ -23,6 +23,7 @@ class ProdTableViewCell: UITableViewCell {
     
     @IBOutlet weak var prodTblprc: UILabel!
     
+    @IBOutlet weak var starViewTbl: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -40,6 +41,7 @@ class ProdTableViewCell: UITableViewCell {
         prodTbldec.text = tabPproduct.producer
         prodTblprc.text = "Rs. \(tabPproduct.cost)"
         prodTblImg.setImage(with: tabPproduct.product_images)
+        starViewTbl.setStarRating(rating: tabPproduct.rating)
     }
     
 }

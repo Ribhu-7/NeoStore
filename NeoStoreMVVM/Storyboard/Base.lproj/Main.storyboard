@@ -772,8 +772,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="BWV-cS-CtE"/>
                                 </constraints>
-                                <color key="tintColor" red="1" green="0.01629760165" blue="0.060681154280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="1" green="0.01629760165" blue="0.060681154280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <color key="barTintColor" systemColor="systemRedColor"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -802,15 +802,22 @@
                                     <constraint firstAttribute="trailing" secondItem="bKP-aW-hmK" secondAttribute="trailing" id="bzQ-SP-WFC"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" id="DRS-Mh-fHd">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="safeArea" id="rxc-SC-NTV"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WSE-i0-1aN"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="TeF-8S-dgU" firstAttribute="leading" secondItem="WSE-i0-1aN" secondAttribute="leading" constant="10" id="5no-so-yJe"/>
                             <constraint firstAttribute="trailing" secondItem="TeF-8S-dgU" secondAttribute="trailing" constant="10" id="7Ki-zf-CE6"/>
                             <constraint firstItem="TeF-8S-dgU" firstAttribute="bottom" secondItem="WSE-i0-1aN" secondAttribute="bottom" id="HVT-ht-Mb8"/>
                             <constraint firstItem="WSE-i0-1aN" firstAttribute="bottom" secondItem="bKP-aW-hmK" secondAttribute="bottom" id="J4y-Ac-JqE"/>
+                            <constraint firstItem="ReP-kp-oOn" firstAttribute="top" secondItem="DRS-Mh-fHd" secondAttribute="bottom" id="K4e-F7-T2k"/>
                             <constraint firstItem="bKP-aW-hmK" firstAttribute="top" secondItem="WSE-i0-1aN" secondAttribute="top" id="LE6-Tw-sne"/>
                             <constraint firstItem="6U0-xX-5xs" firstAttribute="leading" secondItem="WSE-i0-1aN" secondAttribute="leading" id="Opi-9A-AYb"/>
                             <constraint firstItem="TeF-8S-dgU" firstAttribute="top" secondItem="oDv-le-gRc" secondAttribute="bottom" constant="10" id="Qlx-WB-91r"/>
@@ -985,8 +992,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="oDK-iH-AaL"/>
                                 </constraints>
-                                <color key="tintColor" red="1" green="0.01629760165" blue="0.060681154280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="1" green="0.01629760165" blue="0.060681154280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <color key="barTintColor" systemColor="systemRedColor"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1016,17 +1023,25 @@
                                     <outlet property="delegate" destination="Iuw-Jb-kJt" id="k1W-zM-1d1"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyF-jZ-RmN">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="55"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qT4-WG-sC8"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qT4-WG-sC8" firstAttribute="trailing" secondItem="eeq-YC-oPv" secondAttribute="trailing" id="3NJ-3K-Blz"/>
+                            <constraint firstItem="hyF-jZ-RmN" firstAttribute="top" secondItem="X4l-qA-UoI" secondAttribute="top" id="4dA-iL-88p"/>
                             <constraint firstItem="qT4-WG-sC8" firstAttribute="bottom" secondItem="eeq-YC-oPv" secondAttribute="bottom" id="JKZ-IK-kgD"/>
                             <constraint firstItem="eeq-YC-oPv" firstAttribute="leading" secondItem="qT4-WG-sC8" secondAttribute="leading" id="OsJ-b7-QfD"/>
                             <constraint firstItem="eeq-YC-oPv" firstAttribute="leading" secondItem="qT4-WG-sC8" secondAttribute="leading" id="Wgc-rW-dhw"/>
                             <constraint firstItem="eeq-YC-oPv" firstAttribute="top" secondItem="Qb2-ZY-Kjc" secondAttribute="bottom" id="Wox-73-gNC"/>
+                            <constraint firstItem="Qb2-ZY-Kjc" firstAttribute="top" secondItem="hyF-jZ-RmN" secondAttribute="bottom" id="cYM-wu-qzp"/>
                             <constraint firstItem="qT4-WG-sC8" firstAttribute="trailing" secondItem="Qb2-ZY-Kjc" secondAttribute="trailing" id="jHo-DZ-0Ue"/>
+                            <constraint firstAttribute="trailing" secondItem="hyF-jZ-RmN" secondAttribute="trailing" id="lTc-cq-Ubq"/>
                             <constraint firstItem="Qb2-ZY-Kjc" firstAttribute="leading" secondItem="X4l-qA-UoI" secondAttribute="leading" id="ndk-EP-5yO"/>
+                            <constraint firstItem="hyF-jZ-RmN" firstAttribute="leading" secondItem="X4l-qA-UoI" secondAttribute="leading" id="qnX-SH-avb"/>
                             <constraint firstItem="Qb2-ZY-Kjc" firstAttribute="top" secondItem="X4l-qA-UoI" secondAttribute="top" constant="55" id="vzF-MU-5Ad"/>
                         </constraints>
                     </view>
@@ -1045,9 +1060,64 @@
                     <view key="view" contentMode="scaleToFill" id="8Yl-g8-Sz3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="re6-hF-7wc">
+                                <rect key="frame" x="0.0" y="55" width="393" height="45"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="5Ud-1s-N1e"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <color key="barTintColor" systemColor="systemRedColor"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Sofas" id="vhi-xu-Nbw"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYO-bt-4f5">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="55"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YaZ-QZ-EnP">
+                                <rect key="frame" x="0.0" y="100" width="393" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="rxQ-KH-tIm">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rxQ-KH-tIm" id="Qim-tE-64j">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="POZ-Wm-T44"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CYO-bt-4f5" firstAttribute="top" secondItem="8Yl-g8-Sz3" secondAttribute="top" id="741-w8-75r"/>
+                            <constraint firstItem="POZ-Wm-T44" firstAttribute="trailing" secondItem="YaZ-QZ-EnP" secondAttribute="trailing" id="BlG-pU-IBS"/>
+                            <constraint firstItem="re6-hF-7wc" firstAttribute="leading" secondItem="POZ-Wm-T44" secondAttribute="leading" id="FBx-f4-anl"/>
+                            <constraint firstItem="YaZ-QZ-EnP" firstAttribute="leading" secondItem="POZ-Wm-T44" secondAttribute="leading" id="bq0-uO-XBy"/>
+                            <constraint firstItem="POZ-Wm-T44" firstAttribute="bottom" secondItem="YaZ-QZ-EnP" secondAttribute="bottom" id="dzf-nt-FZl"/>
+                            <constraint firstItem="re6-hF-7wc" firstAttribute="top" secondItem="8Yl-g8-Sz3" secondAttribute="top" constant="55" id="goT-TP-17Q"/>
+                            <constraint firstAttribute="trailing" secondItem="CYO-bt-4f5" secondAttribute="trailing" id="lh6-U0-RoY"/>
+                            <constraint firstItem="re6-hF-7wc" firstAttribute="trailing" secondItem="POZ-Wm-T44" secondAttribute="trailing" id="mCI-ZP-Cvs"/>
+                            <constraint firstItem="CYO-bt-4f5" firstAttribute="leading" secondItem="8Yl-g8-Sz3" secondAttribute="leading" id="pNh-OI-Vff"/>
+                            <constraint firstItem="YaZ-QZ-EnP" firstAttribute="top" secondItem="re6-hF-7wc" secondAttribute="bottom" id="rBW-g1-QyL"/>
+                            <constraint firstItem="re6-hF-7wc" firstAttribute="top" secondItem="CYO-bt-4f5" secondAttribute="bottom" id="rxQ-h5-PZD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sofaTblView" destination="YaZ-QZ-EnP" id="Hyl-vY-seV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Lz-6J-Rsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1101,9 +1171,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

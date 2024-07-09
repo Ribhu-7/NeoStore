@@ -35,6 +35,12 @@
 		18D2502B2C3CF32F00D58CFF /* ProdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D250292C3CF32F00D58CFF /* ProdTableViewCell.xib */; };
 		18D2502D2C3CF67600D58CFF /* TableProdExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2502C2C3CF67600D58CFF /* TableProdExtension.swift */; };
 		18D2502F2C3D01EB00D58CFF /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2502E2C3D01EB00D58CFF /* UIImageExtension.swift */; };
+		18D250312C3D163000D58CFF /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D250302C3D163000D58CFF /* StarRatingView.swift */; };
+		18D250332C3D229B00D58CFF /* SofaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D250322C3D229B00D58CFF /* SofaModel.swift */; };
+		18D250352C3D22DC00D58CFF /* SofaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D250342C3D22DC00D58CFF /* SofaViewModel.swift */; };
+		18D250372C3D23FE00D58CFF /* SofaProdExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D250362C3D23FE00D58CFF /* SofaProdExtension.swift */; };
+		18D2503C2C3D24A800D58CFF /* SofaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2503A2C3D24A800D58CFF /* SofaTableViewCell.swift */; };
+		18D2503D2C3D24A800D58CFF /* SofaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D2503B2C3D24A800D58CFF /* SofaTableViewCell.xib */; };
 		18DA70EA2C37F2B0008A2B96 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70E92C37F2B0008A2B96 /* SideViewController.swift */; };
 		18DA70ED2C37F808008A2B96 /* SideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70EB2C37F808008A2B96 /* SideTableViewCell.swift */; };
 		18DA70EE2C37F808008A2B96 /* SideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DA70EC2C37F808008A2B96 /* SideTableViewCell.xib */; };
@@ -42,7 +48,6 @@
 		18DA70F22C38009A008A2B96 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70F12C38009A008A2B96 /* ImageExtension.swift */; };
 		18EA75C02C3BBA03009E3179 /* TableProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75BF2C3BBA03009E3179 /* TableProdViewController.swift */; };
 		18EA75C22C3BBD35009E3179 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75C12C3BBD35009E3179 /* CustomView.swift */; };
-		18EA75C42C3BC05B009E3179 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75C32C3BC05B009E3179 /* UIViewExtension.swift */; };
 		18EA75C62C3BC330009E3179 /* HomeViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75C52C3BC330009E3179 /* HomeViewExtension.swift */; };
 		18EA75CC2C3BC792009E3179 /* SofaProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */; };
 		18EA75D22C3BC818009E3179 /* ChairProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */; };
@@ -84,6 +89,12 @@
 		18D250292C3CF32F00D58CFF /* ProdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProdTableViewCell.xib; sourceTree = "<group>"; };
 		18D2502C2C3CF67600D58CFF /* TableProdExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProdExtension.swift; sourceTree = "<group>"; };
 		18D2502E2C3D01EB00D58CFF /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		18D250302C3D163000D58CFF /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		18D250322C3D229B00D58CFF /* SofaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaModel.swift; sourceTree = "<group>"; };
+		18D250342C3D22DC00D58CFF /* SofaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaViewModel.swift; sourceTree = "<group>"; };
+		18D250362C3D23FE00D58CFF /* SofaProdExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaProdExtension.swift; sourceTree = "<group>"; };
+		18D2503A2C3D24A800D58CFF /* SofaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaTableViewCell.swift; sourceTree = "<group>"; };
+		18D2503B2C3D24A800D58CFF /* SofaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SofaTableViewCell.xib; sourceTree = "<group>"; };
 		18DA70E92C37F2B0008A2B96 /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		18DA70EB2C37F808008A2B96 /* SideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideTableViewCell.swift; sourceTree = "<group>"; };
 		18DA70EC2C37F808008A2B96 /* SideTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideTableViewCell.xib; sourceTree = "<group>"; };
@@ -91,7 +102,6 @@
 		18DA70F12C38009A008A2B96 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		18EA75BF2C3BBA03009E3179 /* TableProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProdViewController.swift; sourceTree = "<group>"; };
 		18EA75C12C3BBD35009E3179 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
-		18EA75C32C3BC05B009E3179 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		18EA75C52C3BC330009E3179 /* HomeViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewExtension.swift; sourceTree = "<group>"; };
 		18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaProdViewController.swift; sourceTree = "<group>"; };
 		18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairProdViewController.swift; sourceTree = "<group>"; };
@@ -231,8 +241,8 @@
 				180B1C872C36615900607EB9 /* AlertFieldExtension.swift */,
 				18DA70F12C38009A008A2B96 /* ImageExtension.swift */,
 				18EA75C12C3BBD35009E3179 /* CustomView.swift */,
-				18EA75C32C3BC05B009E3179 /* UIViewExtension.swift */,
 				18D2502E2C3D01EB00D58CFF /* UIImageExtension.swift */,
+				18D250302C3D163000D58CFF /* StarRatingView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -411,6 +421,8 @@
 		18EA75C82C3BC766009E3179 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				18D250342C3D22DC00D58CFF /* SofaViewModel.swift */,
+				18D250362C3D23FE00D58CFF /* SofaProdExtension.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -418,6 +430,7 @@
 		18EA75C92C3BC777009E3179 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18D250322C3D229B00D58CFF /* SofaModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -426,6 +439,8 @@
 			isa = PBXGroup;
 			children = (
 				18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */,
+				18D2503A2C3D24A800D58CFF /* SofaTableViewCell.swift */,
+				18D2503B2C3D24A800D58CFF /* SofaTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -565,6 +580,7 @@
 				18BC69602C328BAA002A5425 /* Assets.xcassets in Resources */,
 				187807292C36D0B7006B2097 /* MyCollectionViewCell.xib in Resources */,
 				18D2502B2C3CF32F00D58CFF /* ProdTableViewCell.xib in Resources */,
+				18D2503D2C3D24A800D58CFF /* SofaTableViewCell.xib in Resources */,
 				18BC695B2C328BA8002A5425 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,8 +592,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D250312C3D163000D58CFF /* StarRatingView.swift in Sources */,
 				18EA75DA2C3BDBA6009E3179 /* ProductEndPoint.swift in Sources */,
 				18D2502A2C3CF32F00D58CFF /* ProdTableViewCell.swift in Sources */,
+				18D2503C2C3D24A800D58CFF /* SofaTableViewCell.swift in Sources */,
 				18EA75D82C3BC85D009E3179 /* CupboardViewController.swift in Sources */,
 				18BC69792C32ABCD002A5425 /* UITextFieldExtension.swift in Sources */,
 				18BC69762C328CD5002A5425 /* LoginViewController.swift in Sources */,
@@ -586,6 +604,7 @@
 				180B1C8E2C366F2C00607EB9 /* HomeViewController.swift in Sources */,
 				18308A062C33FFC600C62ABD /* Login.swift in Sources */,
 				18EA75E32C3BF04A009E3179 /* APIHelper.swift in Sources */,
+				18D250352C3D22DC00D58CFF /* SofaViewModel.swift in Sources */,
 				187807212C36CFCD006B2097 /* HomeVCExtension.swift in Sources */,
 				18EA75D22C3BC818009E3179 /* ChairProdViewController.swift in Sources */,
 				18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */,
@@ -595,6 +614,7 @@
 				183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */,
 				18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */,
 				18308A022C33FE1600C62ABD /* UserEndPointType.swift in Sources */,
+				18D250372C3D23FE00D58CFF /* SofaProdExtension.swift in Sources */,
 				18EA75C62C3BC330009E3179 /* HomeViewExtension.swift in Sources */,
 				18308A042C33FF3800C62ABD /* Register.swift in Sources */,
 				18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */,
@@ -609,9 +629,9 @@
 				18D2502D2C3CF67600D58CFF /* TableProdExtension.swift in Sources */,
 				18EA75C22C3BBD35009E3179 /* CustomView.swift in Sources */,
 				18EA75C02C3BBA03009E3179 /* TableProdViewController.swift in Sources */,
-				18EA75C42C3BC05B009E3179 /* UIViewExtension.swift in Sources */,
 				1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */,
 				18DA70F22C38009A008A2B96 /* ImageExtension.swift in Sources */,
+				18D250332C3D229B00D58CFF /* SofaModel.swift in Sources */,
 				18BC69562C328BA8002A5425 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

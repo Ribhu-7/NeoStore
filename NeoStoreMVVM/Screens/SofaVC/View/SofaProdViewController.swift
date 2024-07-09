@@ -9,11 +9,14 @@ import UIKit
 
 class SofaProdViewController: UIViewController {
 
+    @IBOutlet weak var sofaTblView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
     }
+    
+    
 
 }

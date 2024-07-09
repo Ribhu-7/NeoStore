@@ -39,12 +39,21 @@
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDL-1s-ve9">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j7r-cQ-Iik">
                                 <rect key="frame" x="0.0" y="67.333333333333329" width="243" height="31.666666666666671"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDL-1s-ve9">
+                                        <rect key="frame" x="0.0" y="0.0" width="121.66666666666667" height="31.666666666666668"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nve-kK-ffU">
+                                        <rect key="frame" x="121.66666666666666" y="0.0" width="121.33333333333334" height="31.666666666666668"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -63,6 +72,7 @@
                 <outlet property="prodTblImg" destination="TS3-Yh-z7p" id="d2L-wh-jdo"/>
                 <outlet property="prodTbldec" destination="6Rb-b8-Y28" id="031-kP-VcO"/>
                 <outlet property="prodTblprc" destination="MDL-1s-ve9" id="kZ4-1y-NV5"/>
+                <outlet property="starViewTbl" destination="nve-kK-ffU" id="5i8-uR-dh6"/>
             </connections>
             <point key="canvasLocation" x="3.8167938931297707" y="44.718309859154935"/>
         </tableViewCell>
@@ -70,6 +80,9 @@
     <resources>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
