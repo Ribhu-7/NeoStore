@@ -16,7 +16,7 @@ class CupboardViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 
-        
+        self.navigationItem.title = "Cupboard"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
         
         cupbTblView.delegate = self

@@ -32,6 +32,10 @@ class TableProdViewController: UIViewController {
         
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationItem.backButtonTitle = ""
+    }
+    
     @objc func searchClicked(){
         
     }
