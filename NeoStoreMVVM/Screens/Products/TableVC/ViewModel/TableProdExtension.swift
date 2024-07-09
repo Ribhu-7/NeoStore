@@ -15,10 +15,13 @@ extension TableProdViewController : UITableViewDelegate , UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = TBtableView.dequeueReusableCell(withIdentifier: "ProdTableViewCell") as! ProdTableViewCell
+        let cell = TBtableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell") as! ProductTableViewCell
         let tb = self.tabViewModel.products[indexPath.row]
-        cell.tabPproduct = tb
-//        cell.prodTablelbl = self.tabViewModel.products.name
+        cell.prodTblImg.setImage(with: tb.product_images)
+        cell.prodHeading.text = tb.name
+        cell.prodDesc.text = tb.producer
+        cell.prodPrice.text = "Rs. \(tb.cost)"
+        cell.prodRating.setStarRating(rating: tb.rating)
         return cell
     }
 }

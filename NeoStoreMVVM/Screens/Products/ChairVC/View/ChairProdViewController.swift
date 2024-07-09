@@ -7,25 +7,25 @@
 
 import UIKit
 
-class TableProdViewController: UIViewController {
+class ChairProdViewController: UIViewController {
 
-    @IBOutlet weak var TBtableView: UITableView!
-    var tabViewModel = TableProdViewModel()
+    @IBOutlet weak var chairTblView: UITableView!
+    var chairViewModel = ChairProdViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 
-        
+        self.navigationItem.title = "Chairs"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
         
-        TBtableView.delegate = self
-        TBtableView.dataSource = self
+        chairTblView.delegate = self
+        chairTblView.dataSource = self
         
-        let nib = UINib(nibName: "ProdTableViewCell", bundle: nil)
-        TBtableView.register(nib, forCellReuseIdentifier: "ProdTableViewCell")
+        let nib = UINib(nibName: "ProductTableViewCell", bundle: nil)
+        chairTblView.register(nib, forCellReuseIdentifier: "ProductTableViewCell")
         
-        let req = TableRequest(product_category_id: 1, limit: 10, page: 1)
+        let req = ProdRequest(product_category_id: 1, limit: 10, page: 1)
 //        tabViewModel.fetchProducts(dataTab: req)
         initViewModel(req: req)
         observeEvent()
@@ -36,12 +36,12 @@ class TableProdViewController: UIViewController {
         
     }
     
-    func initViewModel(req: TableRequest){
-        tabViewModel.fetchProducts(dataTab: req)
+    func initViewModel(req: ProdRequest){
+        chairViewModel.fetchProducts(dataTab: req)
     }
     
     func observeEvent(){
-        tabViewModel.eventHandler = { [weak self] event in
+        chairViewModel.eventHandler = { [weak self] event in
             guard let self else {return}
             
             switch event {
@@ -51,9 +51,9 @@ class TableProdViewController: UIViewController {
                 print("Loading stopped...")
             case .dataLoaded:
                 print("Data Loaded...")
-                print(self.tabViewModel.products)
+                print(self.chairViewModel.products)
                 DispatchQueue.main.async {
-                    self.TBtableView.reloadData()
+                    self.chairTblView.reloadData()
                 }
             case .error(let error):
                 print(error ?? "")

@@ -8,13 +8,13 @@
 import Foundation
 
 
-final class SofaProdViewModel {
+final class ChairProdViewModel {
     
-    var products: [SofaData] = []
+    var products: [ProdData] = []
     var eventHandler: ((_ event: Event) -> Void)?
     
-    func fetchProducts(dataTab: SofaRequest){
-        APIHelper.shared.helpRequest(modelType: SofaProd.self, type: EndPointItems.getSofa
+    func fetchProducts(dataTab: ProdRequest){
+        APIHelper.shared.helpRequest(modelType: Product.self, type: EndPointItems.getChair
         )
         {response in
             self.eventHandler?(.stopLoading)
@@ -30,7 +30,7 @@ final class SofaProdViewModel {
     }
 }
 
-extension SofaProdViewModel {
+extension ChairProdViewModel {
     enum Event {
         case loading
         case stopLoading

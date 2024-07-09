@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct SofaProd : Codable {
+struct Product : Codable {
         let status : Int
-        let data : [SofaData]
+        let data : [ProdData]
 }
 
-struct SofaData : Codable {
+struct ProdData : Codable {
     let id : Int
     let product_category_id : Int
     let name : String
@@ -26,7 +26,7 @@ struct SofaData : Codable {
     let product_images : String
 }
 
-struct SofaRequest: Codable {
+struct ProdRequest: Codable {
     let product_category_id : Int
     let limit: Int
     let page : Int

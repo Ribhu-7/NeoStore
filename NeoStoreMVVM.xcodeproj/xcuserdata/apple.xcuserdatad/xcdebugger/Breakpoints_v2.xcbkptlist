@@ -223,7 +223,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "325">
+                  offsetFromSymbolStart = "394">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -273,6 +273,22 @@
             startingLineNumber = "30"
             endingLineNumber = "30"
             landmarkName = "fetchProducts(dataTab:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87B3DDC0-07A4-40E4-BE2C-B94D737C370D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NeoStoreMVVM/Screens/Products/SofaVC/ViewModel/SofaProdExtension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

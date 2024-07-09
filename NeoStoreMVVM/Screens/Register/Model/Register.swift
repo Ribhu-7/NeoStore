@@ -13,10 +13,6 @@ struct RegisterModel: Codable {
     let message : String?
     let user_msg : String?
     
-  
-    
-   
-    
 }
 
 struct RegistrationData:Codable {
