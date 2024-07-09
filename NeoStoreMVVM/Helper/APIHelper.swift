@@ -25,7 +25,7 @@ final class APIHelper {
     static let shared = APIHelper()
     private init() {}
     
-    func helpRequest<T: Decodable>(
+    func helpRequest<T: Codable>(
         modelType: T.Type,
         type: EndPointType,
         completion: @escaping Helper<T>
@@ -49,8 +49,8 @@ final class APIHelper {
             }
             
             do {
-                let products = try JSONDecoder().decode(modelType, from: data)
-                completion(.success(products))
+                let jsonData = try JSONDecoder().decode(modelType, from: data)
+                completion(.success(jsonData))
             } catch{
                 completion(.failure(.network(error)))
             }

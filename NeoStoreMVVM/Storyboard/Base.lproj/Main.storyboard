@@ -978,9 +978,61 @@
                     <view key="view" contentMode="scaleToFill" id="X4l-qA-UoI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qb2-ZY-Kjc">
+                                <rect key="frame" x="0.0" y="55" width="393" height="45"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="oDK-iH-AaL"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.01629760165" blue="0.060681154280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="1" green="0.01629760165" blue="0.060681154280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Tables" id="PAs-K0-DUa"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eeq-YC-oPv">
+                                <rect key="frame" x="0.0" y="100" width="393" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="9yJ-J3-3Zf">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9yJ-J3-3Zf" id="77w-9a-X0G">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Iuw-Jb-kJt" id="UZc-e4-QO9"/>
+                                    <outlet property="delegate" destination="Iuw-Jb-kJt" id="k1W-zM-1d1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qT4-WG-sC8"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qT4-WG-sC8" firstAttribute="trailing" secondItem="eeq-YC-oPv" secondAttribute="trailing" id="3NJ-3K-Blz"/>
+                            <constraint firstItem="qT4-WG-sC8" firstAttribute="bottom" secondItem="eeq-YC-oPv" secondAttribute="bottom" id="JKZ-IK-kgD"/>
+                            <constraint firstItem="eeq-YC-oPv" firstAttribute="leading" secondItem="qT4-WG-sC8" secondAttribute="leading" id="OsJ-b7-QfD"/>
+                            <constraint firstItem="eeq-YC-oPv" firstAttribute="leading" secondItem="qT4-WG-sC8" secondAttribute="leading" id="Wgc-rW-dhw"/>
+                            <constraint firstItem="eeq-YC-oPv" firstAttribute="top" secondItem="Qb2-ZY-Kjc" secondAttribute="bottom" id="Wox-73-gNC"/>
+                            <constraint firstItem="qT4-WG-sC8" firstAttribute="trailing" secondItem="Qb2-ZY-Kjc" secondAttribute="trailing" id="jHo-DZ-0Ue"/>
+                            <constraint firstItem="Qb2-ZY-Kjc" firstAttribute="leading" secondItem="X4l-qA-UoI" secondAttribute="leading" id="ndk-EP-5yO"/>
+                            <constraint firstItem="Qb2-ZY-Kjc" firstAttribute="top" secondItem="X4l-qA-UoI" secondAttribute="top" constant="55" id="vzF-MU-5Ad"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="TBtableView" destination="eeq-YC-oPv" id="7Rs-Ho-NGy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRG-d4-HdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1046,9 +1098,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
