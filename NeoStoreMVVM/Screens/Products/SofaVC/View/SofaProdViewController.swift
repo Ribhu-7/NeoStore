@@ -27,6 +27,10 @@ class SofaProdViewController: UIViewController {
         observeEvent()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationItem.backButtonTitle = ""
+    }
+    
     func initViewModel(req: ProdRequest){
         sofaViewModel.fetchProducts(dataTab: req)
     }

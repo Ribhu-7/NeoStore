@@ -32,8 +32,10 @@ extension TableProdViewController : UITableViewDelegate , UITableViewDataSource 
         prodVC.navigationItem.title = tb.name
         prodVC.prodHead = tb.name
         prodVC.prodDes = tb.producer
-        prodVC.prodCatg = "Category- Tables"
-        //prodVC.prodRatingView.setStarRating(rating: tb.rating)
+        prodVC.prodCatg = "Category - Tables"
+        prodVC.prodRate = tb.rating
+        prodVC.prodPrc = "Rs \(tb.cost)"
+        
         self.navigationController?.pushViewController(prodVC, animated: true)
     }
 }

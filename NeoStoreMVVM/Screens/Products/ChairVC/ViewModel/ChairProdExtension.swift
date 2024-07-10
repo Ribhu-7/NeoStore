@@ -24,4 +24,15 @@ extension ChairProdViewController : UITableViewDelegate , UITableViewDataSource 
         cell.prodRating.setStarRating(rating: tb.rating)
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let prodVC = sb.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
+        let tb = self.chairViewModel.products[indexPath.row]
+        prodVC.navigationItem.title = tb.name
+        prodVC.prodHead = tb.name
+        prodVC.prodDes = tb.producer
+        prodVC.prodCatg = "Category - Chair"
+        prodVC.prodRate = tb.rating
+        self.navigationController?.pushViewController(prodVC, animated: true)
+    }
 }

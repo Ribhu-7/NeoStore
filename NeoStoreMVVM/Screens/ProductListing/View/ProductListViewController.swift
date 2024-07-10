@@ -14,13 +14,19 @@ class ProductListViewController: UIViewController {
     @IBOutlet weak var prodCategory: UILabel!
     
     @IBOutlet weak var prodDesc: UILabel!
-    
     @IBOutlet weak var prodRatingView: UIView!
+    @IBOutlet weak var prodPrice: UILabel!
+    @IBOutlet weak var prodImageView: UIImageView!
+    @IBOutlet weak var leftImageView: UIImageView!
+    @IBOutlet weak var centerImageView: UIImageView!
+    @IBOutlet weak var rightImageView: UIImageView!
     
     var prodHead : String!
     var prodCatg : String!
     var prodDes : String!
-    var prodRate : UIView?
+    var prodRate : Int!
+//    var prodImage : UIImageView!
+    var prodPrc: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +35,9 @@ class ProductListViewController: UIViewController {
         prodHeading.text = prodHead
         prodCategory.text = prodCatg
         prodDesc.text = prodDes
-        prodRatingView = prodRate ?? UIView()
+        prodRatingView.setStarRating(rating: prodRate)
+       
+        prodPrice.text = prodPrc
     }
     
 
