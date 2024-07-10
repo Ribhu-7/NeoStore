@@ -25,13 +25,14 @@ class ProductListViewController: UIViewController {
     var prodCatg : String!
     var prodDes : String!
     var prodRate : Int!
-//   var prodImage : UIImageView!
     var prodPrc: String!
     var prodImg: String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
         // Do any additional setup after loading the view.
         prodHeading.text = prodHead
         prodCategory.text = prodCatg
@@ -46,8 +47,19 @@ class ProductListViewController: UIViewController {
         rightImageView.setImage(with: prodImg)
         prodPrice.text = prodPrc
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationItem.backButtonTitle = ""
+    }
     
-
+    @IBAction func buyNow(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
+        self.navigationController?.pushViewController(cartVC, animated: true)
+    }
+    
+    @objc func searchClicked(){
+        
+    }
 
 
 }

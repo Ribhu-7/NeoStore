@@ -18,6 +18,7 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideTableViewCell", for: indexPath) as! SideTableViewCell
         
         cell.sideImg.image = UIImage(named: sideImgItems[indexPath.row])
+        //print(cell.isUserInteractionEnabled)
         cell.sideLbl.text = sideItems[indexPath.row]
         return cell
     }
@@ -25,6 +26,21 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        for recognizer in sideTableView.gestureRecognizers ?? [] {
+            recognizer.cancelsTouchesInView = false
+        }
+        sideTableView.alpha = 1.0
+        
+        if indexPath.row == 0 {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+                let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
+                self.navigationController?.pushViewController(cartVC, animated: true)
+            
+        }
+        print("clicked")
+        
     }
     
 }

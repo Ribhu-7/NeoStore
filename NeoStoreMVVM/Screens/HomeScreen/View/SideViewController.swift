@@ -33,7 +33,8 @@ class SideViewController: UIViewController {
         
         let nib = UINib(nibName: "SideTableViewCell", bundle: nil)
         sideTableView.register(nib, forCellReuseIdentifier: "SideTableViewCell")
-        
+        self.sideTableView.allowsSelection = true
+        //print(sideTableView.isUserInteractionEnabled)
     }
     
 //    @IBAction func clickOnButton(_ sender: Any){

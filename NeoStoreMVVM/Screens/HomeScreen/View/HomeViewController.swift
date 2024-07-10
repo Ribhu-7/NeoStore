@@ -50,6 +50,7 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
         sideUIView.alpha = 0
         myPageControl.numberOfPages = sliderImages.count
         myPageControl.currentPage = 0
+    
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,7 +78,7 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
     }
     
     @IBAction func tapGestureClicked(_ sender: Any) {
-        self.hideSideMenu()
+        //self.hideSideMenu()
     }
     
     
