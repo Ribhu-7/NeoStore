@@ -34,6 +34,8 @@ extension SofaProdViewController : UITableViewDelegate , UITableViewDataSource {
         prodVC.prodDes = tb.producer
         prodVC.prodCatg = "Category - Sofa"
         prodVC.prodRate = tb.rating
+        prodVC.prodPrc = "Rs \(tb.cost)"
+        prodVC.prodImg = tb.product_images
         self.navigationController?.pushViewController(prodVC, animated: true)
     }
 }

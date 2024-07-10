@@ -35,7 +35,7 @@ extension TableProdViewController : UITableViewDelegate , UITableViewDataSource 
         prodVC.prodCatg = "Category - Tables"
         prodVC.prodRate = tb.rating
         prodVC.prodPrc = "Rs \(tb.cost)"
-        
+        prodVC.prodImg = tb.product_images
         self.navigationController?.pushViewController(prodVC, animated: true)
     }
 }

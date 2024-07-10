@@ -17,4 +17,9 @@ extension UIImageView {
         kf.setImage(with: resource)
         
     }
+    
+    func setBorder(colour: UIColor){
+        self.layer.borderWidth = 2
+        self.layer.borderColor = colour.cgColor
+    }
 }

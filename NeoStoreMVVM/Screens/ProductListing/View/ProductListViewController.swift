@@ -25,8 +25,9 @@ class ProductListViewController: UIViewController {
     var prodCatg : String!
     var prodDes : String!
     var prodRate : Int!
-//    var prodImage : UIImageView!
+//   var prodImage : UIImageView!
     var prodPrc: String!
+    var prodImg: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,13 @@ class ProductListViewController: UIViewController {
         prodCategory.text = prodCatg
         prodDesc.text = prodDes
         prodRatingView.setStarRating(rating: prodRate)
-       
+        prodImageView.setImage(with: prodImg)
+        leftImageView.setImage(with: prodImg)
+        leftImageView.setBorder(colour: .red)
+        centerImageView.setBorder(colour: .lightGray)
+        rightImageView.setBorder(colour: .green)
+        centerImageView.setImage(with: prodImg)
+        rightImageView.setImage(with: prodImg)
         prodPrice.text = prodPrc
     }
     
