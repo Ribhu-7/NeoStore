@@ -1523,10 +1523,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ogf-FM-0Tj">
-                                        <rect key="frame" x="0.0" y="100" width="393" height="395"/>
+                                        <rect key="frame" x="0.0" y="100" width="393" height="600"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="395" id="aBi-lI-fx5"/>
+                                            <constraint firstAttribute="height" constant="600" id="aBi-lI-fx5"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="RMK-hy-pQn">
@@ -1539,38 +1539,8 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tys-Mh-iLh">
-                                        <rect key="frame" x="0.0" y="495" width="393" height="67"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Uny-dr-qMv">
-                                                <rect key="frame" x="20" y="0.0" width="353" height="67"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTX-0X-X4k">
-                                                        <rect key="frame" x="0.0" y="0.0" width="174" height="67"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vm-Sw-pV9">
-                                                        <rect key="frame" x="179" y="0.0" width="174" height="67"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Uny-dr-qMv" secondAttribute="bottom" id="ADZ-c3-KiM"/>
-                                            <constraint firstAttribute="height" constant="67" id="Gzc-Ey-eWu"/>
-                                            <constraint firstItem="Uny-dr-qMv" firstAttribute="leading" secondItem="tys-Mh-iLh" secondAttribute="leading" constant="20" id="HiK-JL-uJF"/>
-                                            <constraint firstItem="Uny-dr-qMv" firstAttribute="top" secondItem="tys-Mh-iLh" secondAttribute="top" id="Z5B-Ll-pN4"/>
-                                            <constraint firstAttribute="trailing" secondItem="Uny-dr-qMv" secondAttribute="trailing" constant="20" id="zrC-YG-F93"/>
-                                        </constraints>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMl-3D-A32">
-                                        <rect key="frame" x="50" y="582" width="293" height="50"/>
+                                        <rect key="frame" x="50" y="720" width="293" height="50"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GlW-pG-Sa3"/>
@@ -1594,12 +1564,9 @@
                                     <constraint firstItem="Ogf-FM-0Tj" firstAttribute="top" secondItem="SM8-Yb-I5K" secondAttribute="top" constant="100" id="LG9-72-v6f"/>
                                     <constraint firstItem="GMl-3D-A32" firstAttribute="leading" secondItem="SM8-Yb-I5K" secondAttribute="leading" constant="50" id="ZxJ-NR-YTD"/>
                                     <constraint firstItem="Ogf-FM-0Tj" firstAttribute="leading" secondItem="SM8-Yb-I5K" secondAttribute="leading" id="aIJ-O2-OQR"/>
-                                    <constraint firstAttribute="trailing" secondItem="tys-Mh-iLh" secondAttribute="trailing" id="amg-pf-Fsw"/>
                                     <constraint firstItem="Ogf-FM-0Tj" firstAttribute="centerX" secondItem="SM8-Yb-I5K" secondAttribute="centerX" id="eyq-F9-fR0"/>
-                                    <constraint firstItem="tys-Mh-iLh" firstAttribute="top" secondItem="Ogf-FM-0Tj" secondAttribute="bottom" id="hcT-ZE-Ar6"/>
-                                    <constraint firstItem="tys-Mh-iLh" firstAttribute="leading" secondItem="SM8-Yb-I5K" secondAttribute="leading" id="jti-DV-DA8"/>
+                                    <constraint firstItem="GMl-3D-A32" firstAttribute="top" secondItem="Ogf-FM-0Tj" secondAttribute="bottom" constant="20" id="laQ-VU-MRD"/>
                                     <constraint firstAttribute="trailing" secondItem="Ogf-FM-0Tj" secondAttribute="trailing" id="mUN-o8-7Qt"/>
-                                    <constraint firstItem="GMl-3D-A32" firstAttribute="top" secondItem="tys-Mh-iLh" secondAttribute="bottom" constant="20" id="w53-RM-bwZ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -1618,7 +1585,6 @@
                     </view>
                     <connections>
                         <outlet property="cartTableView" destination="Ogf-FM-0Tj" id="Lvd-Fu-VQ7"/>
-                        <outlet property="totalCartPrc" destination="5Vm-Sw-pV9" id="Fxq-Gi-pSx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Wd-is-IGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

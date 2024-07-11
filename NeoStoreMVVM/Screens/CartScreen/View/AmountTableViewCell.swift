@@ -1,5 +1,5 @@
 //
-//  CartTableViewCell.swift
+//  AmountTableViewCell.swift
 //  NeoStoreMVVM
 //
 //  Created by Apple on 11/07/24.
@@ -7,21 +7,9 @@
 
 import UIKit
 
-class CartTableViewCell: UITableViewCell {
+class AmountTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cartImageView: UIImageView!
-    
-    @IBOutlet weak var cartHead: UILabel!
-    
-    @IBOutlet weak var cartDesc: UILabel!
-    
-    
-    @IBOutlet weak var cartPrice: UILabel!
-    
-    @IBOutlet weak var cartItem: UIButton!
-    
-    var cartImg: String!
-    
+    @IBOutlet weak var totalPrc: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

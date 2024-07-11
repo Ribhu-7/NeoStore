@@ -17,6 +17,8 @@
 		181910EC2C3FE2390018B1E8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181910EB2C3FE2390018B1E8 /* NetworkManager.swift */; };
 		181910EE2C3FE5440018B1E8 /* ListCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181910ED2C3FE5440018B1E8 /* ListCartModel.swift */; };
 		181910F02C3FE97A0018B1E8 /* ListCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181910EF2C3FE97A0018B1E8 /* ListCartViewModel.swift */; };
+		181910F32C4007550018B1E8 /* AmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181910F12C4007550018B1E8 /* AmountTableViewCell.swift */; };
+		181910F42C4007550018B1E8 /* AmountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181910F22C4007550018B1E8 /* AmountTableViewCell.xib */; };
 		1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828FC4E2C35102A007DB450 /* RegisterViewModel.swift */; };
 		183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183089FB2C33FB1500C62ABD /* APIManager.swift */; };
 		18308A022C33FE1600C62ABD /* UserEndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A012C33FE1600C62ABD /* UserEndPointType.swift */; };
@@ -83,6 +85,8 @@
 		181910EB2C3FE2390018B1E8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		181910ED2C3FE5440018B1E8 /* ListCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCartModel.swift; sourceTree = "<group>"; };
 		181910EF2C3FE97A0018B1E8 /* ListCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCartViewModel.swift; sourceTree = "<group>"; };
+		181910F12C4007550018B1E8 /* AmountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTableViewCell.swift; sourceTree = "<group>"; };
+		181910F22C4007550018B1E8 /* AmountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountTableViewCell.xib; sourceTree = "<group>"; };
 		1828FC4E2C35102A007DB450 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		183089FB2C33FB1500C62ABD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		18308A012C33FE1600C62ABD /* UserEndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPointType.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 				18B0A8AB2C3E998900C9366D /* CartExtension.swift */,
 				181910E32C3F9BDB0018B1E8 /* CartTableViewCell.swift */,
 				181910E42C3F9BDB0018B1E8 /* CartTableViewCell.xib */,
+				181910F12C4007550018B1E8 /* AmountTableViewCell.swift */,
+				181910F22C4007550018B1E8 /* AmountTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -677,6 +683,7 @@
 				187807292C36D0B7006B2097 /* MyCollectionViewCell.xib in Resources */,
 				18D2503D2C3D24A800D58CFF /* ProductTableViewCell.xib in Resources */,
 				18BC695B2C328BA8002A5425 /* Main.storyboard in Resources */,
+				181910F42C4007550018B1E8 /* AmountTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +739,7 @@
 				187807282C36D0B7006B2097 /* MyCollectionViewCell.swift in Sources */,
 				180B1C882C36615900607EB9 /* AlertFieldExtension.swift in Sources */,
 				18FE155D2C3D499A00DD9026 /* Product.swift in Sources */,
+				181910F32C4007550018B1E8 /* AmountTableViewCell.swift in Sources */,
 				18FE15672C3D5BD100DD9026 /* ProductListViewController.swift in Sources */,
 				18D2502D2C3CF67600D58CFF /* TableProdExtension.swift in Sources */,
 				181910E52C3F9BDB0018B1E8 /* CartTableViewCell.swift in Sources */,
