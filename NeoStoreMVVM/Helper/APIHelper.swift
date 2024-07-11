@@ -35,8 +35,10 @@ final class APIHelper {
             completion(.failure(.invalidURL))
             return
         }
+        var request = URLRequest(url: url)
+        request.setValue("6686300231b21", forHTTPHeaderField: "access_token")
         
-        URLSession.shared.dataTask(with: url){data,response,error in
+        URLSession.shared.dataTask(with: request){data,response,error in
             guard let data , error == nil else {
                 completion(.failure(.invalidData))
                 

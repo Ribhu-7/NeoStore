@@ -27,8 +27,9 @@ class ProductListViewController: UIViewController {
     var prodRate : Int!
     var prodPrc: String!
     var prodImg: String!
+    var prodID: Int!
     
-    
+    var cartViewModel = CartViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,9 +53,11 @@ class ProductListViewController: UIViewController {
     }
     
     @IBAction func buyNow(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
-        self.navigationController?.pushViewController(cartVC, animated: true)
+        let req = CartRequest(product_id: prodID, quantity: 1)
+        cartViewModel.addtoCart(cartreq: req)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            self.showCart()
+        }
     }
     
     @objc func searchClicked(){

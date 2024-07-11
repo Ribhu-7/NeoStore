@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CartModel {
+struct CartModel: Codable {
     let status: Int
     let data: Bool
     let total_carts: Int
@@ -15,7 +15,7 @@ struct CartModel {
     let user_msg: String
 }
 
-struct CartRequest{
+struct CartRequest: Codable{
     let product_id: Int
     let quantity: Int
 }

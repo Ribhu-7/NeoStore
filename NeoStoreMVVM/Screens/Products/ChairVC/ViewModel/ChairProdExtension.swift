@@ -35,6 +35,7 @@ extension ChairProdViewController : UITableViewDelegate , UITableViewDataSource 
         prodVC.prodRate = tb.rating
         prodVC.prodPrc = "Rs \(tb.cost)"
         prodVC.prodImg = tb.product_images
+        prodVC.prodID = 2
         self.navigationController?.pushViewController(prodVC, animated: true)
     }
 }

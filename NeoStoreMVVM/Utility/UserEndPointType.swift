@@ -26,6 +26,7 @@ enum EndPointItems {
     case getDetail
     case setRating
     case addtoCart
+    case getCart
 }
 
 extension EndPointItems: EndPointType{
@@ -49,6 +50,8 @@ extension EndPointItems: EndPointType{
             return "products/setRating"
         case .addtoCart:
             return "addToCart"
+        case .getCart:
+            return "cart"
         }
     
     }

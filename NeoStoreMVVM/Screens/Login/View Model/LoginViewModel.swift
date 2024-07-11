@@ -19,6 +19,7 @@ extension LoginViewController {
             case .success(let jsonData):
                 self.showAlert(message: "User Login Success")
                 print(jsonData)
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
                     self.showHome()
                 }

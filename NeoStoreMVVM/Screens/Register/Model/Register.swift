@@ -28,6 +28,7 @@ struct RegistrationData:Codable {
     var email: String?
     var phone_no: String?
     var first_name: String?
+    var access_token: String?
     
 }
 

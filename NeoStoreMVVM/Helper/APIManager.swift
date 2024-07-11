@@ -31,12 +31,15 @@ final class APIManager {
         completion: @escaping Handler<Any>
     )
     {
+        let headers: HTTPHeaders = [
+            "access_token" : "6686300231b21"
+        ]
         guard let url = type.url else{
             completion(.failure(.invalidURL))
             return
         }
         
-        AF.request(url , method: method,parameters: requestModel,encoder: URLEncodedFormParameterEncoder.default, headers: nil).response{
+        AF.request(url , method: method,parameters: requestModel,encoder: URLEncodedFormParameterEncoder.default, headers: headers).response{
             response in
             debugPrint(response)
             
@@ -47,6 +50,8 @@ final class APIManager {
                         if response.response?.statusCode == 200 {
                             let jsonData = try JSONSerialization.jsonObject(with: data!,options: [])
                             print(jsonData)
+                            
+//                            let resData = try JSONDecoder().decode(modelType, from: data!)
                             
                             completion(.success(jsonData))
                         }
