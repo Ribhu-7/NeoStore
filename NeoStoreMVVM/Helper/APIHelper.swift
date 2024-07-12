@@ -24,7 +24,7 @@ final class APIHelper {
     
     static let shared = APIHelper()
     private init() {}
-    
+    var userDetailsViewModel = UserDetailsViewModel()
     func helpRequest<T: Codable>(
         modelType: T.Type,
         type: EndPointType,
@@ -35,6 +35,8 @@ final class APIHelper {
             completion(.failure(.invalidURL))
             return
         }
+        //let access = userDetailsViewModel.details?.user_data?.access_token
+        //print(access ?? "")
         var request = URLRequest(url: url)
         request.setValue("6686300231b21", forHTTPHeaderField: "access_token")
         

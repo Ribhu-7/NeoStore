@@ -12,6 +12,7 @@ class SideTableViewCell: UITableViewCell {
     @IBOutlet weak var sideLbl: UILabel!
     @IBOutlet weak var sideImg: UIImageView!
     
+    @IBOutlet weak var sideCartBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

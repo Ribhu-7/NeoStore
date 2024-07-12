@@ -15,10 +15,15 @@ class SideViewController: UIViewController {
     
     var delegate: SideViewControllerDelegate?
 
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    
     var sideItems = ["My Cart","Tables","Sofas","Chairs","Cupboards","My Account","Store Locator","My Orders","Logout"]
     var sideImgItems = ["shoppingcart_icon","tables_icon","sofa_icon","chair_icon","cupboard_icon","username_icon","storelocator_icon","myorders_icon","logout_icon"]
     
+    var cartViewModel = ListCartViewModel()
     
+    var userDetailsViewModel = UserDetailsViewModel()
     @IBOutlet weak var sideImageView: UIImageView!
     
     @IBOutlet weak var sideTableView: UITableView!
@@ -30,16 +35,45 @@ class SideViewController: UIViewController {
         sideTableView.delegate = self
         sideTableView.dataSource = self
         sideImageView.maskCircle(anyImage: (UIImage(named: "user_male")!))
-        
         let nib = UINib(nibName: "SideTableViewCell", bundle: nil)
         sideTableView.register(nib, forCellReuseIdentifier: "SideTableViewCell")
         self.sideTableView.allowsSelection = true
         //print(sideTableView.isUserInteractionEnabled)
+        let req = ProdRequest(product_category_id: 1, limit: 10, page: 1)
+//        tabViewModel.fetchProducts(dataTab: req)
+        initViewModel(req: req)
+        observeEvent()
     }
     
 //    @IBAction func clickOnButton(_ sender: Any){
 //        self.delegate?.hideSideMenu()
 //    }
 
+    func initViewModel(req: ProdRequest){
+        userDetailsViewModel.getDetails(dataTab: req)
+    }
+    
+    func observeEvent(){
+        userDetailsViewModel.eventHandler = { [weak self] event in
+            guard let self else {return}
+            
+            switch event {
+            case .loading:
+                print("Loading...")
+            case .stopLoading:
+                print("Loading stopped...")
+            case .dataLoaded:
+                print("Data Loaded...")
+                //print(self.userDetailsViewModel.details)
+                DispatchQueue.main.async {
+                    guard let userN = self.userDetailsViewModel.details?.user_data?.username else {return}
+                    self.userName.text = userN
+                    self.userEmail.text = self.userDetailsViewModel.details?.user_data?.email
+                }
+            case .error(let error):
+                print(error ?? "")
+            }
+        }
+    }
 
 }

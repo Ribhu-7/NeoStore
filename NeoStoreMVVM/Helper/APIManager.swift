@@ -22,7 +22,7 @@ typealias Handler<T> = (Result<T,DataError>) -> Void
 final class APIManager {
     static let shared = APIManager()
     private init() {}
-    
+    var userDetailsViewModel = UserDetailsViewModel()
     func manager<T: Codable , U: Codable>(
         modelType: T.Type,
         type: EndPointType,
@@ -31,8 +31,9 @@ final class APIManager {
         completion: @escaping Handler<Any>
     )
     {
+        let access = userDetailsViewModel.details?.user_data?.access_token
         let headers: HTTPHeaders = [
-            "access_token" : "6686300231b21"
+            "access_token" : access ?? ""
         ]
         guard let url = type.url else{
             completion(.failure(.invalidURL))

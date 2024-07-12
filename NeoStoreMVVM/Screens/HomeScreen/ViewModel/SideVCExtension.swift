@@ -16,7 +16,14 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideTableViewCell", for: indexPath) as! SideTableViewCell
-        
+        let cnt = self.cartViewModel.products.count
+        //print(cnt)
+        if indexPath.row == 0 {
+            cell.sideCartBtn.isHidden = false
+            cell.sideCartBtn.changeView()
+            
+            cell.sideCartBtn.setTitle(String(cnt), for: .normal)
+        }
         cell.sideImg.image = UIImage(named: sideImgItems[indexPath.row])
         //print(cell.isUserInteractionEnabled)
         cell.sideLbl.text = sideItems[indexPath.row]
@@ -32,12 +39,25 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
             recognizer.cancelsTouchesInView = false
         }
         sideTableView.alpha = 1.0
-        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
         if indexPath.row == 0 {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
                 let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
                 self.navigationController?.pushViewController(cartVC, animated: true)
-            
+        } else if indexPath.row == 1 {
+            let tableVC = sb.instantiateViewController(withIdentifier: "tableVC")
+            self.navigationController?.pushViewController(tableVC, animated: true)
+        } else if indexPath.row == 2 {
+            let sofaVC = sb.instantiateViewController(withIdentifier: "sofaVC")
+            self.navigationController?.pushViewController(sofaVC, animated: true)
+        } else if indexPath.row == 3 {
+            let chairVC = sb.instantiateViewController(withIdentifier: "chairVC")
+            self.navigationController?.pushViewController(chairVC, animated: true)
+        } else if indexPath.row == 4 {
+            let cupboardVC = sb.instantiateViewController(withIdentifier: "cupboardVC")
+            self.navigationController?.pushViewController(cupboardVC, animated: true)
+        } else if indexPath.row == 5{
+            let myaccountVC = sb.instantiateViewController(withIdentifier: "myaccountVC")
+            self.navigationController?.pushViewController(myaccountVC, animated: true)
         }
         print("clicked")
         

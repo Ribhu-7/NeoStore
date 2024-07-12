@@ -22,6 +22,9 @@ class CartTableViewCell: UITableViewCell {
     
     var cartImg: String!
     
+    let transparentView = UIView()
+    let tableView = UITableView()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -19,6 +19,10 @@
 		181910F02C3FE97A0018B1E8 /* ListCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181910EF2C3FE97A0018B1E8 /* ListCartViewModel.swift */; };
 		181910F32C4007550018B1E8 /* AmountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181910F12C4007550018B1E8 /* AmountTableViewCell.swift */; };
 		181910F42C4007550018B1E8 /* AmountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181910F22C4007550018B1E8 /* AmountTableViewCell.xib */; };
+		18278A672C41388A004F7629 /* DeleteCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18278A662C41388A004F7629 /* DeleteCartViewModel.swift */; };
+		18278A712C415914004F7629 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18278A702C415914004F7629 /* UserModel.swift */; };
+		18278A732C415947004F7629 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18278A722C415947004F7629 /* UserDetailsViewModel.swift */; };
+		18278A752C4159E1004F7629 /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18278A742C4159E1004F7629 /* MyAccountViewController.swift */; };
 		1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828FC4E2C35102A007DB450 /* RegisterViewModel.swift */; };
 		183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183089FB2C33FB1500C62ABD /* APIManager.swift */; };
 		18308A022C33FE1600C62ABD /* UserEndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18308A012C33FE1600C62ABD /* UserEndPointType.swift */; };
@@ -87,6 +91,10 @@
 		181910EF2C3FE97A0018B1E8 /* ListCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCartViewModel.swift; sourceTree = "<group>"; };
 		181910F12C4007550018B1E8 /* AmountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountTableViewCell.swift; sourceTree = "<group>"; };
 		181910F22C4007550018B1E8 /* AmountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmountTableViewCell.xib; sourceTree = "<group>"; };
+		18278A662C41388A004F7629 /* DeleteCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCartViewModel.swift; sourceTree = "<group>"; };
+		18278A702C415914004F7629 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		18278A722C415947004F7629 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
+		18278A742C4159E1004F7629 /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
 		1828FC4E2C35102A007DB450 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		183089FB2C33FB1500C62ABD /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		18308A012C33FE1600C62ABD /* UserEndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPointType.swift; sourceTree = "<group>"; };
@@ -195,6 +203,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		18278A6C2C415833004F7629 /* MyAccount */ = {
+			isa = PBXGroup;
+			children = (
+				18278A6F2C41584D004F7629 /* ViewModel */,
+				18278A6E2C415848004F7629 /* Model */,
+				18278A6D2C41583F004F7629 /* View */,
+			);
+			path = MyAccount;
+			sourceTree = "<group>";
+		};
+		18278A6D2C41583F004F7629 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18278A742C4159E1004F7629 /* MyAccountViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18278A6E2C415848004F7629 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18278A702C415914004F7629 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18278A6F2C41584D004F7629 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18278A722C415947004F7629 /* UserDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		18308A002C33FDDC00C62ABD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +274,7 @@
 			children = (
 				181910E72C3FA5EB0018B1E8 /* CartViewModel.swift */,
 				181910EF2C3FE97A0018B1E8 /* ListCartViewModel.swift */,
+				18278A662C41388A004F7629 /* DeleteCartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -331,6 +374,7 @@
 		18BC69702C328C86002A5425 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				18278A6C2C415833004F7629 /* MyAccount */,
 				18B0A8A52C3E8DD000C9366D /* CartScreen */,
 				18FE15622C3D5B7E00DD9026 /* ProductListing */,
 				18FE15512C3D39DE00DD9026 /* Products */,
@@ -695,6 +739,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D250312C3D163000D58CFF /* StarRatingView.swift in Sources */,
+				18278A752C4159E1004F7629 /* MyAccountViewController.swift in Sources */,
 				18EA75DA2C3BDBA6009E3179 /* ProductEndPoint.swift in Sources */,
 				18D2503C2C3D24A800D58CFF /* ProductTableViewCell.swift in Sources */,
 				18EA75D82C3BC85D009E3179 /* CupboardViewController.swift in Sources */,
@@ -720,6 +765,7 @@
 				1886C4BF2C351E840082CA62 /* LoginViewModel.swift in Sources */,
 				183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */,
 				18B0A8AC2C3E998900C9366D /* CartExtension.swift in Sources */,
+				18278A732C415947004F7629 /* UserDetailsViewModel.swift in Sources */,
 				18B0A8AE2C3E9E2800C9366D /* CartModel.swift in Sources */,
 				18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */,
 				18FE15542C3D3DD400DD9026 /* ProductExtension.swift in Sources */,
@@ -731,6 +777,7 @@
 				18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */,
 				18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */,
 				18D2502F2C3D01EB00D58CFF /* UIImageExtension.swift in Sources */,
+				18278A672C41388A004F7629 /* DeleteCartViewModel.swift in Sources */,
 				18BC695E2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld in Sources */,
 				18DA70ED2C37F808008A2B96 /* SideTableViewCell.swift in Sources */,
 				18DA70EA2C37F2B0008A2B96 /* SideViewController.swift in Sources */,
@@ -746,6 +793,7 @@
 				18EA75C22C3BBD35009E3179 /* CustomView.swift in Sources */,
 				18EA75C02C3BBA03009E3179 /* TableProdViewController.swift in Sources */,
 				18FE15582C3D46C900DD9026 /* ChairViewModel.swift in Sources */,
+				18278A712C415914004F7629 /* UserModel.swift in Sources */,
 				1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */,
 				18DA70F22C38009A008A2B96 /* ImageExtension.swift in Sources */,
 				18BC69562C328BA8002A5425 /* SceneDelegate.swift in Sources */,

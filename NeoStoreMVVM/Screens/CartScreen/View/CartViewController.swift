@@ -14,6 +14,7 @@ class CartViewController: UIViewController {
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var totalCartPrc: UILabel!
     var cartViewModel = ListCartViewModel()
+    var deleteCartModel = DeleteCartViewModel()
     var totalCartAmt = 0
     override func viewDidLoad() {
         super.viewDidLoad()

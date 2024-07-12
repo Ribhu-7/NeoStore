@@ -43,7 +43,24 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         //        return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row == self.cartViewModel.products.count
+        {
+            return 100
+        }
         return UITableView.automaticDimension
-        //        return 200
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Delete"){ (action , view , success ) in
+            
+            let item = self.cartViewModel.products[indexPath.row]
+            self.deleteCartModel.deleteCart(cartreq: DelCartRequest(product_id: item.product_id))
+            self.cartViewModel.products.remove(at: indexPath.row)
+            self.cartTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            self.cartTableView.reloadData()
+        }
+        let swipeActions = UISwipeActionsConfiguration(actions: [delete])
+        return swipeActions
     }
 }
