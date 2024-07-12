@@ -789,7 +789,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="852"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKP-aW-hmK">
-                                        <rect key="frame" x="0.0" y="50" width="280" height="768"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="818"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
                                         <connections>
                                             <segue destination="I3L-Nn-Yo1" kind="embed" identifier="sideMenuSegue" id="rIh-7e-SWT"/>
                                         </connections>
@@ -817,7 +818,7 @@
                             <constraint firstItem="TeF-8S-dgU" firstAttribute="bottom" secondItem="WSE-i0-1aN" secondAttribute="bottom" id="HVT-ht-Mb8"/>
                             <constraint firstItem="WSE-i0-1aN" firstAttribute="bottom" secondItem="bKP-aW-hmK" secondAttribute="bottom" id="J4y-Ac-JqE"/>
                             <constraint firstAttribute="trailing" secondItem="RjL-dL-fnG" secondAttribute="trailing" id="KG5-cP-gYe"/>
-                            <constraint firstItem="bKP-aW-hmK" firstAttribute="top" secondItem="6U0-xX-5xs" secondAttribute="top" constant="50" id="LE6-Tw-sne"/>
+                            <constraint firstItem="bKP-aW-hmK" firstAttribute="top" secondItem="6U0-xX-5xs" secondAttribute="top" id="LE6-Tw-sne"/>
                             <constraint firstItem="6U0-xX-5xs" firstAttribute="leading" secondItem="WSE-i0-1aN" secondAttribute="leading" id="Opi-9A-AYb"/>
                             <constraint firstItem="TeF-8S-dgU" firstAttribute="top" secondItem="oDv-le-gRc" secondAttribute="bottom" constant="10" id="Qlx-WB-91r"/>
                             <constraint firstItem="oDv-le-gRc" firstAttribute="trailing" secondItem="WSE-i0-1aN" secondAttribute="trailing" id="Vjv-sU-9Gi"/>
@@ -828,6 +829,7 @@
                             <constraint firstAttribute="bottom" secondItem="6U0-xX-5xs" secondAttribute="bottom" id="ass-kv-RLE"/>
                             <constraint firstItem="RjL-dL-fnG" firstAttribute="top" secondItem="Kpd-Nm-lue" secondAttribute="top" id="evc-0S-trE"/>
                             <constraint firstItem="ReP-kp-oOn" firstAttribute="top" secondItem="RjL-dL-fnG" secondAttribute="bottom" id="h5m-LS-M1L"/>
+                            <constraint firstAttribute="top" secondItem="6U0-xX-5xs" secondAttribute="top" id="tKj-p0-mBc"/>
                             <constraint firstItem="ReP-kp-oOn" firstAttribute="trailing" secondItem="WSE-i0-1aN" secondAttribute="trailing" id="u2t-Be-7YR"/>
                             <constraint firstItem="ReP-kp-oOn" firstAttribute="leading" secondItem="WSE-i0-1aN" secondAttribute="leading" id="vL2-zg-hVA"/>
                         </constraints>
@@ -882,11 +884,11 @@
             <objects>
                 <viewController id="I3L-Nn-Yo1" customClass="SideViewController" customModule="NeoStoreMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HBw-uI-UXC">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="818"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lYH-Uc-PtX">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="200"/>
+                                <rect key="frame" x="0.0" y="20" width="280" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_male" translatesAutoresizingMaskIntoConstraints="NO" id="yho-4B-thu">
                                         <rect key="frame" x="98.666666666666686" y="36" width="83" height="83"/>
@@ -929,10 +931,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obJ-Iv-rJr">
-                                <rect key="frame" x="0.0" y="200" width="280" height="568"/>
+                                <rect key="frame" x="0.0" y="220" width="280" height="598"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bn9-kP-BcM">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="598"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -962,7 +964,7 @@
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="obJ-Iv-rJr" secondAttribute="trailing" id="F5x-rz-GeP"/>
-                            <constraint firstItem="lYH-Uc-PtX" firstAttribute="top" secondItem="HBw-uI-UXC" secondAttribute="top" id="Hhw-oE-6YB"/>
+                            <constraint firstItem="lYH-Uc-PtX" firstAttribute="top" secondItem="HBw-uI-UXC" secondAttribute="top" constant="20" id="Hhw-oE-6YB"/>
                             <constraint firstAttribute="bottom" secondItem="obJ-Iv-rJr" secondAttribute="bottom" id="J8N-xb-CsY"/>
                             <constraint firstItem="obJ-Iv-rJr" firstAttribute="leading" secondItem="HBw-uI-UXC" secondAttribute="leading" id="QBV-QU-Juc"/>
                             <constraint firstItem="obJ-Iv-rJr" firstAttribute="top" secondItem="lYH-Uc-PtX" secondAttribute="bottom" id="a9V-WK-xCk"/>

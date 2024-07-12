@@ -59,6 +59,7 @@ class CartViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.cartTableView.reloadData()
 //                    self.amountTableView.reloadData()
+//                    self.totalCartAmt = 0
                 }
             case .error(let error):
                 print(error ?? "")

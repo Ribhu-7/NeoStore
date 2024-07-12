@@ -33,7 +33,9 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
             }
         }
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.sideUIView.alpha = 0
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,15 +60,16 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
     }
     
     func hideSideMenu() {
-        UIView.animate(withDuration: 0.1) {
+        UIView.animate(withDuration: 0.2 , delay: 0.2 , options: .transitionFlipFromRight) {
             self.sideUIView.alpha = 0
         }
     }
     
     @objc func showMenu() {
         if sideUIView.alpha == 0 {
-            UIView.animate(withDuration: 0.1) {
-                self.sideUIView.alpha = 0.8
+            UIView.animate(withDuration: 0.4, delay: 0.2 , options: .transitionFlipFromLeft) {
+                self.sideUIView.alpha = 1
+                self.sideUIView.layer.zPosition = 1
             }
         } else {
             self.hideSideMenu()

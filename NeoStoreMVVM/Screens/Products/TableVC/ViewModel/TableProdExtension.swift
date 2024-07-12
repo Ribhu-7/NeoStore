@@ -19,6 +19,7 @@ extension TableProdViewController : UITableViewDelegate , UITableViewDataSource 
         let tb = self.tabViewModel.products[indexPath.row]
         cell.prodTblImg.setImage(with: tb.product_images)
         cell.prodHeading.text = tb.name
+        cell.selectionStyle = .none
         cell.prodDesc.text = tb.producer
         cell.prodPrice.text = "Rs. \(tb.cost)"
         cell.prodRating.setStarRating(rating: tb.rating)

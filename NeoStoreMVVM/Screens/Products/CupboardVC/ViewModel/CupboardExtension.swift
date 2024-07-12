@@ -36,7 +36,7 @@ extension CupboardViewController : UITableViewDelegate , UITableViewDataSource {
         prodVC.prodRate = tb.rating
         prodVC.prodPrc = "Rs \(tb.cost)"
         prodVC.prodImg = tb.product_images
-        prodVC.prodID = 4
+        prodVC.prodID = tb.id
         self.navigationController?.pushViewController(prodVC, animated: true)
         
     }
