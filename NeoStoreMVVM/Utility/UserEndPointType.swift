@@ -31,6 +31,7 @@ enum EndPointItems {
     case getUserDetails
     case editDetails
     case forgotPass
+    case resetPass
 }
 
 extension EndPointItems: EndPointType{
@@ -64,6 +65,8 @@ extension EndPointItems: EndPointType{
             return "users/update"
         case .forgotPass:
             return "users/forgot"
+        case .resetPass:
+            return "users/change"
         }
     
     }

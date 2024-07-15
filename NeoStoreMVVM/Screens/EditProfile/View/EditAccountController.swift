@@ -58,6 +58,9 @@ class EditAccountController: UIViewController {
 //        observeEvent()
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationItem.backButtonTitle = ""
+    }
     
     @objc func searchClicked(){
         
@@ -75,6 +78,9 @@ class EditAccountController: UIViewController {
     }
     
     @IBAction func resetPass(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let ResetVC = sb.instantiateViewController(withIdentifier: "resetPassVC")
+        self.navigationController?.pushViewController(ResetVC, animated: true)
     }
     
 }
