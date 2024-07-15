@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductListViewController: UIViewController {
+class ProductListViewController: UIViewController , UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet weak var prodHeading: UILabel!
     
@@ -32,7 +32,7 @@ class ProductListViewController: UIViewController {
     var cartViewModel = CartViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.alpha = 1
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
         // Do any additional setup after loading the view.
         prodHeading.text = prodHead
@@ -47,6 +47,18 @@ class ProductListViewController: UIViewController {
         centerImageView.setImage(with: prodImg)
         rightImageView.setImage(with: prodImg)
         prodPrice.text = prodPrc
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue , sender: Any?){
+        if segue.identifier == "ratingSegue" {
+            let popup = segue.destination as! ProductRatingController
+            popup.prodLbl = prodHead
+            popup.prodImg = prodImg
+            popup.prodRate = prodRate
+            popup.prodID = prodID
+            
+        }
     }
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationItem.backButtonTitle = ""
@@ -65,4 +77,16 @@ class ProductListViewController: UIViewController {
     }
 
 
+    @IBAction func rateUs(_ sender: Any) {
+      
+    
+//        ratingVC.modalPresentationStyle = .overCurrentContext
+//        ratingVC.modalTransitionStyle = .crossDissolve
+//        ratingVC.view.backgroundColor = UIColor.white.withAlphaComponent(0.9)
+//        self.view.alpha = 0.4
+//
+//        ratingVC.preferredContentSize = CGSizeMake(300, 300)
+//        self.navigationController?.present(ratingVC, animated: true)
+    }
+    
 }

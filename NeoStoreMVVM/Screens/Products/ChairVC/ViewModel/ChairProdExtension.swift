@@ -27,6 +27,7 @@ extension ChairProdViewController : UITableViewDelegate , UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let prodVC = sb.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
+        let ratingVC = sb.instantiateViewController(withIdentifier: "productRating") as! ProductRatingController
         let tb = self.chairViewModel.products[indexPath.row]
         prodVC.navigationItem.title = tb.name
         prodVC.prodHead = tb.name
@@ -36,6 +37,9 @@ extension ChairProdViewController : UITableViewDelegate , UITableViewDataSource 
         prodVC.prodPrc = "Rs \(tb.cost)"
         prodVC.prodImg = tb.product_images
         prodVC.prodID = tb.id
+//        ratingVC.prodLbl = tb.name
+//        ratingVC.prodRate = tb.rating
+//        ratingVC.prodImg = tb.product_images
         self.navigationController?.pushViewController(prodVC, animated: true)
     }
 }
