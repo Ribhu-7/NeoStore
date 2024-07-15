@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         navigationItem.backButtonTitle = ""
-        usernameField.text = "ribhughosh7@gmail.com"
+        usernameField.text = "riseabovehate10@gmail.com"
         passField.text = "Abcd@123"
         configuration()
     }

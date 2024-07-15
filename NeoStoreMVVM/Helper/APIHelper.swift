@@ -38,7 +38,7 @@ final class APIHelper {
         //let access = userDetailsViewModel.details?.user_data?.access_token
         //print(access ?? "")
         var request = URLRequest(url: url)
-        request.setValue("6686300231b21", forHTTPHeaderField: "access_token")
+        request.setValue("6694b76aa1a75", forHTTPHeaderField: "access_token")
         
         URLSession.shared.dataTask(with: request){data,response,error in
             guard let data , error == nil else {

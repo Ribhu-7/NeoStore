@@ -23,8 +23,11 @@ class MyAccountViewController: UIViewController {
     
     @IBOutlet weak var editProfile: UIButton!
     
+    @IBOutlet weak var resetPass: UIButton!
+    
     var userDetailsViewModel = UserDetailsViewModel()
     
+    let sb = UIStoryboard(name: "Main", bundle: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,12 +50,17 @@ class MyAccountViewController: UIViewController {
 
     @IBAction func editProfileClick(_ sender: Any) {
         
+        let editProfileVC = sb.instantiateViewController(withIdentifier: "editAccount")
+        self.navigationController?.pushViewController(editProfileVC, animated: true)
     }
     
     @IBAction func resetPass(_ sender: Any) {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationItem.backButtonTitle = ""
+    }
     @objc func searchClicked(){
         
     }

@@ -31,9 +31,9 @@ final class APIManager {
         completion: @escaping Handler<Any>
     )
     {
-        let access = userDetailsViewModel.details?.user_data?.access_token
+//        let access = userDetailsViewModel.details?.user_data?.access_token
         let headers: HTTPHeaders = [
-            "access_token" : access ?? ""
+            "access_token" : "6694b76aa1a75"
         ]
         guard let url = type.url else{
             completion(.failure(.invalidURL))

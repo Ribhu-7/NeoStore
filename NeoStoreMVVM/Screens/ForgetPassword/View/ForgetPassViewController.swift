@@ -22,6 +22,14 @@ class ForgetPassViewController: UIViewController {
         loginBtn.changeView()
     }
     
+    
+    @IBAction func sendEmail(_ sender: Any) {
+        guard let email = usernameField.text else {return}
+        let req = ForgotRequest(email: email)
+        self.forgotRequest(logs: req)
+            
+    }
+    
 
    
 

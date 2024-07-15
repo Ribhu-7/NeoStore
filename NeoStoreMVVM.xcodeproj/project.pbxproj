@@ -47,6 +47,11 @@
 		18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC697A2C32B0AB002A5425 /* ButtonExtension.swift */; };
 		18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69822C32BA76002A5425 /* ForgetPassViewController.swift */; };
 		18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69882C32C37C002A5425 /* RegisterViewController.swift */; };
+		18C424C82C44D963002E0CA1 /* EditAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424C72C44D963002E0CA1 /* EditAccountController.swift */; };
+		18C424CA2C44D97A002E0CA1 /* EditAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424C92C44D97A002E0CA1 /* EditAccountModel.swift */; };
+		18C424CC2C44D98B002E0CA1 /* EditAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424CB2C44D98B002E0CA1 /* EditAccountViewModel.swift */; };
+		18C424CE2C44EC01002E0CA1 /* ForgotPassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424CD2C44EC01002E0CA1 /* ForgotPassModel.swift */; };
+		18C424D02C44ECA5002E0CA1 /* ForgotPassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424CF2C44ECA5002E0CA1 /* ForgotPassViewModel.swift */; };
 		18D2502D2C3CF67600D58CFF /* TableProdExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2502C2C3CF67600D58CFF /* TableProdExtension.swift */; };
 		18D2502F2C3D01EB00D58CFF /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2502E2C3D01EB00D58CFF /* UIImageExtension.swift */; };
 		18D250312C3D163000D58CFF /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D250302C3D163000D58CFF /* StarRatingView.swift */; };
@@ -120,6 +125,11 @@
 		18BC697A2C32B0AB002A5425 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		18BC69822C32BA76002A5425 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
 		18BC69882C32C37C002A5425 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		18C424C72C44D963002E0CA1 /* EditAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountController.swift; sourceTree = "<group>"; };
+		18C424C92C44D97A002E0CA1 /* EditAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountModel.swift; sourceTree = "<group>"; };
+		18C424CB2C44D98B002E0CA1 /* EditAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewModel.swift; sourceTree = "<group>"; };
+		18C424CD2C44EC01002E0CA1 /* ForgotPassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassModel.swift; sourceTree = "<group>"; };
+		18C424CF2C44ECA5002E0CA1 /* ForgotPassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassViewModel.swift; sourceTree = "<group>"; };
 		18D2502C2C3CF67600D58CFF /* TableProdExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProdExtension.swift; sourceTree = "<group>"; };
 		18D2502E2C3D01EB00D58CFF /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		18D250302C3D163000D58CFF /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
@@ -374,6 +384,7 @@
 		18BC69702C328C86002A5425 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				18C424C32C44D91D002E0CA1 /* EditProfile */,
 				18278A6C2C415833004F7629 /* MyAccount */,
 				18B0A8A52C3E8DD000C9366D /* CartScreen */,
 				18FE15622C3D5B7E00DD9026 /* ProductListing */,
@@ -433,6 +444,7 @@
 		18BC697D2C32B9E7002A5425 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				18C424CF2C44ECA5002E0CA1 /* ForgotPassViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -440,6 +452,7 @@
 		18BC697E2C32B9F2002A5425 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18C424CD2C44EC01002E0CA1 /* ForgotPassModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -484,6 +497,40 @@
 				18308A032C33FF3800C62ABD /* Register.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		18C424C32C44D91D002E0CA1 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				18C424C62C44D941002E0CA1 /* ViewModel */,
+				18C424C52C44D93B002E0CA1 /* Model */,
+				18C424C42C44D932002E0CA1 /* View */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		18C424C42C44D932002E0CA1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18C424C72C44D963002E0CA1 /* EditAccountController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18C424C52C44D93B002E0CA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18C424C92C44D97A002E0CA1 /* EditAccountModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18C424C62C44D941002E0CA1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18C424CB2C44D98B002E0CA1 /* EditAccountViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		18EA75BB2C3BB9A1009E3179 /* TableVC */ = {
@@ -746,6 +793,7 @@
 				18BC69792C32ABCD002A5425 /* UITextFieldExtension.swift in Sources */,
 				18BC69762C328CD5002A5425 /* LoginViewController.swift in Sources */,
 				180B1C862C3660E700607EB9 /* StringExtension.swift in Sources */,
+				18C424D02C44ECA5002E0CA1 /* ForgotPassViewModel.swift in Sources */,
 				180B1C8E2C366F2C00607EB9 /* HomeViewController.swift in Sources */,
 				18308A062C33FFC600C62ABD /* Login.swift in Sources */,
 				18EA75E32C3BF04A009E3179 /* APIHelper.swift in Sources */,
@@ -755,14 +803,17 @@
 				181910F02C3FE97A0018B1E8 /* ListCartViewModel.swift in Sources */,
 				18FE155F2C3D4D7900DD9026 /* CupboardExtension.swift in Sources */,
 				18B0A8AA2C3E8F2600C9366D /* CartViewController.swift in Sources */,
+				18C424C82C44D963002E0CA1 /* EditAccountController.swift in Sources */,
 				18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */,
 				181910EC2C3FE2390018B1E8 /* NetworkManager.swift in Sources */,
 				181910E82C3FA5EB0018B1E8 /* CartViewModel.swift in Sources */,
+				18C424CA2C44D97A002E0CA1 /* EditAccountModel.swift in Sources */,
 				181910EE2C3FE5440018B1E8 /* ListCartModel.swift in Sources */,
 				181910EA2C3FB8040018B1E8 /* ProductViewModel.swift in Sources */,
 				18DA70F02C37FD55008A2B96 /* SideVCExtension.swift in Sources */,
 				18EA75CC2C3BC792009E3179 /* SofaProdViewController.swift in Sources */,
 				1886C4BF2C351E840082CA62 /* LoginViewModel.swift in Sources */,
+				18C424CE2C44EC01002E0CA1 /* ForgotPassModel.swift in Sources */,
 				183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */,
 				18B0A8AC2C3E998900C9366D /* CartExtension.swift in Sources */,
 				18278A732C415947004F7629 /* UserDetailsViewModel.swift in Sources */,
@@ -772,6 +823,7 @@
 				18308A022C33FE1600C62ABD /* UserEndPointType.swift in Sources */,
 				18FE15612C3D4DB100DD9026 /* CupboardViewModel.swift in Sources */,
 				18D250372C3D23FE00D58CFF /* SofaProdExtension.swift in Sources */,
+				18C424CC2C44D98B002E0CA1 /* EditAccountViewModel.swift in Sources */,
 				18EA75C62C3BC330009E3179 /* HomeViewExtension.swift in Sources */,
 				18308A042C33FF3800C62ABD /* Register.swift in Sources */,
 				18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */,

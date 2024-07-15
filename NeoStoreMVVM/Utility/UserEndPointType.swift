@@ -29,6 +29,8 @@ enum EndPointItems {
     case getCart
     case deleteCart
     case getUserDetails
+    case editDetails
+    case forgotPass
 }
 
 extension EndPointItems: EndPointType{
@@ -58,6 +60,10 @@ extension EndPointItems: EndPointType{
             return "deleteCart"
         case .getUserDetails:
             return "users/getUserData"
+        case .editDetails:
+            return "users/update"
+        case .forgotPass:
+            return "users/forgot"
         }
     
     }
