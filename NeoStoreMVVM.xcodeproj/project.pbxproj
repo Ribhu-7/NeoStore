@@ -10,6 +10,8 @@
 		180B1C862C3660E700607EB9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B1C852C3660E700607EB9 /* StringExtension.swift */; };
 		180B1C882C36615900607EB9 /* AlertFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B1C872C36615900607EB9 /* AlertFieldExtension.swift */; };
 		180B1C8E2C366F2C00607EB9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B1C8D2C366F2C00607EB9 /* HomeViewController.swift */; };
+		180E410B2C463365002992DA /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E410A2C463365002992DA /* StarRating.swift */; };
+		180E410D2C463BE6002992DA /* ProductRatingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E410C2C463BE6002992DA /* ProductRatingExtension.swift */; };
 		181910E52C3F9BDB0018B1E8 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181910E32C3F9BDB0018B1E8 /* CartTableViewCell.swift */; };
 		181910E62C3F9BDB0018B1E8 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181910E42C3F9BDB0018B1E8 /* CartTableViewCell.xib */; };
 		181910E82C3FA5EB0018B1E8 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181910E72C3FA5EB0018B1E8 /* CartViewModel.swift */; };
@@ -93,6 +95,8 @@
 		180B1C852C3660E700607EB9 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		180B1C872C36615900607EB9 /* AlertFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFieldExtension.swift; sourceTree = "<group>"; };
 		180B1C8D2C366F2C00607EB9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		180E410A2C463365002992DA /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
+		180E410C2C463BE6002992DA /* ProductRatingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRatingExtension.swift; sourceTree = "<group>"; };
 		181910E32C3F9BDB0018B1E8 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		181910E42C3F9BDB0018B1E8 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		181910E72C3FA5EB0018B1E8 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
@@ -380,6 +384,7 @@
 				18EA75C12C3BBD35009E3179 /* CustomView.swift */,
 				18D2502E2C3D01EB00D58CFF /* UIImageExtension.swift */,
 				18D250302C3D163000D58CFF /* StarRatingView.swift */,
+				180E410A2C463365002992DA /* StarRating.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -611,6 +616,7 @@
 			isa = PBXGroup;
 			children = (
 				18C424DF2C4503C6002E0CA1 /* ProductRatingController.swift */,
+				180E410C2C463BE6002992DA /* ProductRatingExtension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -925,10 +931,12 @@
 				18FE155A2C3D48E400DD9026 /* ChairProdExtension.swift in Sources */,
 				187807282C36D0B7006B2097 /* MyCollectionViewCell.swift in Sources */,
 				180B1C882C36615900607EB9 /* AlertFieldExtension.swift in Sources */,
+				180E410D2C463BE6002992DA /* ProductRatingExtension.swift in Sources */,
 				18FE155D2C3D499A00DD9026 /* Product.swift in Sources */,
 				181910F32C4007550018B1E8 /* AmountTableViewCell.swift in Sources */,
 				18FE15672C3D5BD100DD9026 /* ProductListViewController.swift in Sources */,
 				18D2502D2C3CF67600D58CFF /* TableProdExtension.swift in Sources */,
+				180E410B2C463365002992DA /* StarRating.swift in Sources */,
 				181910E52C3F9BDB0018B1E8 /* CartTableViewCell.swift in Sources */,
 				18EA75C22C3BBD35009E3179 /* CustomView.swift in Sources */,
 				18EA75C02C3BBA03009E3179 /* TableProdViewController.swift in Sources */,
