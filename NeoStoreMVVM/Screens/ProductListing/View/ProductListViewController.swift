@@ -59,17 +59,23 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
             popup.prodID = prodID
             
         }
+        else if segue.identifier == "quantitySegue" {
+            let popup = segue.destination as! ProductQuantityController
+            popup.prodLbl = prodHead
+            popup.prodImg = prodImg
+            popup.prodId = prodID
+        }
     }
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationItem.backButtonTitle = ""
     }
     
     @IBAction func buyNow(_ sender: Any) {
-        let req = CartRequest(product_id: prodID, quantity: 1)
-        cartViewModel.addtoCart(cartreq: req)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-            self.showCart()
-        }
+//        let req = CartRequest(product_id: prodID, quantity: 1)
+//        cartViewModel.addtoCart(cartreq: req)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+//           self.showCart()
+//        }
     }
     
     @objc func searchClicked(){

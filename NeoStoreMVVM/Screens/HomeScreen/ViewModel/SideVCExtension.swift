@@ -20,8 +20,8 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
         //print(cnt)
         if indexPath.row == 0 {
             cell.sideCartBtn.isHidden = false
-            cell.sideCartBtn.changeView()
-            
+            cell.sideCartBtn.layer.cornerRadius = 20
+            print("Count of cart: ",cnt)
             cell.sideCartBtn.setTitle(String(cnt), for: .normal)
         }
         cell.sideImg.image = UIImage(named: sideImgItems[indexPath.row])

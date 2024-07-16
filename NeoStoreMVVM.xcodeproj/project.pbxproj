@@ -12,6 +12,7 @@
 		180B1C8E2C366F2C00607EB9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B1C8D2C366F2C00607EB9 /* HomeViewController.swift */; };
 		180E410B2C463365002992DA /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E410A2C463365002992DA /* StarRating.swift */; };
 		180E410D2C463BE6002992DA /* ProductRatingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E410C2C463BE6002992DA /* ProductRatingExtension.swift */; };
+		180E41152C4651C9002992DA /* ProductQuantityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E41142C4651C9002992DA /* ProductQuantityController.swift */; };
 		181910E52C3F9BDB0018B1E8 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181910E32C3F9BDB0018B1E8 /* CartTableViewCell.swift */; };
 		181910E62C3F9BDB0018B1E8 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181910E42C3F9BDB0018B1E8 /* CartTableViewCell.xib */; };
 		181910E82C3FA5EB0018B1E8 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181910E72C3FA5EB0018B1E8 /* CartViewModel.swift */; };
@@ -97,6 +98,7 @@
 		180B1C8D2C366F2C00607EB9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		180E410A2C463365002992DA /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
 		180E410C2C463BE6002992DA /* ProductRatingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRatingExtension.swift; sourceTree = "<group>"; };
+		180E41142C4651C9002992DA /* ProductQuantityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductQuantityController.swift; sourceTree = "<group>"; };
 		181910E32C3F9BDB0018B1E8 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		181910E42C3F9BDB0018B1E8 /* CartTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		181910E72C3FA5EB0018B1E8 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
@@ -225,6 +227,38 @@
 				187807202C36CFCD006B2097 /* HomeVCExtension.swift */,
 				18DA70EF2C37FD55008A2B96 /* SideVCExtension.swift */,
 				18EA75C52C3BC330009E3179 /* HomeViewExtension.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		180E410E2C465157002992DA /* ProductQuantity */ = {
+			isa = PBXGroup;
+			children = (
+				180E41112C46517A002992DA /* ViewModel */,
+				180E41102C465172002992DA /* View */,
+				180E410F2C46516C002992DA /* Model */,
+			);
+			path = ProductQuantity;
+			sourceTree = "<group>";
+		};
+		180E410F2C46516C002992DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		180E41102C465172002992DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				180E41142C4651C9002992DA /* ProductQuantityController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		180E41112C46517A002992DA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -401,6 +435,7 @@
 		18BC69702C328C86002A5425 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				180E410E2C465157002992DA /* ProductQuantity */,
 				18C424DB2C45038E002E0CA1 /* ProductRating */,
 				18C424D12C44F32B002E0CA1 /* Reset Password */,
 				18C424C32C44D91D002E0CA1 /* EditProfile */,
@@ -897,6 +932,7 @@
 				18C424D82C44F367002E0CA1 /* ResetPassModel.swift in Sources */,
 				181910EC2C3FE2390018B1E8 /* NetworkManager.swift in Sources */,
 				18C424E02C4503C6002E0CA1 /* ProductRatingController.swift in Sources */,
+				180E41152C4651C9002992DA /* ProductQuantityController.swift in Sources */,
 				181910E82C3FA5EB0018B1E8 /* CartViewModel.swift in Sources */,
 				18C424CA2C44D97A002E0CA1 /* EditAccountModel.swift in Sources */,
 				181910EE2C3FE5440018B1E8 /* ListCartModel.swift in Sources */,
