@@ -7,7 +7,14 @@
 
 import UIKit
 
-class ProductQuantityController: UIViewController {
+class ProductQuantityController: UIViewController, CartViewControllerDelegate {
+    
+    func showCartMenu() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+               let cartVC = sb.instantiateViewController(withIdentifier: "cartVC") as! CartViewController
+              self.navigationController?.pushViewController(cartVC, animated: true)
+    }
+    
 
     @IBOutlet weak var submitBtn: UIButton!
     
@@ -17,6 +24,7 @@ class ProductQuantityController: UIViewController {
     
     @IBOutlet weak var quantityField: UITextField!
     
+    var cartViewController: CartViewController?
     var prodImg: String!
     var prodLbl: String!
     var prodId: Int!
@@ -35,16 +43,29 @@ class ProductQuantityController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue , sender: Any?){
         if segue.identifier == "cartSegue" {
-            dismiss(animated: true)
-        }
+            if let nextDestination = segue.destination as? CartViewController {
+                self.cartViewController = nextDestination
+                //self.cartViewController = self
+                self.cartViewController = nextDestination
+                self.cartViewController?.delegate = self
+            }
+            //dismiss(animated: true)
+           
+
+            }
     }
     
+    @objc func searchClicked(){
+        
+    }
     @IBAction func submitClick(_ sender: Any) {
         let req = CartRequest(product_id: prodId, quantity: Int(self.quantityField.text ?? "0") ?? 0)
 //        print(Int(quantity))
                 cartViewModel.addtoCart(cartreq: req)
-                
-        dismiss(animated: true)
+        performSegue(withIdentifier: "cartSegue", sender: self)
+        //dismiss(animated: true)
+        
+        //dismiss(animated: true)
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
 //           self.showCart()
 //        }

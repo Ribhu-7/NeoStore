@@ -7,10 +7,14 @@
 
 import UIKit
 
+protocol CartViewControllerDelegate {
+    func showCartMenu()
+}
 class CartViewController: UIViewController {
     
 //    @IBOutlet weak var amountTableView: UITableView!
 //    @IBOutlet weak var amountView: UIView!
+    var delegate: CartViewControllerDelegate?
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var totalCartPrc: UILabel!
     var cartViewModel = ListCartViewModel()
@@ -68,7 +72,16 @@ class CartViewController: UIViewController {
         }
     }
     @objc func searchClicked(){
-        
+       
     }
-   
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationItem.backButtonTitle = ""
+    }
+    
+    @IBAction func orderNow(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let addressList = sb.instantiateViewController(withIdentifier: "addressList")
+        self.navigationController?.pushViewController(addressList, animated: true)
+    }
+    
 }

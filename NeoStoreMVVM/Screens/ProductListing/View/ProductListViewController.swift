@@ -7,8 +7,18 @@
 
 import UIKit
 
-class ProductListViewController: UIViewController , UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate {
 
+class ProductListViewController: UIViewController , UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate, CartViewControllerDelegate {
+    func showCartMenu() {
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5){
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let cartVC = sb.instantiateViewController(withIdentifier: "cartVC") as! CartViewController
+            self.navigationController?.pushViewController(cartVC, animated: true)
+            
+        }
+        
+    }
+    
     @IBOutlet weak var prodHeading: UILabel!
     
     @IBOutlet weak var prodCategory: UILabel!
@@ -30,6 +40,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     var prodID: Int!
     
     var cartViewModel = CartViewModel()
+    var cartViewController : CartViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.alpha = 1
@@ -57,6 +68,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
             popup.prodImg = prodImg
             popup.prodRate = prodRate
             popup.prodID = prodID
+            cartViewController?.delegate
             
         }
         else if segue.identifier == "quantitySegue" {

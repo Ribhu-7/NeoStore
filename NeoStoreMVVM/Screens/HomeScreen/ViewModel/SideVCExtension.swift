@@ -58,6 +58,9 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
         } else if indexPath.row == 5{
             let myaccountVC = sb.instantiateViewController(withIdentifier: "myaccountVC")
             self.navigationController?.pushViewController(myaccountVC, animated: true)
+        } else if indexPath.row == 6 {
+            let storeVC = sb.instantiateViewController(withIdentifier: "storeVC")
+            self.navigationController?.pushViewController(storeVC, animated: true)
         }
         print("clicked")
         
