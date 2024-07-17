@@ -20,9 +20,10 @@ class CartViewController: UIViewController {
     var cartViewModel = ListCartViewModel()
     var deleteCartModel = DeleteCartViewModel()
     var totalCartAmt = 0
+    var a = 1
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.navigationItem.title = "My Cart"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
@@ -80,8 +81,15 @@ class CartViewController: UIViewController {
     
     @IBAction func orderNow(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let addressList = sb.instantiateViewController(withIdentifier: "addressList")
-        self.navigationController?.pushViewController(addressList, animated: true)
+        let arr = UserDefaults.standard.stringArray(forKey: "Address") ?? []
+        if arr.count != 0 {
+            let addressList = sb.instantiateViewController(withIdentifier: "addressList")
+            self.navigationController?.pushViewController(addressList, animated: true)
+           
+        } else {
+            let addAddress = sb.instantiateViewController(withIdentifier: "addAddress")
+            self.navigationController?.pushViewController(addAddress, animated: true)
+        }
     }
     
 }

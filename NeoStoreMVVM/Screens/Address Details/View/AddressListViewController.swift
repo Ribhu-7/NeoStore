@@ -7,22 +7,10 @@
 
 import UIKit
 
-class AddressListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
+class AddressListViewController: UIViewController{
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddressListCell") as! AddressListCell
-        cell.addressHead.text = "Ribhu Ghosh"
-        cell.addressDesc.text = "Palava,Mumbai"
-        return cell
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-
+    var arr = UserDefaults.standard.array(forKey: "Address") ?? []
+   
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -30,16 +18,26 @@ class AddressListViewController: UIViewController, UITableViewDelegate, UITableV
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Address List"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .plain, target: self, action: #selector(addClicked))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addClicked))
         tableView.delegate = self
         tableView.dataSource = self
         
         let nib = UINib(nibName: "AddressListCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "AddressListCell")
+        
+//        btnMale.setImage(UIImage.init(named: "chkn"), for: .normal)
+//        btnFemale.setImage(UIImage.init(named: "chkn"), for: .normal)
+//        btnMale.setImage(UIImage.init(named: "chky"), for: .selected)
     }
     
     @objc func addClicked(){
-        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let addAddress = sb.instantiateViewController(withIdentifier: "addAddress")
+        self.navigationController?.pushViewController(addAddress, animated: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationItem.backButtonTitle = ""
     }
 
 }

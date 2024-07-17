@@ -14,20 +14,25 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
+    var resp: LoginResponse?
     
-    
+    var userDefault: UserClassSettings?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         navigationItem.backButtonTitle = ""
+        let defaults = UserDefaults.standard
+//        defaults.set("riseabovehate10@gmail.com", forKey: "username")
+//        defaults.set("Abcd@1234", forKey: "password")
         usernameField.text = "riseabovehate10@gmail.com"
         passField.text = "Abcd@1234"
         configuration()
     }
     
     func configuration(){
+        //UserClassSettings.shared.password
         usernameField.setContent("Username", "username_icon")
         passField.setContent("Password", "password_icon")
         loginBtn.changeView()
@@ -40,10 +45,14 @@ class LoginViewController: UIViewController {
         if (emailId.isValidEmail && password.isValidPassword){
             let logs = LoginModel(email: emailId, password: password)
             self.getRequest(logs: logs)
+            
+            UserDefaults.standard.set(emailId, forKey: "username")
+            UserDefaults.standard.set(password, forKey: "password")
         } else {
             self.showAlert(message: "Invalid details")
         }
-        
+        print(UserDefaults.standard.value(forKey: "username") ?? "")
+        print(UserDefaults.standard.value(forKey: "password") ?? "")
     }
     
     @IBAction func forgotPass(_ sender: Any) {

@@ -68,7 +68,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
             popup.prodImg = prodImg
             popup.prodRate = prodRate
             popup.prodID = prodID
-            cartViewController?.delegate
+            //cartViewController?.delegate
             
         }
         else if segue.identifier == "quantitySegue" {
@@ -83,17 +83,21 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     }
     
     @IBAction func buyNow(_ sender: Any) {
-//        let req = CartRequest(product_id: prodID, quantity: 1)
-//        cartViewModel.addtoCart(cartreq: req)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-//           self.showCart()
-//        }
+        let req = CartRequest(product_id: prodID, quantity: 1)
+        cartViewModel.addtoCart(cartreq: req)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+           self.showCart()
+        }
     }
     
     @objc func searchClicked(){
         
     }
-
+    
+    @IBAction func shareBtn(_ sender: Any) {
+        
+    }
+    
 
     @IBAction func rateUs(_ sender: Any) {
       

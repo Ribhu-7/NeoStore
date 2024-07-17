@@ -42,7 +42,7 @@ final class APIManager {
         
         AF.request(url , method: method,parameters: requestModel,encoder: URLEncodedFormParameterEncoder.default, headers: headers).response{
             response in
-            debugPrint(response)
+            //debugPrint(response)
             
             switch response.result {
             case .success(let data):
@@ -50,7 +50,7 @@ final class APIManager {
                     do{
                         if response.response?.statusCode == 200 {
                             let jsonData = try JSONSerialization.jsonObject(with: data!,options: [])
-                            print(jsonData)
+                            //print(jsonData)
                             
 //                            let resData = try JSONDecoder().decode(modelType, from: data!)
                             

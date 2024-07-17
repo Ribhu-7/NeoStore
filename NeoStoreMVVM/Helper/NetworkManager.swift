@@ -1,30 +1,73 @@
-//import UIKit
-//import Alamofire
 //
-//class NetworkManager {
+//  APIManager.swift
+//  NeoStoreMVVM
 //
-//    // Singleton instance
-//    static let shared = NetworkManager()
+//  Created by Apple on 02/07/24.
 //
-//    // Generic request function
-//    func makeRequest(
-//        url: URL?,
-//        method: HTTPMethod,
-//        parameters: Parameters? = nil,
-//        headers: HTTPHeaders? = nil,
-//        completion: @escaping (Result<Any, AFError>) -> Void
-//    ) {
-//        // Make the request using Alamofire
-//        guard let dataurl = url else {return}
-//        AF.request(dataurl, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
-//            .validate()
-//            .responseJSON { response in
-//                switch response.result {
-//                case .success(let value):
-//                    completion(.success(value))
-//                case .failure(let error):
-//                    completion(.failure(error))
-//                }
-//            }
-//    }
-//}
+
+import Foundation
+import Alamofire
+import UIKit
+
+enum DataErrors: Error {
+    case invalidResponse
+    case invalidDecoding
+    case invalidURL
+    case invalidData
+    case network(String)
+}
+
+typealias Handle<T> = (Result<T,DataErrors>) -> Void
+
+final class NetworkManager {
+    static let shared = NetworkManager()
+    private init() {}
+    var userDetailsViewModel = UserDetailsViewModel()
+    func manager<T: Codable , U: Codable>(
+        modelType: T.Type,
+        type: EndPointType,
+        requestModel: U,
+        method: HTTPMethod,
+        completion: @escaping Handle<Any>
+    )
+    {
+//        let access = userDetailsViewModel.details?.user_data?.access_token
+        let headers: HTTPHeaders = [
+            "access_token" : "6694b76aa1a75"
+        ]
+        guard let url = type.url else{
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        AF.request(url , method: method,parameters: requestModel,encoder: URLEncodedFormParameterEncoder.default, headers: headers).response{
+            response in
+            debugPrint(response)
+            
+            switch response.result {
+            case .success(let data):
+                
+                    do{
+                        if response.response?.statusCode == 200 {
+                            let jsonData = try JSONSerialization.jsonObject(with: data!,options: [])
+                            print(jsonData)
+                            
+//                            let resData = try JSONDecoder().decode(modelType, from: data!)
+                            
+                            completion(.success(jsonData))
+                        }
+                        
+                    } catch{
+                        completion(.failure(.invalidData))
+                        print(error.localizedDescription)
+                    }
+                
+                
+                
+            case .failure:
+                completion(.failure(.network("invalid")))
+            }
+        }
+    }
+}
+
