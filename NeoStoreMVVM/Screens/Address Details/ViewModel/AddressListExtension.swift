@@ -22,22 +22,25 @@ extension AddressListViewController: UITableViewDelegate, UITableViewDataSource 
         cell.selectionStyle = .none
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "AddressListCell") as! AddressListCell
-        //cell.addressBtn.isSelected = true
-        //cell.addressBtn.imageView?.image = UIImage(systemName: "circle.inset.filled")
+
         let cell = tableView.cellForRow(at: indexPath) as! AddressListCell
         if cell.isCheck == false {
             cell.isCheck = true
             cell.btnImage.image = UIImage(systemName: "circle.inset.filled")
         }
-//        } else {
-//            cell.isCheck = false
-//            cell.btnImage.image = UIImage(systemName: "circle")
-//        }
+        let address = arr[indexPath.row] as? String
+        print(address ?? "")
+        guard let address1 = address else {
+            return
+        }
+        self.finalAddress = address1
+       
         
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

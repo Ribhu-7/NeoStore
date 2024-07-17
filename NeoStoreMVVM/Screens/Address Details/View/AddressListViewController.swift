@@ -11,6 +11,7 @@ class AddressListViewController: UIViewController{
     
     var arr = UserDefaults.standard.array(forKey: "Address") ?? []
     
+    var finalAddress : String?
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,9 +26,7 @@ class AddressListViewController: UIViewController{
         let nib = UINib(nibName: "AddressListCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "AddressListCell")
         
-//        btnMale.setImage(UIImage.init(named: "chkn"), for: .normal)
-//        btnFemale.setImage(UIImage.init(named: "chkn"), for: .normal)
-//        btnMale.setImage(UIImage.init(named: "chky"), for: .selected)
+
     }
     
     @objc func addClicked(){
@@ -40,4 +39,10 @@ class AddressListViewController: UIViewController{
         self.navigationItem.backButtonTitle = ""
     }
 
+    @IBAction func saveAddress(_ sender: Any) {
+        let logs = OrderRequest(address: finalAddress ??  "")
+        print(finalAddress ?? "")
+        self.orderRequest(logs: logs)
+    }
+    
 }

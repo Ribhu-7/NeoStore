@@ -32,7 +32,7 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
-    
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         for recognizer in sideTableView.gestureRecognizers ?? [] {
@@ -41,8 +41,8 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
         sideTableView.alpha = 1.0
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if indexPath.row == 0 {
-                let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
-                self.navigationController?.pushViewController(cartVC, animated: true)
+            let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
+            self.navigationController?.pushViewController(cartVC, animated: true)
         } else if indexPath.row == 1 {
             let tableVC = sb.instantiateViewController(withIdentifier: "tableVC")
             self.navigationController?.pushViewController(tableVC, animated: true)
@@ -61,9 +61,12 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
         } else if indexPath.row == 6 {
             let storeVC = sb.instantiateViewController(withIdentifier: "storeVC")
             self.navigationController?.pushViewController(storeVC, animated: true)
+        } else if indexPath.row == 7 {
+            let orderList = sb.instantiateViewController(withIdentifier: "orderList")
+            self.navigationController?.pushViewController(orderList, animated: true)
+            print("clicked")
+            
         }
-        print("clicked")
         
     }
-    
 }
