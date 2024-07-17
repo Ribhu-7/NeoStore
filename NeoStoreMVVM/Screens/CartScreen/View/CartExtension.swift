@@ -12,7 +12,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        UserDefaults.standard.set(self.cartViewModel.products.count, forKey: "TotalCart")
         return self.cartViewModel.products.count + 1
         
     }
@@ -57,6 +57,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             let item = self.cartViewModel.products[indexPath.row]
             self.deleteCartModel.deleteCart(cartreq: DelCartRequest(product_id: item.product_id))
             self.cartViewModel.products.remove(at: indexPath.row)
+            UserDefaults.standard.set(self.cartViewModel.products.count, forKey: "TotalCart")
             self.cartTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             self.cartTableView.reloadData()
         }

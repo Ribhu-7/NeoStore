@@ -21,6 +21,8 @@ final class UserDetailsViewModel {
             switch response {
             case .success(let details):
                 self.details = details.data
+                UserDefaults.standard.set(details.data?.user_data?.username, forKey: "Name")
+                UserDefaults.standard.set(details.data?.total_carts, forKey: "CartTotal")
                 self.eventHandler?(.dataLoaded)
             case .failure(let error):
                 print(error)

@@ -16,7 +16,7 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideTableViewCell", for: indexPath) as! SideTableViewCell
-        let cnt = self.cartViewModel.products.count
+        let cnt = UserDefaults.standard.integer(forKey: "TotalCart")
         //print(cnt)
         if indexPath.row == 0 {
             cell.sideCartBtn.isHidden = false

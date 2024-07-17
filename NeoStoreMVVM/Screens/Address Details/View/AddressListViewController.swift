@@ -10,7 +10,7 @@ import UIKit
 class AddressListViewController: UIViewController{
     
     var arr = UserDefaults.standard.array(forKey: "Address") ?? []
-   
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {

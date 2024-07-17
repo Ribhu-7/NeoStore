@@ -286,8 +286,8 @@
             filePath = "NeoStoreMVVM/Screens/CartScreen/View/CartViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "viewDidDisappear(_:)"
             landmarkType = "7">
          </BreakpointContent>

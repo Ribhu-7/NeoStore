@@ -61,7 +61,8 @@ class CartViewController: UIViewController {
                 print("Loading stopped...")
             case .dataLoaded:
                 print("Data Loaded...")
-                print(self.cartViewModel.products)
+                //print(self.cartViewModel.products)
+                print(self.cartViewModel.products.count)
                 DispatchQueue.main.async {
                     self.cartTableView.reloadData()
 //                    self.amountTableView.reloadData()
