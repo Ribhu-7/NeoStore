@@ -28,7 +28,7 @@ final class APIManager {
         type: EndPointType,
         requestModel: U,
         method: HTTPMethod,
-        completion: @escaping Handler<Any>
+        completion: @escaping Handler<T>
     )
     {
 //        let access = userDetailsViewModel.details?.user_data?.access_token
@@ -49,12 +49,19 @@ final class APIManager {
                 
                     do{
                         if response.response?.statusCode == 200 {
-                            let jsonData = try JSONSerialization.jsonObject(with: data!,options: [])
+//                           let jsonData = try JSONSerialization.jsonObject(with: data!,options: [])
+                            
+                            let decoder = JSONDecoder()
+                            if let decoded = try? decoder.decode(T.self, from: data!) {
+                                //print("Value of decoder == \(String(describing: (decoded as! LoginResponse).data?.access_token))")
+                                completion(.success(decoded))
+                                }
+                            
                             //print(jsonData)
                             
 //                            let resData = try JSONDecoder().decode(modelType, from: data!)
                             
-                            completion(.success(jsonData))
+                          //  completion(.success(T.self as! T))
                         }
                         
                     } catch{

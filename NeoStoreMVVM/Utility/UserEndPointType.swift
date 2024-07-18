@@ -34,7 +34,7 @@ enum EndPointItems {
     case resetPass
     case order
     case orderList
-    case orderDetail
+    case orderDetail(Int)
 }
 
 extension EndPointItems: EndPointType{
@@ -74,8 +74,8 @@ extension EndPointItems: EndPointType{
             return "order"
         case .orderList:
             return "orderList"
-        case .orderDetail:
-            return "orderDetail"
+        case let .orderDetail(id):
+            return "orderDetail?order_id=\(id)"
         }
     
     }
@@ -87,6 +87,4 @@ extension EndPointItems: EndPointType{
     var url: URL? {
         return URL(string: "\(baseURl)\(path)")
     }
-    
-    
 }

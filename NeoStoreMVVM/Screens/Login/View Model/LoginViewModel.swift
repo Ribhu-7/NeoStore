@@ -13,13 +13,15 @@ extension LoginViewController {
     
     func getRequest(logs: LoginModel) {
         
-        APIManager.shared.manager(modelType: LoginModel.self, type: EndPointItems.login, requestModel: logs , method: .post){
+        APIManager.shared.manager(modelType: LoginResponse.self, type: EndPointItems.login, requestModel: logs, method: .post){
             result in
             switch result {
             case .success(let jsonData):
                 self.showAlert(message: "User Login Success")
-                print(jsonData)
-                //resp?.data.access_token
+                print("json data:\(String(describing: (jsonData as LoginResponse).data?.access_token))")
+//                print("access token 000:",data?["access_token"])
+                
+             
                 
                 //let act = jsonData
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){

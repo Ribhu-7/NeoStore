@@ -10,12 +10,13 @@ import Foundation
 
 final class OrderDetailsVM {
     
-    var details: [OrderDetailsData] = []
+    var details: OrderDetailsData?
     var eventHandler: ((_ event: Event) -> Void)?
+  
     
-    func getOrderDetails(dataTab: OrderDetailsRequest){
-        APIHelper.shared.helpRequest(modelType: OrderDetails.self, type: EndPointItems.orderDetail
-        )
+    func getOrderDetails(dataTab: OrderDetailsRequest , id: Int){
+
+        APIHelper.shared.helpRequest(modelType: OrderDetails.self, type: EndPointItems.orderDetail(id))
         {response in
             self.eventHandler?(.stopLoading)
             switch response {

@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         navigationItem.backButtonTitle = ""
-        let defaults = UserDefaults.standard
+        //let defaults = UserDefaults.standard
 //        defaults.set("riseabovehate10@gmail.com", forKey: "username")
 //        defaults.set("Abcd@1234", forKey: "password")
         usernameField.text = "riseabovehate10@gmail.com"
