@@ -34,6 +34,7 @@ enum EndPointItems {
     case resetPass
     case order
     case orderList
+    case orderDetail
 }
 
 extension EndPointItems: EndPointType{
@@ -73,6 +74,8 @@ extension EndPointItems: EndPointType{
             return "order"
         case .orderList:
             return "orderList"
+        case .orderDetail:
+            return "orderDetail"
         }
     
     }

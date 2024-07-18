@@ -10,6 +10,11 @@ import UIKit
 class OrderListViewCell: UITableViewCell {
 
     @IBOutlet weak var orderId: UILabel!
+    
+    @IBOutlet weak var orderDate: UILabel!
+    
+    @IBOutlet weak var orderAmt: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

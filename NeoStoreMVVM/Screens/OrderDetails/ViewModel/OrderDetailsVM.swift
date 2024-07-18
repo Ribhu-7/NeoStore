@@ -8,13 +8,13 @@
 import Foundation
 
 
-final class OrderListViewModel {
+final class OrderDetailsVM {
     
-    var details: [OrderData] = []
+    var details: [OrderDetailsData] = []
     var eventHandler: ((_ event: Event) -> Void)?
     
-    func getOrder(dataTab: ProdRequest){
-        APIHelper.shared.helpRequest(modelType: OrderListModel.self, type: EndPointItems.orderList
+    func getOrderDetails(dataTab: OrderDetailsRequest){
+        APIHelper.shared.helpRequest(modelType: OrderDetails.self, type: EndPointItems.orderDetail
         )
         {response in
             self.eventHandler?(.stopLoading)
@@ -31,7 +31,7 @@ final class OrderListViewModel {
     }
 }
 
-extension OrderListViewModel {
+extension OrderDetailsVM {
     enum Event {
         case loading
         case stopLoading
