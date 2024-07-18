@@ -22,6 +22,10 @@ class OrderDetailsViewController: UIViewController {
         //amountView.isHidden = true
         let nib = UINib(nibName: "OrderDetailsViewCell", bundle: nil)
         orderDetTblView.register(nib, forCellReuseIdentifier: "OrderDetailsViewCell")
+        
+        let nib1 = UINib(nibName: "AmountTableViewCell", bundle: nil)
+        orderDetTblView.register(nib1, forCellReuseIdentifier: "AmountTableViewCell")
+        
         initViewModel(req: req, id: orderDetailsId!)
         observeEvent()
         

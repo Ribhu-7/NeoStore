@@ -30,7 +30,9 @@ class LoginViewController: UIViewController {
         passField.text = "Abcd@1234"
         configuration()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.hidesBackButton = true
+    }
     func configuration(){
         //UserClassSettings.shared.password
         usernameField.setContent("Username", "username_icon")

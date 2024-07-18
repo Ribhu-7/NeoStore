@@ -66,6 +66,10 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
             self.navigationController?.pushViewController(orderList, animated: true)
             print("clicked")
             
+        } else if indexPath.row == 8 {
+            let loginVC = sb.instantiateViewController(withIdentifier: "LoginVC")
+            self.navigationController?.pushViewController(loginVC, animated: true)
+            print("loginVC")
         }
         
     }

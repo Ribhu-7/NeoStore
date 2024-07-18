@@ -104,7 +104,6 @@
 		18EA75CC2C3BC792009E3179 /* SofaProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */; };
 		18EA75D22C3BC818009E3179 /* ChairProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */; };
 		18EA75D82C3BC85D009E3179 /* CupboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D72C3BC85D009E3179 /* CupboardViewController.swift */; };
-		18EA75DA2C3BDBA6009E3179 /* ProductEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D92C3BDBA6009E3179 /* ProductEndPoint.swift */; };
 		18EA75DE2C3BE25E009E3179 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75DD2C3BE25E009E3179 /* TableViewModel.swift */; };
 		18EA75E12C3BE53D009E3179 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 18EA75E02C3BE53D009E3179 /* Kingfisher */; };
 		18EA75E32C3BF04A009E3179 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75E22C3BF049009E3179 /* APIHelper.swift */; };
@@ -216,7 +215,6 @@
 		18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaProdViewController.swift; sourceTree = "<group>"; };
 		18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairProdViewController.swift; sourceTree = "<group>"; };
 		18EA75D72C3BC85D009E3179 /* CupboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupboardViewController.swift; sourceTree = "<group>"; };
-		18EA75D92C3BDBA6009E3179 /* ProductEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEndPoint.swift; sourceTree = "<group>"; };
 		18EA75DD2C3BE25E009E3179 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		18EA75E22C3BF049009E3179 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		18FE15532C3D3DD400DD9026 /* ProductExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExtension.swift; sourceTree = "<group>"; };
@@ -494,7 +492,6 @@
 			isa = PBXGroup;
 			children = (
 				18308A012C33FE1600C62ABD /* UserEndPointType.swift */,
-				18EA75D92C3BDBA6009E3179 /* ProductEndPoint.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1153,7 +1150,6 @@
 				18D250312C3D163000D58CFF /* StarRatingView.swift in Sources */,
 				1812E2D52C47919F00D05C0F /* UserDefault.swift in Sources */,
 				18278A752C4159E1004F7629 /* MyAccountViewController.swift in Sources */,
-				18EA75DA2C3BDBA6009E3179 /* ProductEndPoint.swift in Sources */,
 				18C424E52C450402002E0CA1 /* ProductRatingVM.swift in Sources */,
 				18D6393D2C48F9480060B282 /* OrderDetailsViewCell.swift in Sources */,
 				18D2503C2C3D24A800D58CFF /* ProductTableViewCell.swift in Sources */,

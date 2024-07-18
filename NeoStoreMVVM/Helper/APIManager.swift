@@ -33,7 +33,7 @@ final class APIManager {
     {
 //        let access = userDetailsViewModel.details?.user_data?.access_token
         let headers: HTTPHeaders = [
-            "access_token" : "6694b76aa1a75"
+            "access_token" : UserDefaults.standard.string(forKey: "accessToken") ?? ""
         ]
         guard let url = type.url else{
             completion(.failure(.invalidURL))
