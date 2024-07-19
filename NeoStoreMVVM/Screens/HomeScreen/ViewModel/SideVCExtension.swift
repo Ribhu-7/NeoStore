@@ -19,10 +19,15 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
         let cnt = UserDefaults.standard.integer(forKey: "CartTotal")
         //print(cnt)
         if indexPath.row == 0 {
-            cell.sideCartBtn.isHidden = false
-            cell.sideCartBtn.layer.cornerRadius = 20
-            print("Count of cart: ",cnt)
-            cell.sideCartBtn.setTitle(String(cnt), for: .normal)
+            let total = UserDefaults.standard.integer(forKey: "CartTotal")
+            if total != 0 {
+                cell.sideCartBtn.isHidden = false
+                cell.sideCartBtn.layer.cornerRadius = 20
+                print("Count of cart: ",cnt)
+                cell.sideCartBtn.setTitle(String(cnt), for: .normal)
+            } else {
+                cell.sideCartBtn.isHidden = true
+            }
         } else {
             cell.sideCartBtn.isHidden = true
         }

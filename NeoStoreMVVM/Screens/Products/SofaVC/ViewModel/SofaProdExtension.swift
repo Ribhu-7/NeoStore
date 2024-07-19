@@ -28,7 +28,7 @@ extension SofaProdViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let prodVC = sb.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
-        let ratingVC = sb.instantiateViewController(withIdentifier: "productRating") as! ProductRatingController
+        //let ratingVC = sb.instantiateViewController(withIdentifier: "productRating") as! ProductRatingController
         let tb = self.sofaViewModel.products[indexPath.row]
         prodVC.navigationItem.title = tb.name
         prodVC.prodHead = tb.name
@@ -37,6 +37,7 @@ extension SofaProdViewController : UITableViewDelegate , UITableViewDataSource {
         prodVC.prodRate = tb.rating
         prodVC.prodPrc = "Rs \(tb.cost)"
         prodVC.prodImg = tb.product_images
+        //let idd = UserDefaults.standard.integer(forKey: "prodRating \(tb.id)") 
         prodVC.prodID = tb.id
 //        ratingVC.prodLbl = tb.name
 //        ratingVC.prodRate = tb.rating

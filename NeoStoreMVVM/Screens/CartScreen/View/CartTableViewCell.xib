@@ -43,11 +43,11 @@
                                 <rect key="frame" x="-12" y="138" width="222" height="67"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhx-Lx-QkY">
-                                        <rect key="frame" x="0.0" y="10" width="69.666666666666671" height="47"/>
+                                        <rect key="frame" x="0.0" y="10" width="65.333333333333329" height="47"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" title="1 " imagePadding="10"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" title="1" imagePadding="10"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNx-gZ-hjo">
                                         <rect key="frame" x="150.66666666666669" y="10" width="41.333333333333343" height="47"/>

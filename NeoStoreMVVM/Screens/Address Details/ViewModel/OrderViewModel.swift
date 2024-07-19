@@ -20,7 +20,7 @@ extension AddressListViewController {
                 //self.showAlert(message: "User Login Success")
                 print(jsonData)
                 //resp?.data.access_token
-                
+                self.showAlert(message: "Order Placed successfully")
                 //let act = jsonData
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
                     self.showOrders()

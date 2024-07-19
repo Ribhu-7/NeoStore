@@ -19,7 +19,12 @@ extension ProductRatingController{
             case .success(let jsonData):
                 self.showAlert(message: "Success")
                 print(jsonData)
-                
+                if let Pid = Optional((jsonData as RatingResponse).data?.id){
+                    if let rating = Optional((jsonData as RatingResponse).data?.rating) {
+                        print("Rating:",rating ?? "")
+                        UserDefaults.standard.set(rating, forKey: "prodRating \(Pid ?? 0)")
+                    }
+                }
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
 //                    self.showLogin()
 //                }

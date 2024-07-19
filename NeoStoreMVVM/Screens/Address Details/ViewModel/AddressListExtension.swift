@@ -48,4 +48,21 @@ extension AddressListViewController: UITableViewDelegate, UITableViewDataSource 
         cell.btnImage.image = UIImage(systemName: "circle")
         cell.isCheck = false
     }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: ""){ (action , view , success ) in
+            self.arr.remove(at: indexPath.row)
+            var addressArray = UserDefaults.standard.array(forKey: "Address")
+            addressArray?.remove(at: indexPath.row)
+            UserDefaults.standard.set(addressArray, forKey: "Address")
+            self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            self.tableView.reloadData()
+        }
+        let theImage: UIImage? = UIImage(named:"delete")?.withRenderingMode(.alwaysOriginal)
+        //delete.backgroundColor = .white
+        delete.backgroundColor = UIColor.white
+        delete.image = theImage
+
+        let swipeActions = UISwipeActionsConfiguration(actions: [delete])
+        return swipeActions
+    }
 }

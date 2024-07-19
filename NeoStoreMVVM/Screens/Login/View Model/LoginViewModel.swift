@@ -17,7 +17,7 @@ extension LoginViewController {
             result in
             switch result {
             case .success(let jsonData):
-                self.showAlert(message: "User Login Success")
+                //self.showAlert(message: "User Login Success")
                 //print("json data:\(String(describing: (jsonData as LoginResponse).data?.access_token))")
                 if let token = Optional((jsonData as LoginResponse).data?.access_token) {
                     print(token ?? "")

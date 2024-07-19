@@ -26,6 +26,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         
             cell.cartHead.text = tb.product.name
             cell.cartDesc.text = tb.product.product_category
+            cell.cartItem.addTarget(self, action: #selector(addQuantity), for: .touchUpInside)
             cell.cartItem.titleLabel?.text = String(tb.quantity)
             cell.cartPrice.text = "Rs. \(itemPrice)"
             cell.cartImageView.setImage(with: tb.product.product_images)
@@ -34,15 +35,11 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else {
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "AmountTableViewCell", for: indexPath) as! AmountTableViewCell
-            //let at = self.cartViewModel
-            //cell.totalPrc.text = "Rs.\(self.totalCartAmt)"
-            //self.totalCartAmt = 0
             let amt = UserDefaults.standard.integer(forKey: "CartAmt")
             cell.totalPrc.text = "Rs. \(amt)"
             return cell
         }
         
-        //        return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -54,7 +51,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "Delete"){ (action , view , success ) in
+        let delete = UIContextualAction(style: .destructive, title: ""){ (action , view , success ) in
             
             let item = self.cartViewModel.products[indexPath.row]
             let total = UserDefaults.standard.integer(forKey: "CartAmt")
@@ -62,12 +59,18 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             self.deleteCartModel.deleteCart(cartreq: DelCartRequest(product_id: item.product_id))
             
             self.cartViewModel.products.remove(at: indexPath.row)
-            //UserDefaults.standard.set(self.cartViewModel.products.count, forKey: "TotalCart")
             self.cartTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-            //UserDefaults.standard.set(, forKey: "CartAmt")
             self.cartTableView.reloadData()
         }
+        let theImage: UIImage? = UIImage(named:"delete")?.withRenderingMode(.alwaysOriginal)
+        delete.backgroundColor = .white
+        delete.image = theImage
+
         let swipeActions = UISwipeActionsConfiguration(actions: [delete])
         return swipeActions
+    }
+    
+    @objc func addQuantity(id: Int){
+        
     }
 }

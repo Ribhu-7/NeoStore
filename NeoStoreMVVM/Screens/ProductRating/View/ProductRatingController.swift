@@ -56,7 +56,7 @@ class ProductRatingController: UIViewController {
         
         let req = RatingRequest(product_id: String(prodID), rating: selectedRate)
         self.rateRequest(logs: req)
-        
+        print("Rating::",UserDefaults.standard.integer(forKey: "prodRating"))
         dismiss(animated: true)
     }
 
