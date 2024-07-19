@@ -37,6 +37,7 @@ extension SofaProdViewController : UITableViewDelegate , UITableViewDataSource {
         prodVC.prodRate = tb.rating
         prodVC.prodPrc = "Rs \(tb.cost)"
         prodVC.prodImg = tb.product_images
+        prodVC.prodViewCount =  tb.view_count
         //let idd = UserDefaults.standard.integer(forKey: "prodRating \(tb.id)") 
         prodVC.prodID = tb.id
 //        ratingVC.prodLbl = tb.name

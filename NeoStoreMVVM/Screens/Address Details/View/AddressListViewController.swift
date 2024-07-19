@@ -43,6 +43,8 @@ class AddressListViewController: UIViewController{
         let logs = OrderRequest(address: finalAddress ??  "")
         print(finalAddress ?? "")
         self.orderRequest(logs: logs)
+        UserDefaults.standard.set(0, forKey: "CartTotal")
+        UserDefaults.standard.set(0, forKey: "CartAmt")
     }
     
 }

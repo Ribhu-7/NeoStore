@@ -41,6 +41,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     var prodImg: String!
     var prodID: Int!
     var prodQuantity: Int!
+    var prodViewCount: Int!
     
     var cartViewModel = CartViewModel()
     var cartViewController : CartViewController?
@@ -61,9 +62,15 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
         centerImageView.setImage(with: prodImg)
         rightImageView.setImage(with: prodImg)
         prodPrice.text = prodPrc
-        prodStock.isHidden = true
-        hideImage.isHidden = true
         
+        
+        if prodViewCount == 0 {
+            prodStock.isHidden = false
+            hideImage.isHidden = false
+        } else {
+            prodStock.isHidden = true
+            hideImage.isHidden = true
+        }
         
     }
     
@@ -87,19 +94,20 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationItem.backButtonTitle = ""
     }
-    @IBAction func prodQuantityCnt(_ sender: Any) {
+    
+    @IBAction func buyNow(_ sender: Any) {
+
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let prodQuantity = sb.instantiateViewController(withIdentifier: "prodQuantity") as! ProductQuantityController
         prodQuantity.prodImg = prodImg
         prodQuantity.prodLbl = prodHead
         prodQuantity.prodId = prodID
+        prodQuantity.productQuantityDelegate = self
         prodQuantity.modalPresentationStyle = .overFullScreen
         prodQuantity.modalTransitionStyle = .crossDissolve
         self.present(prodQuantity, animated: true)
         
         
-    }
-    @IBAction func buyNow(_ sender: Any) {
         //print(prodQuantity)
         //print("Prod Quantity::::",prodQuantity)
 //        var quant = 0
@@ -108,13 +116,13 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
 //        } else {
 //            quant = 1
 //        }
-        let req = CartRequest(product_id: prodID, quantity: 1)
-        cartViewModel.addtoCart(cartreq: req)
-        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-            self.showCart()
-        }
+//        let req = CartRequest(product_id: prodID, quantity: 1)
+//        cartViewModel.addtoCart(cartreq: req)
+//
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+//            self.showCart()
+//        }
         //        let sb = UIStoryboard(name: "Main", bundle: nil)
         //        let prodQuantity = sb.instantiateViewController(withIdentifier: "prodQuantity") as! ProductQuantityController
         //        prodQuantity.prodImg = prodImg
@@ -122,6 +130,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
         //        prodQuantity.prodId = prodID
         //        self.present(prodQuantity, animated: true)
     }
+    
     @IBAction func rateNow(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let prodRating = sb.instantiateViewController(withIdentifier: "productRating") as! ProductRatingController
@@ -139,6 +148,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     }
     
     @IBAction func shareBtn(_ sender: Any) {
+        print("Share Item")
         
     }
     
@@ -155,4 +165,10 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
         //        self.navigationController?.present(ratingVC, animated: true)
     }
     
+}
+
+extension ProductListViewController : ProductQuantityDelegate {
+    func quantityAdded() {
+        self.showCart()
+    }
 }

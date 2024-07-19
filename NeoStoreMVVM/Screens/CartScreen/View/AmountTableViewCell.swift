@@ -9,6 +9,7 @@ import UIKit
 
 class AmountTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var totalLbl: UILabel!
     @IBOutlet weak var totalPrc: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

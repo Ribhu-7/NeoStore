@@ -69,6 +69,8 @@
 		18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC697A2C32B0AB002A5425 /* ButtonExtension.swift */; };
 		18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69822C32BA76002A5425 /* ForgetPassViewController.swift */; };
 		18BC69892C32C37C002A5425 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC69882C32C37C002A5425 /* RegisterViewController.swift */; };
+		18C1FAC82C4A95F800648E42 /* UIPickerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1FAC72C4A95F800648E42 /* UIPickerViewExtension.swift */; };
+		18C1FACA2C4A962F00648E42 /* CartPickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1FAC92C4A962F00648E42 /* CartPickerExtension.swift */; };
 		18C424C82C44D963002E0CA1 /* EditAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424C72C44D963002E0CA1 /* EditAccountController.swift */; };
 		18C424CA2C44D97A002E0CA1 /* EditAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424C92C44D97A002E0CA1 /* EditAccountModel.swift */; };
 		18C424CC2C44D98B002E0CA1 /* EditAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424CB2C44D98B002E0CA1 /* EditAccountViewModel.swift */; };
@@ -180,6 +182,8 @@
 		18BC697A2C32B0AB002A5425 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		18BC69822C32BA76002A5425 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
 		18BC69882C32C37C002A5425 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		18C1FAC72C4A95F800648E42 /* UIPickerViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerViewExtension.swift; sourceTree = "<group>"; };
+		18C1FAC92C4A962F00648E42 /* CartPickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPickerExtension.swift; sourceTree = "<group>"; };
 		18C424C72C44D963002E0CA1 /* EditAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountController.swift; sourceTree = "<group>"; };
 		18C424C92C44D97A002E0CA1 /* EditAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountModel.swift; sourceTree = "<group>"; };
 		18C424CB2C44D98B002E0CA1 /* EditAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewModel.swift; sourceTree = "<group>"; };
@@ -515,6 +519,7 @@
 				181910E42C3F9BDB0018B1E8 /* CartTableViewCell.xib */,
 				181910F12C4007550018B1E8 /* AmountTableViewCell.swift */,
 				181910F22C4007550018B1E8 /* AmountTableViewCell.xib */,
+				18C1FAC92C4A962F00648E42 /* CartPickerExtension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -609,6 +614,7 @@
 				18D2502E2C3D01EB00D58CFF /* UIImageExtension.swift */,
 				18D250302C3D163000D58CFF /* StarRatingView.swift */,
 				180E410A2C463365002992DA /* StarRating.swift */,
+				18C1FAC72C4A95F800648E42 /* UIPickerViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1200,6 +1206,7 @@
 				18D250372C3D23FE00D58CFF /* SofaProdExtension.swift in Sources */,
 				18C424CC2C44D98B002E0CA1 /* EditAccountViewModel.swift in Sources */,
 				18EA75C62C3BC330009E3179 /* HomeViewExtension.swift in Sources */,
+				18C1FAC82C4A95F800648E42 /* UIPickerViewExtension.swift in Sources */,
 				18308A042C33FF3800C62ABD /* Register.swift in Sources */,
 				18BC69832C32BA76002A5425 /* ForgetPassViewController.swift in Sources */,
 				18BC697B2C32B0AC002A5425 /* ButtonExtension.swift in Sources */,
@@ -1207,6 +1214,7 @@
 				18D2502F2C3D01EB00D58CFF /* UIImageExtension.swift in Sources */,
 				180E412D2C469BB9002992DA /* AddressListCell.swift in Sources */,
 				18278A672C41388A004F7629 /* DeleteCartViewModel.swift in Sources */,
+				18C1FACA2C4A962F00648E42 /* CartPickerExtension.swift in Sources */,
 				18BC695E2C328BA8002A5425 /* NeoStoreMVVM.xcdatamodeld in Sources */,
 				18DA70ED2C37F808008A2B96 /* SideTableViewCell.swift in Sources */,
 				1812E2D02C47784100D05C0F /* AddAddressController.swift in Sources */,

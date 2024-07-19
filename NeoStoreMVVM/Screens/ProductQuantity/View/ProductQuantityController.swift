@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ProductQuantityDelegate {
+    func quantityAdded()
+}
+
 class ProductQuantityController: UIViewController, CartViewControllerDelegate {
     let sb = UIStoryboard(name: "Main", bundle: nil)
     func showCartMenu() {
@@ -23,6 +27,7 @@ class ProductQuantityController: UIViewController, CartViewControllerDelegate {
     @IBOutlet weak var quantityImg: UIImageView!
     
     @IBOutlet weak var quantityField: UITextField!
+    var productQuantityDelegate: ProductQuantityDelegate?
     
     var cartViewController: CartViewController?
     var prodImg: String!
@@ -60,6 +65,7 @@ class ProductQuantityController: UIViewController, CartViewControllerDelegate {
     @objc func searchClicked(){
         
     }
+    
     @IBAction func submitClick(_ sender: Any) {
         let quantTotal = Int(self.quantityField.text ?? "0") ?? 0
         let req = CartRequest(product_id: prodId, quantity: quantTotal - 1 )
@@ -69,7 +75,9 @@ class ProductQuantityController: UIViewController, CartViewControllerDelegate {
 //        let sb = UIStoryboard(name: "Main", bundle: nil)
 //        let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
 //        self.navigationController?.pushViewController(cartVC, animated: true)
+       
         dismiss(animated: true)
+        productQuantityDelegate?.quantityAdded()
         
         //dismiss(animated: true)
 //        print(Int(quantity))

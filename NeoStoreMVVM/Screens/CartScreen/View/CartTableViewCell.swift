@@ -18,7 +18,8 @@ class CartTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cartPrice: UILabel!
     
-    @IBOutlet weak var cartItem: UIButton!
+    
+    @IBOutlet weak var cartItemCnt: UILabel!
     
     var cartImg: String!
     
@@ -36,4 +37,6 @@ class CartTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func cartStepper(_ sender: Any) {
+    }
 }

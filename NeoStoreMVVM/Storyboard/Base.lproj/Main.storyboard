@@ -1330,7 +1330,6 @@
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="share"/>
                                                                         <connections>
-                                                                            <action selector="prodQuantityCnt:" destination="CtN-nf-kOv" eventType="touchUpInside" id="5qZ-vG-LxC"/>
                                                                             <action selector="shareBtn:" destination="CtN-nf-kOv" eventType="touchUpInside" id="xdp-5B-5tJ"/>
                                                                         </connections>
                                                                     </button>

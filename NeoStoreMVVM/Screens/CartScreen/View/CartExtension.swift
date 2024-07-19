@@ -21,13 +21,14 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row < self.cartViewModel.products.count {
             let tb = self.cartViewModel.products[indexPath.row]
             let itemPrice = Int(tb.product.cost) * tb.quantity
-            self.totalCartAmt = self.totalCartAmt + itemPrice
+            //self.totalCartAmt = self.totalCartAmt + itemPrice
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as! CartTableViewCell
         
             cell.cartHead.text = tb.product.name
             cell.cartDesc.text = tb.product.product_category
-            cell.cartItem.addTarget(self, action: #selector(addQuantity), for: .touchUpInside)
-            cell.cartItem.titleLabel?.text = String(tb.quantity)
+//            cell.cartItem.addTarget(self, action: #selector(addQuantity), for: .touchUpInside)
+//            cell.cartItem.titleLabel?.text = String(tb.quantity)
+            cell.cartItemCnt.text = String(tb.quantity)
             cell.cartPrice.text = "Rs. \(itemPrice)"
             cell.cartImageView.setImage(with: tb.product.product_images)
             
@@ -36,7 +37,14 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "AmountTableViewCell", for: indexPath) as! AmountTableViewCell
             let amt = UserDefaults.standard.integer(forKey: "CartAmt")
-            cell.totalPrc.text = "Rs. \(amt)"
+            if self.cartViewModel.products.count == 0{
+                cell.totalPrc.text = "Cart is Empty"
+                cell.totalLbl.text = "Please add"
+            } else{
+                cell.totalLbl.text = "Total"
+                cell.totalPrc.text = "Rs. \(amt)"
+            }
+            
             return cell
         }
         

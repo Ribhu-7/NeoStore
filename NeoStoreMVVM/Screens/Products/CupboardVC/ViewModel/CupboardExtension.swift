@@ -38,6 +38,7 @@ extension CupboardViewController : UITableViewDelegate , UITableViewDataSource {
         prodVC.prodPrc = "Rs \(tb.cost)"
         prodVC.prodImg = tb.product_images
         prodVC.prodID = tb.id
+        prodVC.prodViewCount =  tb.view_count
 //        ratingVC.prodLbl = tb.name
 //        ratingVC.prodRate = tb.rating
 //        ratingVC.prodImg = tb.product_images

@@ -42,15 +42,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcj-Sq-9jP">
                                 <rect key="frame" x="-12" y="138" width="222" height="67"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhx-Lx-QkY">
-                                        <rect key="frame" x="0.0" y="10" width="65.333333333333329" height="47"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system" title="1" imagePadding="10"/>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNx-gZ-hjo">
                                         <rect key="frame" x="150.66666666666669" y="10" width="41.333333333333343" height="47"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="EWR-li-ZxB">
+                                        <rect key="frame" x="0.0" y="17" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="cartStepper:" destination="KGk-i7-Jjw" eventType="valueChanged" id="aXt-SA-9ik"/>
+                                        </connections>
+                                    </stepper>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj4-o9-1tO">
+                                        <rect key="frame" x="26.000000000000004" y="0.0" width="41.333333333333343" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -58,11 +63,14 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Hhx-Lx-QkY" secondAttribute="bottom" constant="10" id="DB6-o3-Soa"/>
+                                    <constraint firstItem="EWR-li-ZxB" firstAttribute="top" secondItem="cj4-o9-1tO" secondAttribute="bottom" constant="1" id="17F-zG-08m"/>
+                                    <constraint firstAttribute="bottom" secondItem="EWR-li-ZxB" secondAttribute="bottom" constant="18" id="Iho-6A-wfe"/>
+                                    <constraint firstItem="EWR-li-ZxB" firstAttribute="top" secondItem="Xcj-Sq-9jP" secondAttribute="top" constant="17" id="MfM-I5-NrK"/>
                                     <constraint firstItem="sNx-gZ-hjo" firstAttribute="top" secondItem="Xcj-Sq-9jP" secondAttribute="top" constant="10" id="aYM-Ny-J3S"/>
+                                    <constraint firstItem="cj4-o9-1tO" firstAttribute="top" secondItem="Xcj-Sq-9jP" secondAttribute="top" id="gAp-Gl-7NM"/>
                                     <constraint firstAttribute="bottom" secondItem="sNx-gZ-hjo" secondAttribute="bottom" constant="10" id="gYl-x1-LQC"/>
-                                    <constraint firstItem="Hhx-Lx-QkY" firstAttribute="top" secondItem="Xcj-Sq-9jP" secondAttribute="top" constant="10" id="v0e-m4-6Ao"/>
-                                    <constraint firstItem="Hhx-Lx-QkY" firstAttribute="leading" secondItem="Xcj-Sq-9jP" secondAttribute="leading" id="v2i-kG-fn0"/>
+                                    <constraint firstItem="EWR-li-ZxB" firstAttribute="leading" secondItem="Xcj-Sq-9jP" secondAttribute="leading" id="p6H-re-XnG"/>
+                                    <constraint firstItem="cj4-o9-1tO" firstAttribute="leading" secondItem="Xcj-Sq-9jP" secondAttribute="leading" constant="26" id="y1I-kt-Bw1"/>
                                     <constraint firstAttribute="trailing" secondItem="sNx-gZ-hjo" secondAttribute="trailing" constant="30" id="zZp-xR-S2Z"/>
                                 </constraints>
                             </view>
@@ -89,19 +97,15 @@
                 <outlet property="cartDesc" destination="xKB-YT-G1N" id="bBX-3X-0fE"/>
                 <outlet property="cartHead" destination="ijU-b1-2aD" id="Hcv-Xv-dpO"/>
                 <outlet property="cartImageView" destination="z6u-rg-aCb" id="tVO-Ju-mVq"/>
-                <outlet property="cartItem" destination="Hhx-Lx-QkY" id="iB9-Yp-J9c"/>
+                <outlet property="cartItemCnt" destination="cj4-o9-1tO" id="VB3-7Y-UXh"/>
                 <outlet property="cartPrice" destination="sNx-gZ-hjo" id="25S-zG-m0a"/>
             </connections>
             <point key="canvasLocation" x="-34.351145038167935" y="90.140845070422543"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="chevron.down" catalog="system" width="128" height="70"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
