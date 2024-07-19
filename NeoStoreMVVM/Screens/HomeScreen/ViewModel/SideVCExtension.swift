@@ -67,6 +67,8 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
             print("clicked")
             
         } else if indexPath.row == 8 {
+            UserDefaults.standard.removeObject(forKey: "username")
+            UserDefaults.standard.removeObject(forKey: "password")
             let loginVC = sb.instantiateViewController(withIdentifier: "LoginVC")
             self.navigationController?.pushViewController(loginVC, animated: true)
             print("loginVC")

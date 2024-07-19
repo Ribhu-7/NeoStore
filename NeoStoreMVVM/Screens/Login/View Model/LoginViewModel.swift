@@ -23,17 +23,19 @@ extension LoginViewController {
                     print(token ?? "")
                     UserDefaults.standard.set(token, forKey: "accessToken")
                 }
-//                print("access token 000:",data?["access_token"])
-                
-             
-                
-                //let act = jsonData
+//
+                if let emailId = Optional((jsonData as LoginResponse).data?.email){
+                    UserDefaults.standard.set(emailId, forKey: "emailId")
+                }
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
                     self.showHome()
                 }
+                
             case .failure(_):
                 self.showAlert(message: "Invalid Credentials")
                 print("Error:")
+                
             }
         }
         

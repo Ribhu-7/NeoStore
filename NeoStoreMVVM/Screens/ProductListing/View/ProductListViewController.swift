@@ -21,6 +21,8 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     
     @IBOutlet weak var prodHeading: UILabel!
     
+    @IBOutlet weak var hideImage: UIView!
+    @IBOutlet weak var prodStock: UILabel!
     @IBOutlet weak var prodCategory: UILabel!
     
     @IBOutlet weak var prodDesc: UILabel!
@@ -58,6 +60,9 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
         centerImageView.setImage(with: prodImg)
         rightImageView.setImage(with: prodImg)
         prodPrice.text = prodPrc
+        prodStock.isHidden = true
+        hideImage.isHidden = true
+        
 
     }
     

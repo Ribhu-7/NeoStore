@@ -26,8 +26,12 @@ class LoginViewController: UIViewController {
         //let defaults = UserDefaults.standard
 //        defaults.set("riseabovehate10@gmail.com", forKey: "username")
 //        defaults.set("Abcd@1234", forKey: "password")
-        usernameField.text = "riseabovehate10@gmail.com"
-        passField.text = "Abcd@1234"
+        let userN = UserDefaults.standard.string(forKey: "username")
+        let userP = UserDefaults.standard.string(forKey: "password")
+        if userN != nil && userP != nil {
+            usernameField.text = userN
+            passField.text = userP
+        }
         configuration()
     }
     override func viewWillAppear(_ animated: Bool) {
