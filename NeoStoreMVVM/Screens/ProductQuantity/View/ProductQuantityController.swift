@@ -8,9 +8,9 @@
 import UIKit
 
 class ProductQuantityController: UIViewController, CartViewControllerDelegate {
-    
+    let sb = UIStoryboard(name: "Main", bundle: nil)
     func showCartMenu() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
                let cartVC = sb.instantiateViewController(withIdentifier: "cartVC") as! CartViewController
               self.navigationController?.pushViewController(cartVC, animated: true)
     }
@@ -37,6 +37,8 @@ class ProductQuantityController: UIViewController, CartViewControllerDelegate {
         quantityImg.setImage(with: prodImg)
         quantityHead.text = prodLbl
         print(prodId!)
+        
+        //self.modalPresentationStyle = .overCurrentContext
         //quantityField.text
         
     }
@@ -59,10 +61,19 @@ class ProductQuantityController: UIViewController, CartViewControllerDelegate {
         
     }
     @IBAction func submitClick(_ sender: Any) {
-        let req = CartRequest(product_id: prodId, quantity: Int(self.quantityField.text ?? "0") ?? 0)
+        let quantTotal = Int(self.quantityField.text ?? "0") ?? 0
+        let req = CartRequest(product_id: prodId, quantity: quantTotal - 1 )
+        let prodListVC = sb.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
+        prodListVC.prodQuantity = quantTotal
+        cartViewModel.addtoCart(cartreq: req)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
+//        self.navigationController?.pushViewController(cartVC, animated: true)
         dismiss(animated: true)
+        
+        //dismiss(animated: true)
 //        print(Int(quantity))
-                cartViewModel.addtoCart(cartreq: req)
+                
         //performSegue(withIdentifier: "cartSegue", sender: self)
         //dismiss(animated: true)
         
@@ -72,6 +83,7 @@ class ProductQuantityController: UIViewController, CartViewControllerDelegate {
 //        }
     }
     
+   
 //    func showCart(){
 //        let sb = UIStoryboard(name: "Main", bundle: nil)
 //        let cartVC = sb.instantiateViewController(withIdentifier: "cartVC") as! CartViewController

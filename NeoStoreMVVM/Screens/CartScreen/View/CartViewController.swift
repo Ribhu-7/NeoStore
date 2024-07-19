@@ -39,7 +39,7 @@ class CartViewController: UIViewController {
         let nib1 = UINib(nibName: "AmountTableViewCell", bundle: nil)
         cartTableView.register(nib1, forCellReuseIdentifier: "AmountTableViewCell")
         
-        let req = CartRequest(product_id: 1, quantity: 1)
+        let req = CartRequest(product_id: 1, quantity: 0)
         //amountView.isHidden = true
         initViewModel(req: req)
         observeEvent()

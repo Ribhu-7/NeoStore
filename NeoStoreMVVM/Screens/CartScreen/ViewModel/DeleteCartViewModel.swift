@@ -20,7 +20,9 @@ final class DeleteCartViewModel {
             case .success(let jsonData):
                 print(jsonData)
                 //CartViewModel.products = jsonData as? CartModel
-                
+                if let totalCart = Optional((jsonData as CartModel).total_carts){
+                    UserDefaults.standard.set(totalCart, forKey: "CartTotal")
+                }
             case .failure(_):
                 
                 print("Error:")

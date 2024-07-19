@@ -70,6 +70,9 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
             UIView.animate(withDuration: 0.4, delay: 0.2 , options: .transitionFlipFromLeft) {
                 self.sideUIView.alpha = 1
                 self.sideUIView.layer.zPosition = 1
+                DispatchQueue.main.async {
+                    self.sideViewController?.sideTableView.reloadData()
+                }
             }
         } else {
             self.hideSideMenu()

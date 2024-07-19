@@ -1330,8 +1330,8 @@
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="share"/>
                                                                         <connections>
+                                                                            <action selector="prodQuantityCnt:" destination="CtN-nf-kOv" eventType="touchUpInside" id="5qZ-vG-LxC"/>
                                                                             <action selector="shareBtn:" destination="CtN-nf-kOv" eventType="touchUpInside" id="xdp-5B-5tJ"/>
-                                                                            <segue destination="wCd-Tw-emY" kind="presentation" identifier="quantitySegue" modalPresentationStyle="overCurrentContext" id="58B-Kd-ffD"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1484,8 +1484,8 @@
                                                     <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
+                                                    <action selector="rateNow:" destination="CtN-nf-kOv" eventType="touchUpInside" id="yAm-fc-1pG"/>
                                                     <action selector="rateUs:" destination="CtN-nf-kOv" eventType="touchUpInside" id="4im-Wi-WvQ"/>
-                                                    <segue destination="L49-Wn-EyO" kind="presentation" identifier="ratingSegue" modalPresentationStyle="overCurrentContext" id="yns-QD-R46"/>
                                                 </connections>
                                             </button>
                                         </subviews>

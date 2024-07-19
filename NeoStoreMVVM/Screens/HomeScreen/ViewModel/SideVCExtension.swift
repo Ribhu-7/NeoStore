@@ -16,13 +16,15 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideTableViewCell", for: indexPath) as! SideTableViewCell
-        let cnt = UserDefaults.standard.integer(forKey: "TotalCart")
+        let cnt = UserDefaults.standard.integer(forKey: "CartTotal")
         //print(cnt)
         if indexPath.row == 0 {
             cell.sideCartBtn.isHidden = false
             cell.sideCartBtn.layer.cornerRadius = 20
             print("Count of cart: ",cnt)
             cell.sideCartBtn.setTitle(String(cnt), for: .normal)
+        } else {
+            cell.sideCartBtn.isHidden = true
         }
         cell.sideImg.image = UIImage(named: sideImgItems[indexPath.row])
         //print(cell.isUserInteractionEnabled)

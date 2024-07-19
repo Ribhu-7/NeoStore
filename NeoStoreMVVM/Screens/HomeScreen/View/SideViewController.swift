@@ -65,10 +65,12 @@ class SideViewController: UIViewController {
             case .dataLoaded:
                 print("Data Loaded...")
                 //print(self.userDetailsViewModel.details)
+//                self.sideTableView.reloadData()
                 DispatchQueue.main.async {
                     guard let userN = self.userDetailsViewModel.details?.user_data?.username else {return}
                     self.userName.text = userN
                     self.userEmail.text = self.userDetailsViewModel.details?.user_data?.email
+                    self.sideTableView.reloadData()
                 }
             case .error(let error):
                 print(error ?? "")

@@ -11,6 +11,7 @@ import Foundation
 final class ListCartViewModel {
     
     var products: [ListCartData] = []
+    var model: Int?
     var eventHandler: ((_ event: Event) -> Void)?
     
     func fetchCart(dataTab: CartRequest){
@@ -21,6 +22,7 @@ final class ListCartViewModel {
             switch response {
             case .success(let products):
                 self.products = products.data
+                UserDefaults.standard.set(products.total, forKey: "CartAmt")
                 self.eventHandler?(.dataLoaded)
             case .failure(let error):
                 print(error)

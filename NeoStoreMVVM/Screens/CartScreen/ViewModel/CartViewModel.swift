@@ -19,7 +19,13 @@ final class CartViewModel {
             switch result {
             case .success(let jsonData):
                 print(jsonData)
-                CartViewModel.products = jsonData as? CartModel
+//                if let token = Optional((jsonData as LoginResponse).data?.access_token) {
+//                    print(token ?? "")
+//                    UserDefaults.standard.set(token, forKey: "accessToken")
+//                }
+                if let totalCart = Optional((jsonData as CartModel).total_carts){
+                    UserDefaults.standard.set(totalCart, forKey: "CartTotal")
+                }
                 
             case .failure(_):
                 

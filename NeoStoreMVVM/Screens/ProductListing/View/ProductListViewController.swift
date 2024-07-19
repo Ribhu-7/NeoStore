@@ -40,6 +40,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     var prodPrc: String!
     var prodImg: String!
     var prodID: Int!
+    var prodQuantity: Int!
     
     var cartViewModel = CartViewModel()
     var cartViewController : CartViewController?
@@ -63,36 +64,74 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
         prodStock.isHidden = true
         hideImage.isHidden = true
         
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue , sender: Any?){
-        if segue.identifier == "ratingSegue" {
-            let popup = segue.destination as! ProductRatingController
-            popup.prodLbl = prodHead
-            popup.prodImg = prodImg
-            popup.prodRate = prodRate
-            popup.prodID = prodID
-            //cartViewController?.delegate
-            
-        }
-        else if segue.identifier == "quantitySegue" {
-            let popup = segue.destination as! ProductQuantityController
-            popup.prodLbl = prodHead
-            popup.prodImg = prodImg
-            popup.prodId = prodID
-        }
+//        if segue.identifier == "ratingSegue" {
+//            let popup = segue.destination as! ProductRatingController
+//            popup.prodLbl = prodHead
+//            popup.prodImg = prodImg
+//            popup.prodRate = prodRate
+//            popup.prodID = prodID
+//            //cartViewController?.delegate
+//
+//        }
+        //        else if segue.identifier == "quantitySegue" {
+        //            let popup = segue.destination as! ProductQuantityController
+        //            popup.prodLbl = prodHead
+        //            popup.prodImg = prodImg
+        //            popup.prodId = prodID
+        //        }
     }
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationItem.backButtonTitle = ""
     }
-    
+    @IBAction func prodQuantityCnt(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let prodQuantity = sb.instantiateViewController(withIdentifier: "prodQuantity") as! ProductQuantityController
+        prodQuantity.prodImg = prodImg
+        prodQuantity.prodLbl = prodHead
+        prodQuantity.prodId = prodID
+        prodQuantity.modalPresentationStyle = .overFullScreen
+        prodQuantity.modalTransitionStyle = .crossDissolve
+        self.present(prodQuantity, animated: true)
+        
+        
+    }
     @IBAction func buyNow(_ sender: Any) {
+        //print(prodQuantity)
+        //print("Prod Quantity::::",prodQuantity)
+//        var quant = 0
+//        if prodQuantity != nil {
+//            quant = prodQuantity
+//        } else {
+//            quant = 1
+//        }
         let req = CartRequest(product_id: prodID, quantity: 1)
         cartViewModel.addtoCart(cartreq: req)
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-           self.showCart()
+            self.showCart()
         }
+        //        let sb = UIStoryboard(name: "Main", bundle: nil)
+        //        let prodQuantity = sb.instantiateViewController(withIdentifier: "prodQuantity") as! ProductQuantityController
+        //        prodQuantity.prodImg = prodImg
+        //        prodQuantity.prodLbl = prodHead
+        //        prodQuantity.prodId = prodID
+        //        self.present(prodQuantity, animated: true)
+    }
+    @IBAction func rateNow(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let prodRating = sb.instantiateViewController(withIdentifier: "productRating") as! ProductRatingController
+        prodRating.prodImg = prodImg
+        prodRating.prodLbl = prodHead
+        prodRating.prodRate = prodRate
+        prodRating.prodID = prodID
+        prodRating.modalPresentationStyle = .overFullScreen
+        prodRating.modalTransitionStyle = .crossDissolve
+        self.present(prodRating, animated: true)
     }
     
     @objc func searchClicked(){
@@ -103,17 +142,17 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
         
     }
     
-
-    @IBAction func rateUs(_ sender: Any) {
-      
     
-//        ratingVC.modalPresentationStyle = .overCurrentContext
-//        ratingVC.modalTransitionStyle = .crossDissolve
-//        ratingVC.view.backgroundColor = UIColor.white.withAlphaComponent(0.9)
-//        self.view.alpha = 0.4
-//
-//        ratingVC.preferredContentSize = CGSizeMake(300, 300)
-//        self.navigationController?.present(ratingVC, animated: true)
+    @IBAction func rateUs(_ sender: Any) {
+        
+        
+        //        ratingVC.modalPresentationStyle = .overCurrentContext
+        //        ratingVC.modalTransitionStyle = .crossDissolve
+        //        ratingVC.view.backgroundColor = UIColor.white.withAlphaComponent(0.9)
+        //        self.view.alpha = 0.4
+        //
+        //        ratingVC.preferredContentSize = CGSizeMake(300, 300)
+        //        self.navigationController?.present(ratingVC, animated: true)
     }
     
 }

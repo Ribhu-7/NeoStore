@@ -12,19 +12,18 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        UserDefaults.standard.set(self.cartViewModel.products.count, forKey: "TotalCart")
         return self.cartViewModel.products.count + 1
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+       
         if indexPath.row < self.cartViewModel.products.count {
             let tb = self.cartViewModel.products[indexPath.row]
             let itemPrice = Int(tb.product.cost) * tb.quantity
             self.totalCartAmt = self.totalCartAmt + itemPrice
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as! CartTableViewCell
-            
+        
             cell.cartHead.text = tb.product.name
             cell.cartDesc.text = tb.product.product_category
             cell.cartItem.titleLabel?.text = String(tb.quantity)
@@ -35,8 +34,11 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         }
         else {
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "AmountTableViewCell", for: indexPath) as! AmountTableViewCell
-            cell.totalPrc.text = "Rs.\(self.totalCartAmt)"
-            self.totalCartAmt = 0
+            //let at = self.cartViewModel
+            //cell.totalPrc.text = "Rs.\(self.totalCartAmt)"
+            //self.totalCartAmt = 0
+            let amt = UserDefaults.standard.integer(forKey: "CartAmt")
+            cell.totalPrc.text = "Rs. \(amt)"
             return cell
         }
         
@@ -55,10 +57,14 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         let delete = UIContextualAction(style: .destructive, title: "Delete"){ (action , view , success ) in
             
             let item = self.cartViewModel.products[indexPath.row]
+            let total = UserDefaults.standard.integer(forKey: "CartAmt")
+            UserDefaults.standard.set(total - item.product.cost, forKey: "CartAmt")
             self.deleteCartModel.deleteCart(cartreq: DelCartRequest(product_id: item.product_id))
+            
             self.cartViewModel.products.remove(at: indexPath.row)
-            UserDefaults.standard.set(self.cartViewModel.products.count, forKey: "TotalCart")
+            //UserDefaults.standard.set(self.cartViewModel.products.count, forKey: "TotalCart")
             self.cartTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            //UserDefaults.standard.set(, forKey: "CartAmt")
             self.cartTableView.reloadData()
         }
         let swipeActions = UISwipeActionsConfiguration(actions: [delete])
