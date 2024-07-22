@@ -23,7 +23,7 @@ extension AddressListViewController {
                 self.showAlert(message: "Order Placed successfully")
                 //let act = jsonData
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                    self.showOrders()
+                    self.showHome()
                 }
             case .failure(_):
                 //self.showAlert(message: "Invalid Credentials")
@@ -38,5 +38,10 @@ extension AddressListViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let orderList = sb.instantiateViewController(withIdentifier: "orderList")
         self.navigationController?.pushViewController(orderList, animated: true)
+    }
+    func showHome(){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let HomeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
+        self.navigationController?.pushViewController(HomeVC, animated: true)
     }
 }
