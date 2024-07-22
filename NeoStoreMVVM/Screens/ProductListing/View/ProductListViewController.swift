@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ProductListViewController: UIViewController , UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate, CartViewControllerDelegate {
+class ProductListViewController: UIViewController , UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate {
     func showCartMenu() {
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5){
             let sb = UIStoryboard(name: "Main", bundle: nil)

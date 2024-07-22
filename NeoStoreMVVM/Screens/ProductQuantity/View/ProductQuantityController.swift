@@ -11,7 +11,7 @@ protocol ProductQuantityDelegate {
     func quantityAdded()
 }
 
-class ProductQuantityController: UIViewController, CartViewControllerDelegate {
+class ProductQuantityController: UIViewController {
     let sb = UIStoryboard(name: "Main", bundle: nil)
     func showCartMenu() {
         

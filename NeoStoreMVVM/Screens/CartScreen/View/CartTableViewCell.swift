@@ -25,7 +25,8 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
     
     @IBOutlet weak var cartPrice: UILabel!
     
-    var cartImg: String!
+    var prodId: Int!
+    var prodCost: Int!
     
     let transparentView = UIView()
     let tableView = UITableView()
@@ -61,6 +62,9 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
         UIView.animate(withDuration: 0.3) {
         self.dropdownTableView.heightAnchor.constraint(equalToConstant: self.isDropdownVisible ? CGFloat(self.options.count * 44) : 0).isActive = true
                   self.layoutIfNeeded()
+            self.dropdownTableView.layer.borderWidth = 2.0
+            self.dropdownTableView.layer.borderColor = UIColor.black.cgColor
+          
               }
     }
     
@@ -69,12 +73,17 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = dropdownTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.textLabel?.text = String(options[indexPath.row])
             return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             cartCount.setTitle(String(options[indexPath.row]), for: .normal)
+//        UserDefaults.standard.se
+    //    EditCartViewModel().editCart(cartreq: <#T##EditCartRequest#>)
+        let req = EditCartRequest(product_id: self.prodId, quantity: options[indexPath.row])
+        UserDefaults.standard.set(options[indexPath.row], forKey: "Prod \(String(describing: self.prodId))" )
+        EditCartViewModel().editCart(dataTab: req)
             dropdownTableView.isHidden = true
             isDropdownVisible = false
             dropdownTableView.heightAnchor.constraint(equalToConstant: 0).isActive = true

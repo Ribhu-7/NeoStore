@@ -23,3 +23,8 @@ struct CartRequest: Codable{
 struct DelCartRequest: Codable {
     let product_id: Int
 }
+
+struct EditCartRequest: Codable {
+   let product_id: Int
+   let quantity: Int
+}

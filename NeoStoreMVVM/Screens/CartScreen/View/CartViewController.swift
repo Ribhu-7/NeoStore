@@ -7,25 +7,17 @@
 
 import UIKit
 
-enum quantityList: Int, CaseIterable{
-    case one = 1
-    case two = 2
-    case three = 3
-    case four = 4
-}
 
-protocol CartViewControllerDelegate {
-    func showCartMenu()
-}
 class CartViewController: UIViewController {
     
 //    @IBOutlet weak var amountTableView: UITableView!
 //    @IBOutlet weak var amountView: UIView!
-    var delegate: CartViewControllerDelegate?
+
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var totalCartPrc: UILabel!
     var cartViewModel = ListCartViewModel()
     var deleteCartModel = DeleteCartViewModel()
+    var editCartViewModel = EditCartViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +26,7 @@ class CartViewController: UIViewController {
         self.navigationItem.title = "My Cart"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
         //tb = cartViewModel.products
+        
         
         cartTableView.delegate = self
         cartTableView.dataSource = self
@@ -71,8 +64,28 @@ class CartViewController: UIViewController {
                 print(self.cartViewModel.products.count)
                 DispatchQueue.main.async {
                     self.cartTableView.reloadData()
-//                    self.amountTableView.reloadData()
-//                    self.totalCartAmt = 0
+
+                }
+            case .error(let error):
+                print(error ?? "")
+            }
+        }
+        
+        editCartViewModel.eventHandler = { [weak self] event in
+            guard let self else {return}
+            
+            switch event {
+            case .loading:
+                print("Loading...")
+            case .stopLoading:
+                print("Loading stopped...")
+            case .dataLoaded:
+                print("Data Loaded...")
+                //print(self.cartViewModel.products)
+                //print(self.cartViewModel.products.count)
+                DispatchQueue.main.async {
+                    self.cartTableView.reloadData()
+
                 }
             case .error(let error):
                 print(error ?? "")

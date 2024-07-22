@@ -20,10 +20,12 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
        
         if indexPath.row < self.cartViewModel.products.count {
             let tb = self.cartViewModel.products[indexPath.row]
-            let itemPrice = Int(tb.product.cost) * tb.quantity
+            UserDefaults.standard.set(tb.quantity, forKey: "Prod \(String(describing: tb.product.id))" )
+            let itemPrice = Int(tb.product.cost) * UserDefaults.standard.integer(forKey: "Prod \(String(describing: tb.product.id))")
             //self.totalCartAmt = self.totalCartAmt + itemPrice
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as! CartTableViewCell
-        
+            //tb.product.id
+            cell.prodId = tb.product.id
             cell.cartHead.text = tb.product.name
             cell.cartDesc.text = tb.product.product_category
             cell.cartCount.setTitle(String(tb.quantity), for: .normal)

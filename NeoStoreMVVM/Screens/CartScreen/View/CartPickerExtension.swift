@@ -8,18 +8,8 @@
 import Foundation
 import UIKit
 
-extension CartViewController: UIPickerViewDelegate,UIPickerViewDataSource{
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(quantityList.allCases[row].rawValue)
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return quantityList.allCases.count
-    }
+extension CartViewController{
+   
     
 //    func textFieldDidBeginEditing(_ textField: UITextField) {
 //        if textField == self.education {
