@@ -26,9 +26,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         
             cell.cartHead.text = tb.product.name
             cell.cartDesc.text = tb.product.product_category
-//            cell.cartItem.addTarget(self, action: #selector(addQuantity), for: .touchUpInside)
-//            cell.cartItem.titleLabel?.text = String(tb.quantity)
-            cell.cartItemCnt.text = String(tb.quantity)
+            cell.cartCount.setTitle(String(tb.quantity), for: .normal)
             cell.cartPrice.text = "Rs. \(itemPrice)"
             cell.cartImageView.setImage(with: tb.product.product_images)
             
@@ -78,7 +76,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         return swipeActions
     }
     
-    @objc func addQuantity(id: Int){
-        
-    }
+//    @objc func addQuantity(id: Int){
+//
+//    }
+    
 }

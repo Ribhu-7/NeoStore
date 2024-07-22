@@ -68,7 +68,7 @@ class ProductQuantityController: UIViewController, CartViewControllerDelegate {
     
     @IBAction func submitClick(_ sender: Any) {
         let quantTotal = Int(self.quantityField.text ?? "0") ?? 0
-        let req = CartRequest(product_id: prodId, quantity: quantTotal - 1 )
+        let req = CartRequest(product_id: prodId, quantity: quantTotal)
         let prodListVC = sb.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
         prodListVC.prodQuantity = quantTotal
         cartViewModel.addtoCart(cartreq: req)

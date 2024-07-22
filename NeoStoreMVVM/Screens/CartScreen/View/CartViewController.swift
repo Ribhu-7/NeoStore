@@ -27,25 +27,6 @@ class CartViewController: UIViewController {
     var cartViewModel = ListCartViewModel()
     var deleteCartModel = DeleteCartViewModel()
     
-    private var pickerView: UIPickerView = {
-        var picker = UIPickerView()
-        return picker
-    }()
-
-    
-    private lazy var toolBar: UIToolbar = {
-        var toolbar = UIToolbar()
-        let cancelBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain,target: self, action: #selector(cancel(_:)))
-        let doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,target: self, action: #selector(done(_:)))
-        
-        toolbar.items = [cancelBarButtonItem, doneBarButtonItem]
-        toolbar.barStyle = .default
-        toolbar.sizeToFit()
-        
-        
-        return toolbar
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,7 +49,7 @@ class CartViewController: UIViewController {
         //amountView.isHidden = true
         initViewModel(req: req)
         observeEvent()
-        setUpPickerView()
+      
     }
 
     func initViewModel(req: CartRequest){
@@ -98,10 +79,7 @@ class CartViewController: UIViewController {
             }
         }
     }
-    private func setUpPickerView() {
-        pickerView.delegate = self
-        pickerView.dataSource = self
-    }
+   
     @objc func searchClicked(){
        
     }
@@ -122,15 +100,15 @@ class CartViewController: UIViewController {
         }
     }
     
-    @objc func done(_ sender: UIBarButtonItem) {
-        let row = pickerView.selectedRow(inComponent: 0)
-        //education.text = quantityList.allCases[row].rawValue
-        view.endEditing(true)
-    }
+//    @objc func done(_ sender: UIBarButtonItem) {
+//        let row = pickerView.selectedRow(inComponent: 0)
+//        //education.text = quantityList.allCases[row].rawValue
+//        view.endEditing(true)
+//    }
 
-    @objc func cancel(_ sender: UIBarButtonItem) {
-        view.endEditing(true)
-    }
+//    @objc func cancel(_ sender: UIBarButtonItem) {
+//        view.endEditing(true)
+//    }
     
     
 }

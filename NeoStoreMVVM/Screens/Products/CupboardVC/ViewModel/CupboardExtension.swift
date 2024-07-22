@@ -28,7 +28,7 @@ extension CupboardViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let prodVC = sb.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
-        let ratingVC = sb.instantiateViewController(withIdentifier: "productRating") as! ProductRatingController
+//        let ratingVC = sb.instantiateViewController(withIdentifier: "productRating") as! ProductRatingController
         let tb = self.cupBViewModel.products[indexPath.row]
         prodVC.navigationItem.title = tb.name
         prodVC.prodHead = tb.name
