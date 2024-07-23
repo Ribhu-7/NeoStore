@@ -62,8 +62,8 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
         UIView.animate(withDuration: 0.3) {
         self.dropdownTableView.heightAnchor.constraint(equalToConstant: self.isDropdownVisible ? CGFloat(self.options.count * 44) : 0).isActive = true
                   self.layoutIfNeeded()
-            self.dropdownTableView.layer.borderWidth = 2.0
-            self.dropdownTableView.layer.borderColor = UIColor.black.cgColor
+            self.dropdownTableView.layer.borderWidth = 1.0
+            self.dropdownTableView.layer.borderColor = UIColor.lightGray.cgColor
           
               }
     }
@@ -88,5 +88,7 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
             isDropdownVisible = false
             dropdownTableView.heightAnchor.constraint(equalToConstant: 0).isActive = true
         }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 30
+    }
 }

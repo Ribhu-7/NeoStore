@@ -24,14 +24,7 @@ final class LoginViewModel {
                     UserDefaults.standard.set(token, forKey: "accessToken")
                     
                 }
-//
-                if let emailId = Optional((jsonData as LoginResponse).data?.email){
-                    UserDefaults.standard.set(emailId, forKey: "emailId")
-                }
 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                    //self.showHome()
-                }
                 self.eventHandler?(.dataLoaded)
             case .failure(let error):
                 //self.showAlert(message: "Invalid Credentials")

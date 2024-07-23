@@ -53,7 +53,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row == self.cartViewModel.products.count
         {
-            return 100
+            return 120
         }
         return UITableView.automaticDimension
     }
