@@ -15,30 +15,26 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     var resp: LoginResponse?
+    var loginViewModel = LoginViewModel()
     
-    var userDefault: UserClassSettings?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         navigationItem.backButtonTitle = ""
-        //let defaults = UserDefaults.standard
-//        defaults.set("riseabovehate10@gmail.com", forKey: "username")
-//        defaults.set("Abcd@1234", forKey: "password")
         let userN = UserDefaults.standard.string(forKey: "username")
         let userP = UserDefaults.standard.string(forKey: "password")
         if userN != nil && userP != nil {
-            usernameField.text = userN
-            passField.text = userP
+            self.showHome()
         }
         configuration()
     }
     override func viewWillAppear(_ animated: Bool) {
+        
         self.navigationItem.hidesBackButton = true
     }
     func configuration(){
-        //UserClassSettings.shared.password
         usernameField.setContent("Username", "username_icon")
         passField.setContent("Password", "password_icon")
         loginBtn.changeView()
@@ -50,17 +46,41 @@ class LoginViewController: UIViewController {
         guard let password = passField.text else {return}
         if (emailId.isValidEmail && password.isValidPassword){
             let logs = LoginModel(email: emailId, password: password)
-            self.getRequest(logs: logs)
-            
-            UserDefaults.standard.set(emailId, forKey: "username")
-            UserDefaults.standard.set(password, forKey: "password")
+            //self.getRequest(logs: logs)
+            initViewModel(req: logs)
+            observeEvent()
         } else {
             self.showAlert(message: "Invalid details")
         }
-        print(UserDefaults.standard.value(forKey: "username") ?? "")
-        print(UserDefaults.standard.value(forKey: "password") ?? "")
     }
     
+    func initViewModel(req: LoginModel){
+        loginViewModel.getRequest(logs: req)
+    }
+    
+    func observeEvent(){
+        loginViewModel.eventHandler = { [weak self] event in
+            guard let self else {return}
+            
+            switch event {
+            case .loading:
+                print("Loading...")
+            case .stopLoading:
+                print("Loading stopped...")
+            case .dataLoaded:
+                print("Data Loaded...")
+                DispatchQueue.main.async {
+                    self.showHome()
+                    guard let email = self.usernameField.text else {return}
+                    guard let pass = self.passField.text else {return}
+                    UserDefaults.standard.set(email, forKey: "username")
+                    UserDefaults.standard.set(pass,forKey: "password")
+                }
+            case .error(let error):
+                print(error ?? "")
+            }
+        }
+    }
     @IBAction func forgotPass(_ sender: Any) {
         
         let forgotVC = sb.instantiateViewController(withIdentifier: "ForgotVC")
@@ -73,4 +93,9 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
     
+    func showHome(){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let homeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
+        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
 }
