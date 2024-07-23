@@ -20,10 +20,6 @@ enum EndPointItems {
     case register
     case login
     case getProduct(Int)
-    case getTable
-    case getChair
-    case getSofa
-    case getCupboard
     case getDetail
     case setRating
     case addtoCart
@@ -48,14 +44,6 @@ extension EndPointItems: EndPointType{
             return "users/login"
         case let .getProduct(id):
             return "products/getList?product_category_id=\(id)"
-        case .getTable:
-            return "products/getList?product_category_id=1"
-        case .getChair:
-            return "products/getList?product_category_id=2"
-        case .getSofa:
-            return "products/getList?product_category_id=3"
-        case .getCupboard:
-            return "products/getList?product_category_id=4"
         case .getDetail:
             return "products/getDetail"
         case .setRating:

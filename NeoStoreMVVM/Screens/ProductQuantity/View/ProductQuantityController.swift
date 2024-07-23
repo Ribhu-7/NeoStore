@@ -13,11 +13,7 @@ protocol ProductQuantityDelegate {
 
 class ProductQuantityController: UIViewController {
     let sb = UIStoryboard(name: "Main", bundle: nil)
-    func showCartMenu() {
-        
-               let cartVC = sb.instantiateViewController(withIdentifier: "cartVC") as! CartViewController
-              self.navigationController?.pushViewController(cartVC, animated: true)
-    }
+   
     
 
     @IBOutlet weak var submitBtn: UIButton!

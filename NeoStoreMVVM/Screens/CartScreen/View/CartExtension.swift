@@ -25,11 +25,14 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             //self.totalCartAmt = self.totalCartAmt + itemPrice
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as! CartTableViewCell
             //tb.product.id
+            UserDefaults.standard.set(tb.product.cost*tb.quantity, forKey: "ProdCost \(String(describing: tb.product_id))")
             cell.prodId = tb.product.id
+            cell.prodCost = tb.product.cost 
             cell.cartHead.text = tb.product.name
             cell.cartDesc.text = tb.product.product_category
             cell.cartCount.setTitle(String(tb.quantity), for: .normal)
-            cell.cartPrice.text = "Rs. \(itemPrice)"
+            //cell.cartPrice.text = "Rs. \(itemPrice)"
+            cell.cartPrice.text = "Rs. \(UserDefaults.standard.integer(forKey: "ProdCost \(String(describing: tb.product_id))"))"
             cell.cartImageView.setImage(with: tb.product.product_images)
             
             return cell
@@ -63,7 +66,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             
             let item = self.cartViewModel.products[indexPath.row]
             let total = UserDefaults.standard.integer(forKey: "CartAmt")
-            UserDefaults.standard.set(total - item.product.cost, forKey: "CartAmt")
+            UserDefaults.standard.set(total - (item.product.cost*item.quantity), forKey: "CartAmt")
             self.deleteCartModel.deleteCart(cartreq: DelCartRequest(product_id: item.product_id))
             
             self.cartViewModel.products.remove(at: indexPath.row)

@@ -9,15 +9,19 @@ import UIKit
 
 class ProductViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBOutlet weak var prodTblView: UITableView!
     var prodCatId: Int!
     var prodViewModel = ProductViewModel()
+    var filteredData: [ProdData]!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         print(prodCatId ?? 0)
         let req = ProdRequest(product_category_id: prodCatId ?? 0, limit: 10, page: 1)
+        self.searchBar.isHidden = true
 //        tabViewModel.fetchProducts(dataTab: req)
         
         if prodCatId == 1{
@@ -43,12 +47,18 @@ class ProductViewController: UIViewController {
         prodTblView.dataSource = self
         let nib = UINib(nibName: "ProductTableViewCell", bundle: nil)
         prodTblView.register(nib, forCellReuseIdentifier: "ProductTableViewCell")
+        filteredData = prodViewModel.products
+        print("Filtered Data::::",filteredData)
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationItem.backButtonTitle = ""
     }
     @objc func searchClicked(){
-        
+        if self.searchBar.isHidden == true {
+            self.searchBar.isHidden = false
+        } else if self.searchBar.isHidden == false {
+            self.searchBar.isHidden = true
+        }
     }
 
     func initViewModel(req: ProdRequest,id: Int){
@@ -76,3 +86,6 @@ class ProductViewController: UIViewController {
     }
 }
 
+extension ProductViewController: UISearchBarDelegate{
+    
+}

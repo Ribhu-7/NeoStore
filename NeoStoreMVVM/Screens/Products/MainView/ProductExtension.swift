@@ -12,6 +12,7 @@ extension ProductViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.prodViewModel.products.count
+        //return self.filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

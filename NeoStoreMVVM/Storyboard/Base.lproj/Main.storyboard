@@ -870,9 +870,25 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDl-4B-J6E">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kCz-9E-IFr">
+                                        <rect key="frame" x="40" y="50" width="293" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.01629760165" blue="0.060681154280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Vtn-JT-YSg" id="VDP-GX-FTu"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
+                                    <constraint firstItem="kCz-9E-IFr" firstAttribute="leading" secondItem="uDl-4B-J6E" secondAttribute="leading" constant="40" id="Iaq-tg-4eI"/>
+                                    <constraint firstAttribute="trailing" secondItem="kCz-9E-IFr" secondAttribute="trailing" constant="60" id="KKP-3O-1Ck"/>
                                     <constraint firstAttribute="height" constant="100" id="Pi9-Ay-K95"/>
+                                    <constraint firstItem="kCz-9E-IFr" firstAttribute="top" secondItem="uDl-4B-J6E" secondAttribute="top" constant="50" id="aye-Z8-kY0"/>
+                                    <constraint firstAttribute="bottom" secondItem="kCz-9E-IFr" secondAttribute="bottom" id="snd-mt-CDc"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kb6-vf-vpV">
@@ -894,6 +910,7 @@
                     </view>
                     <connections>
                         <outlet property="prodTblView" destination="Kb6-vf-vpV" id="LBh-RP-jjc"/>
+                        <outlet property="searchBar" destination="kCz-9E-IFr" id="zqn-0I-7my"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFF-3Z-w5r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
