@@ -45,23 +45,24 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
         for recognizer in sideTableView.gestureRecognizers ?? [] {
             recognizer.cancelsTouchesInView = false
         }
-        sideTableView.alpha = 1.0
         let sb = UIStoryboard(name: "Main", bundle: nil)
+        let productVC = sb.instantiateViewController(withIdentifier: "productVC") as! ProductViewController
+        sideTableView.alpha = 1.0
         if indexPath.row == 0 {
             let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
             self.navigationController?.pushViewController(cartVC, animated: true)
         } else if indexPath.row == 1 {
-            let tableVC = sb.instantiateViewController(withIdentifier: "tableVC")
-            self.navigationController?.pushViewController(tableVC, animated: true)
+            productVC.prodCatId = 1
+            self.navigationController?.pushViewController(productVC, animated: true)
         } else if indexPath.row == 2 {
-            let sofaVC = sb.instantiateViewController(withIdentifier: "sofaVC")
-            self.navigationController?.pushViewController(sofaVC, animated: true)
+            productVC.prodCatId = 3
+            self.navigationController?.pushViewController(productVC, animated: true)
         } else if indexPath.row == 3 {
-            let chairVC = sb.instantiateViewController(withIdentifier: "chairVC")
-            self.navigationController?.pushViewController(chairVC, animated: true)
+            productVC.prodCatId = 2
+            self.navigationController?.pushViewController(productVC, animated: true)
         } else if indexPath.row == 4 {
-            let cupboardVC = sb.instantiateViewController(withIdentifier: "cupboardVC")
-            self.navigationController?.pushViewController(cupboardVC, animated: true)
+            productVC.prodCatId = 4
+            self.navigationController?.pushViewController(productVC, animated: true)
         } else if indexPath.row == 5{
             let myaccountVC = sb.instantiateViewController(withIdentifier: "myaccountVC")
             self.navigationController?.pushViewController(myaccountVC, animated: true)

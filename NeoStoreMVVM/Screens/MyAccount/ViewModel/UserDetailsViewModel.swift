@@ -14,8 +14,9 @@ final class UserDetailsViewModel {
     var eventHandler: ((_ event: Event) -> Void)?
     
     func getDetails(dataTab: ProdRequest){
-        APIHelper.shared.helpRequest(modelType: UserModel.self, type: EndPointItems.getUserDetails
-        )
+//        APIHelper.shared.helpRequest(modelType: UserModel.self, type: EndPointItems.getUserDetails
+//        )
+        APIManager.shared.manager(modelType: UserModel.self, type: EndPointItems.getUserDetails, requestModel: dataTab, method: .get)
         {response in
             self.eventHandler?(.stopLoading)
             switch response {

@@ -9,11 +9,6 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
 
-    var sofaPproduct: ProdData? {
-        didSet {
-            sofaConfiguration()
-        }
-    }
     
     @IBOutlet weak var prodTblImg: UIImageView!
     @IBOutlet weak var prodHeading: UILabel!
@@ -30,9 +25,5 @@ class ProductTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    func sofaConfiguration(){
-        
     }
 }

@@ -13,7 +13,7 @@ extension HomeViewController {
         let productVC = sb.instantiateViewController(withIdentifier: "productVC") as! ProductViewController
         if let touch = touches.first {
             if tableProdView == touch.view {
-                let tableVC = sb.instantiateViewController(withIdentifier: "tableVC")
+//                let tableVC = sb.instantiateViewController(withIdentifier: "tableVC")
 //                self.navigationController?.pushViewController(tableVC, animated: true)
                 
                 productVC.prodCatId = 1

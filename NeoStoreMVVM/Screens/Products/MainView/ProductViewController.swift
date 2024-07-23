@@ -17,7 +17,7 @@ class ProductViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         print(prodCatId ?? 0)
-        let req = ProdRequest(product_category_id: 1, limit: 10, page: 1)
+        let req = ProdRequest(product_category_id: prodCatId ?? 0, limit: 10, page: 1)
 //        tabViewModel.fetchProducts(dataTab: req)
         
         if prodCatId == 1{

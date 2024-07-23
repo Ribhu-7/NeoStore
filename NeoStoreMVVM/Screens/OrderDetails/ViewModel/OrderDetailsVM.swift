@@ -16,13 +16,13 @@ final class OrderDetailsVM {
     
     func getOrderDetails(dataTab: OrderDetailsRequest , id: Int){
 
-        APIHelper.shared.helpRequest(modelType: OrderDetails.self, type: EndPointItems.orderDetail(id))
+//        APIHelper.shared.helpRequest(modelType: OrderDetails.self, type: EndPointItems.orderDetail(id))
+        APIManager.shared.manager(modelType: OrderDetails.self, type: EndPointItems.orderDetail(id), requestModel: dataTab, method: .get)
         {response in
             self.eventHandler?(.stopLoading)
             switch response {
             case .success(let details):
                 self.details = details.data
-               
                 self.eventHandler?(.dataLoaded)
             case .failure(let error):
                 print(error)

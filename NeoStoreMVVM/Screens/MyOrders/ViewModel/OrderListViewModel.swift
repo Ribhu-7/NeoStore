@@ -14,8 +14,9 @@ final class OrderListViewModel {
     var eventHandler: ((_ event: Event) -> Void)?
     
     func getOrder(dataTab: ProdRequest){
-        APIHelper.shared.helpRequest(modelType: OrderListModel.self, type: EndPointItems.orderList
-        )
+//        APIHelper.shared.helpRequest(modelType: OrderListModel.self, type: EndPointItems.orderList
+//        )
+        APIManager.shared.manager(modelType: OrderListModel.self, type: EndPointItems.orderList, requestModel: dataTab, method: .get)
         {response in
             self.eventHandler?(.stopLoading)
             switch response {

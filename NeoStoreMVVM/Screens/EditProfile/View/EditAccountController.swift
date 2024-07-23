@@ -75,6 +75,7 @@ class EditAccountController: UIViewController {
         guard let dob = editDob.text else {return}
         let req = EditRequest(first_name: fname, last_name: lname, email: email, dob: dob, profile_pic: "",  phone_no: phone)
         self.editRequest(logs: req)
+        
     }
     
     @IBAction func resetPass(_ sender: Any) {

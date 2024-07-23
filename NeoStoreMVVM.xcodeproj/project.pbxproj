@@ -79,11 +79,8 @@
 		18C424E02C4503C6002E0CA1 /* ProductRatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424DF2C4503C6002E0CA1 /* ProductRatingController.swift */; };
 		18C424E32C4503F1002E0CA1 /* ProductRatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424E22C4503F1002E0CA1 /* ProductRatingModel.swift */; };
 		18C424E52C450402002E0CA1 /* ProductRatingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C424E42C450402002E0CA1 /* ProductRatingVM.swift */; };
-		18D2502D2C3CF67600D58CFF /* TableProdExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2502C2C3CF67600D58CFF /* TableProdExtension.swift */; };
 		18D2502F2C3D01EB00D58CFF /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2502E2C3D01EB00D58CFF /* UIImageExtension.swift */; };
 		18D250312C3D163000D58CFF /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D250302C3D163000D58CFF /* StarRatingView.swift */; };
-		18D250352C3D22DC00D58CFF /* SofaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D250342C3D22DC00D58CFF /* SofaViewModel.swift */; };
-		18D250372C3D23FE00D58CFF /* SofaProdExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D250362C3D23FE00D58CFF /* SofaProdExtension.swift */; };
 		18D2503C2C3D24A800D58CFF /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2503A2C3D24A800D58CFF /* ProductTableViewCell.swift */; };
 		18D2503D2C3D24A800D58CFF /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D2503B2C3D24A800D58CFF /* ProductTableViewCell.xib */; };
 		18D639302C48D1640060B282 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6392F2C48D1640060B282 /* OrderDetailsViewController.swift */; };
@@ -97,13 +94,8 @@
 		18DA70EE2C37F808008A2B96 /* SideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DA70EC2C37F808008A2B96 /* SideTableViewCell.xib */; };
 		18DA70F02C37FD55008A2B96 /* SideVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70EF2C37FD55008A2B96 /* SideVCExtension.swift */; };
 		18DA70F22C38009A008A2B96 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA70F12C38009A008A2B96 /* ImageExtension.swift */; };
-		18EA75C02C3BBA03009E3179 /* TableProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75BF2C3BBA03009E3179 /* TableProdViewController.swift */; };
 		18EA75C22C3BBD35009E3179 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75C12C3BBD35009E3179 /* CustomView.swift */; };
 		18EA75C62C3BC330009E3179 /* HomeViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75C52C3BC330009E3179 /* HomeViewExtension.swift */; };
-		18EA75CC2C3BC792009E3179 /* SofaProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */; };
-		18EA75D22C3BC818009E3179 /* ChairProdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */; };
-		18EA75D82C3BC85D009E3179 /* CupboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75D72C3BC85D009E3179 /* CupboardViewController.swift */; };
-		18EA75DE2C3BE25E009E3179 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75DD2C3BE25E009E3179 /* TableViewModel.swift */; };
 		18EA75E12C3BE53D009E3179 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 18EA75E02C3BE53D009E3179 /* Kingfisher */; };
 		18EA75E32C3BF04A009E3179 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75E22C3BF049009E3179 /* APIHelper.swift */; };
 		18EB09552C4F656E00B3E4EC /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB09542C4F656E00B3E4EC /* LoginVM.swift */; };
@@ -111,11 +103,7 @@
 		18EB095A2C4F870D00B3E4EC /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB09592C4F870D00B3E4EC /* ProductViewModel.swift */; };
 		18EB095C2C4F879A00B3E4EC /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB095B2C4F879A00B3E4EC /* ProductViewController.swift */; };
 		18FE15542C3D3DD400DD9026 /* ProductExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE15532C3D3DD400DD9026 /* ProductExtension.swift */; };
-		18FE15582C3D46C900DD9026 /* ChairViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE15572C3D46C900DD9026 /* ChairViewModel.swift */; };
-		18FE155A2C3D48E400DD9026 /* ChairProdExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE15592C3D48E400DD9026 /* ChairProdExtension.swift */; };
 		18FE155D2C3D499A00DD9026 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE155C2C3D499A00DD9026 /* Product.swift */; };
-		18FE155F2C3D4D7900DD9026 /* CupboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE155E2C3D4D7900DD9026 /* CupboardExtension.swift */; };
-		18FE15612C3D4DB100DD9026 /* CupboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE15602C3D4DB100DD9026 /* CupboardViewModel.swift */; };
 		18FE15672C3D5BD100DD9026 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE15662C3D5BD100DD9026 /* ProductListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -193,11 +181,8 @@
 		18C424DF2C4503C6002E0CA1 /* ProductRatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRatingController.swift; sourceTree = "<group>"; };
 		18C424E22C4503F1002E0CA1 /* ProductRatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRatingModel.swift; sourceTree = "<group>"; };
 		18C424E42C450402002E0CA1 /* ProductRatingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRatingVM.swift; sourceTree = "<group>"; };
-		18D2502C2C3CF67600D58CFF /* TableProdExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProdExtension.swift; sourceTree = "<group>"; };
 		18D2502E2C3D01EB00D58CFF /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		18D250302C3D163000D58CFF /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
-		18D250342C3D22DC00D58CFF /* SofaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaViewModel.swift; sourceTree = "<group>"; };
-		18D250362C3D23FE00D58CFF /* SofaProdExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaProdExtension.swift; sourceTree = "<group>"; };
 		18D2503A2C3D24A800D58CFF /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		18D2503B2C3D24A800D58CFF /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		18D6392F2C48D1640060B282 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
@@ -211,24 +196,15 @@
 		18DA70EC2C37F808008A2B96 /* SideTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideTableViewCell.xib; sourceTree = "<group>"; };
 		18DA70EF2C37FD55008A2B96 /* SideVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideVCExtension.swift; sourceTree = "<group>"; };
 		18DA70F12C38009A008A2B96 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
-		18EA75BF2C3BBA03009E3179 /* TableProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableProdViewController.swift; sourceTree = "<group>"; };
 		18EA75C12C3BBD35009E3179 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		18EA75C52C3BC330009E3179 /* HomeViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewExtension.swift; sourceTree = "<group>"; };
-		18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SofaProdViewController.swift; sourceTree = "<group>"; };
-		18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairProdViewController.swift; sourceTree = "<group>"; };
-		18EA75D72C3BC85D009E3179 /* CupboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupboardViewController.swift; sourceTree = "<group>"; };
-		18EA75DD2C3BE25E009E3179 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		18EA75E22C3BF049009E3179 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		18EB09542C4F656E00B3E4EC /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		18EB09562C4F72BD00B3E4EC /* Gotham Bold */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Gotham Bold"; sourceTree = "<group>"; };
 		18EB09592C4F870D00B3E4EC /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		18EB095B2C4F879A00B3E4EC /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		18FE15532C3D3DD400DD9026 /* ProductExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExtension.swift; sourceTree = "<group>"; };
-		18FE15572C3D46C900DD9026 /* ChairViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairViewModel.swift; sourceTree = "<group>"; };
-		18FE15592C3D48E400DD9026 /* ChairProdExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChairProdExtension.swift; sourceTree = "<group>"; };
 		18FE155C2C3D499A00DD9026 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		18FE155E2C3D4D7900DD9026 /* CupboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupboardExtension.swift; sourceTree = "<group>"; };
-		18FE15602C3D4DB100DD9026 /* CupboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupboardViewModel.swift; sourceTree = "<group>"; };
 		18FE15662C3D5BD100DD9026 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -887,110 +863,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		18EA75BB2C3BB9A1009E3179 /* TableVC */ = {
-			isa = PBXGroup;
-			children = (
-				18EA75BE2C3BB9D5009E3179 /* ViewModel */,
-				18EA75BC2C3BB9B1009E3179 /* View */,
-			);
-			path = TableVC;
-			sourceTree = "<group>";
-		};
-		18EA75BC2C3BB9B1009E3179 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				18EA75BF2C3BBA03009E3179 /* TableProdViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		18EA75BE2C3BB9D5009E3179 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				18EA75DD2C3BE25E009E3179 /* TableViewModel.swift */,
-				18D2502C2C3CF67600D58CFF /* TableProdExtension.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		18EA75C72C3BC74F009E3179 /* SofaVC */ = {
-			isa = PBXGroup;
-			children = (
-				18EA75CA2C3BC77D009E3179 /* View */,
-				18EA75C82C3BC766009E3179 /* ViewModel */,
-			);
-			path = SofaVC;
-			sourceTree = "<group>";
-		};
-		18EA75C82C3BC766009E3179 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				18D250342C3D22DC00D58CFF /* SofaViewModel.swift */,
-				18D250362C3D23FE00D58CFF /* SofaProdExtension.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		18EA75CA2C3BC77D009E3179 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				18EA75CB2C3BC792009E3179 /* SofaProdViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		18EA75CD2C3BC7E7009E3179 /* ChairVC */ = {
-			isa = PBXGroup;
-			children = (
-				18EA75D02C3BC7FF009E3179 /* View */,
-				18EA75CE2C3BC7F3009E3179 /* ViewModel */,
-			);
-			path = ChairVC;
-			sourceTree = "<group>";
-		};
-		18EA75CE2C3BC7F3009E3179 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				18FE15572C3D46C900DD9026 /* ChairViewModel.swift */,
-				18FE15592C3D48E400DD9026 /* ChairProdExtension.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		18EA75D02C3BC7FF009E3179 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				18EA75D12C3BC818009E3179 /* ChairProdViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		18EA75D32C3BC82C009E3179 /* CupboardVC */ = {
-			isa = PBXGroup;
-			children = (
-				18EA75D62C3BC845009E3179 /* ViewModel */,
-				18EA75D42C3BC838009E3179 /* View */,
-			);
-			path = CupboardVC;
-			sourceTree = "<group>";
-		};
-		18EA75D42C3BC838009E3179 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				18EA75D72C3BC85D009E3179 /* CupboardViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		18EA75D62C3BC845009E3179 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				18FE155E2C3D4D7900DD9026 /* CupboardExtension.swift */,
-				18FE15602C3D4DB100DD9026 /* CupboardViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		18EB09582C4F86A300B3E4EC /* MainVM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1005,10 +877,6 @@
 				18EB09582C4F86A300B3E4EC /* MainVM */,
 				18FE155B2C3D498800DD9026 /* MainModel */,
 				18FE15522C3D3A3900DD9026 /* MainView */,
-				18EA75C72C3BC74F009E3179 /* SofaVC */,
-				18EA75BB2C3BB9A1009E3179 /* TableVC */,
-				18EA75CD2C3BC7E7009E3179 /* ChairVC */,
-				18EA75D32C3BC82C009E3179 /* CupboardVC */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -1161,7 +1029,6 @@
 				18C424E52C450402002E0CA1 /* ProductRatingVM.swift in Sources */,
 				18D6393D2C48F9480060B282 /* OrderDetailsViewCell.swift in Sources */,
 				18D2503C2C3D24A800D58CFF /* ProductTableViewCell.swift in Sources */,
-				18EA75D82C3BC85D009E3179 /* CupboardViewController.swift in Sources */,
 				18EB095A2C4F870D00B3E4EC /* ProductViewModel.swift in Sources */,
 				1812E2E82C47ED3600D05C0F /* OrderListViewCell.swift in Sources */,
 				18BC69792C32ABCD002A5425 /* UITextFieldExtension.swift in Sources */,
@@ -1176,11 +1043,8 @@
 				18308A062C33FFC600C62ABD /* Login.swift in Sources */,
 				18EA75E32C3BF04A009E3179 /* APIHelper.swift in Sources */,
 				1812E2DF2C47DC6600D05C0F /* OrderModel.swift in Sources */,
-				18D250352C3D22DC00D58CFF /* SofaViewModel.swift in Sources */,
 				187807212C36CFCD006B2097 /* HomeVCExtension.swift in Sources */,
-				18EA75D22C3BC818009E3179 /* ChairProdViewController.swift in Sources */,
 				181910F02C3FE97A0018B1E8 /* ListCartViewModel.swift in Sources */,
-				18FE155F2C3D4D7900DD9026 /* CupboardExtension.swift in Sources */,
 				18B0A8AA2C3E8F2600C9366D /* CartViewController.swift in Sources */,
 				18C424C82C44D963002E0CA1 /* EditAccountController.swift in Sources */,
 				18BC69542C328BA8002A5425 /* AppDelegate.swift in Sources */,
@@ -1193,7 +1057,6 @@
 				181910EE2C3FE5440018B1E8 /* ListCartModel.swift in Sources */,
 				181910EA2C3FB8040018B1E8 /* ProductListViewModel.swift in Sources */,
 				18DA70F02C37FD55008A2B96 /* SideVCExtension.swift in Sources */,
-				18EA75CC2C3BC792009E3179 /* SofaProdViewController.swift in Sources */,
 				18C424CE2C44EC01002E0CA1 /* ForgotPassModel.swift in Sources */,
 				183089FC2C33FB1500C62ABD /* APIManager.swift in Sources */,
 				18B0A8AC2C3E998900C9366D /* CartExtension.swift in Sources */,
@@ -1205,8 +1068,6 @@
 				18FE15542C3D3DD400DD9026 /* ProductExtension.swift in Sources */,
 				1812E2E52C47EBDB00D05C0F /* OrderListViewModel.swift in Sources */,
 				18308A022C33FE1600C62ABD /* UserEndPointType.swift in Sources */,
-				18FE15612C3D4DB100DD9026 /* CupboardViewModel.swift in Sources */,
-				18D250372C3D23FE00D58CFF /* SofaProdExtension.swift in Sources */,
 				18C424CC2C44D98B002E0CA1 /* EditAccountViewModel.swift in Sources */,
 				18EA75C62C3BC330009E3179 /* HomeViewExtension.swift in Sources */,
 				18C1FAC82C4A95F800648E42 /* UIPickerViewExtension.swift in Sources */,
@@ -1224,8 +1085,6 @@
 				18C424E32C4503F1002E0CA1 /* ProductRatingModel.swift in Sources */,
 				18C424D62C44F356002E0CA1 /* ResetPassViewController.swift in Sources */,
 				18DA70EA2C37F2B0008A2B96 /* SideViewController.swift in Sources */,
-				18EA75DE2C3BE25E009E3179 /* TableViewModel.swift in Sources */,
-				18FE155A2C3D48E400DD9026 /* ChairProdExtension.swift in Sources */,
 				187807282C36D0B7006B2097 /* MyCollectionViewCell.swift in Sources */,
 				18EB095C2C4F879A00B3E4EC /* ProductViewController.swift in Sources */,
 				180B1C882C36615900607EB9 /* AlertFieldExtension.swift in Sources */,
@@ -1235,13 +1094,10 @@
 				181910F32C4007550018B1E8 /* AmountTableViewCell.swift in Sources */,
 				18EB09552C4F656E00B3E4EC /* LoginVM.swift in Sources */,
 				18FE15672C3D5BD100DD9026 /* ProductListViewController.swift in Sources */,
-				18D2502D2C3CF67600D58CFF /* TableProdExtension.swift in Sources */,
 				180E410B2C463365002992DA /* StarRating.swift in Sources */,
 				1812E2E32C47E4D600D05C0F /* OrderListModel.swift in Sources */,
 				181910E52C3F9BDB0018B1E8 /* CartTableViewCell.swift in Sources */,
 				18EA75C22C3BBD35009E3179 /* CustomView.swift in Sources */,
-				18EA75C02C3BBA03009E3179 /* TableProdViewController.swift in Sources */,
-				18FE15582C3D46C900DD9026 /* ChairViewModel.swift in Sources */,
 				18278A712C415914004F7629 /* UserModel.swift in Sources */,
 				1828FC4F2C35102A007DB450 /* RegisterViewModel.swift in Sources */,
 				18DA70F22C38009A008A2B96 /* ImageExtension.swift in Sources */,

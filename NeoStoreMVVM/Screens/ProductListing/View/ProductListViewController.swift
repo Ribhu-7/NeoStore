@@ -152,19 +152,6 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
         
     }
     
-    
-    @IBAction func rateUs(_ sender: Any) {
-        
-        
-        //        ratingVC.modalPresentationStyle = .overCurrentContext
-        //        ratingVC.modalTransitionStyle = .crossDissolve
-        //        ratingVC.view.backgroundColor = UIColor.white.withAlphaComponent(0.9)
-        //        self.view.alpha = 0.4
-        //
-        //        ratingVC.preferredContentSize = CGSizeMake(300, 300)
-        //        self.navigationController?.present(ratingVC, animated: true)
-    }
-    
 }
 
 extension ProductListViewController : ProductQuantityDelegate {
