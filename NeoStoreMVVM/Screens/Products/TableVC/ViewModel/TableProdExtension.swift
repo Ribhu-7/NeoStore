@@ -11,12 +11,12 @@ import UIKit
 extension TableProdViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tabViewModel.products.count
+        return self.prodViewModel.products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TBtableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell") as! ProductTableViewCell
-        let tb = self.tabViewModel.products[indexPath.row]
+        let tb = self.prodViewModel.products[indexPath.row]
         cell.prodTblImg.setImage(with: tb.product_images)
         cell.prodHeading.text = tb.name
         cell.selectionStyle = .none
@@ -30,7 +30,7 @@ extension TableProdViewController : UITableViewDelegate , UITableViewDataSource 
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let prodVC = sb.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
         //let ratingVC = sb.instantiateViewController(withIdentifier: "productRating") as! ProductRatingController
-        let tb = self.tabViewModel.products[indexPath.row]
+        let tb = self.prodViewModel.products[indexPath.row]
         prodVC.navigationItem.title = tb.name
         prodVC.prodHead = tb.name
         prodVC.prodDes = tb.producer

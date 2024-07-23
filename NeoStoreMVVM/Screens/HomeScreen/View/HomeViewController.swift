@@ -62,6 +62,7 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
     func hideSideMenu() {
         UIView.animate(withDuration: 0.2 , delay: 0.2 , options: .transitionFlipFromRight) {
             self.sideUIView.alpha = 0
+            
         }
     }
     

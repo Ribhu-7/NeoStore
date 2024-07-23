@@ -19,6 +19,7 @@ protocol EndPointType: Codable {
 enum EndPointItems {
     case register
     case login
+    case getProduct(Int)
     case getTable
     case getChair
     case getSofa
@@ -45,6 +46,8 @@ extension EndPointItems: EndPointType{
             return "users/register"
         case .login:
             return "users/login"
+        case let .getProduct(id):
+            return "products/getList?product_category_id=\(id)"
         case .getTable:
             return "products/getList?product_category_id=1"
         case .getChair:

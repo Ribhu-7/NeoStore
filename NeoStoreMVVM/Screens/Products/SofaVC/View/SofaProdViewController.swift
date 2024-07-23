@@ -23,6 +23,7 @@ class SofaProdViewController: UIViewController {
         let nib = UINib(nibName: "ProductTableViewCell", bundle: nil)
         sofaTblView.register(nib, forCellReuseIdentifier: "ProductTableViewCell")
         let req = ProdRequest(product_category_id: 1, limit: 10, page: 1)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
         initViewModel(req: req)
         observeEvent()
     }
@@ -55,6 +56,8 @@ class SofaProdViewController: UIViewController {
             }
         }
     }
-    
+    @objc func searchClicked(){
+        
+    }
 
 }

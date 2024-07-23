@@ -11,6 +11,7 @@ class TableProdViewController: UIViewController {
 
     @IBOutlet weak var TBtableView: UITableView!
     var tabViewModel = TableProdViewModel()
+    var prodViewModel = ProductViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +28,7 @@ class TableProdViewController: UIViewController {
         
         let req = ProdRequest(product_category_id: 1, limit: 10, page: 1)
 //        tabViewModel.fetchProducts(dataTab: req)
-        initViewModel(req: req)
+        initViewModel(req: req, id: 1)
         observeEvent()
         
     }
@@ -40,12 +41,13 @@ class TableProdViewController: UIViewController {
         
     }
     
-    func initViewModel(req: ProdRequest){
-        tabViewModel.fetchProducts(dataTab: req)
+    func initViewModel(req: ProdRequest, id: Int){
+        //tabViewModel.fetchProducts(dataTab: req)
+        prodViewModel.fetchProducts(dataTab: req, id: id)
     }
     
     func observeEvent(){
-        tabViewModel.eventHandler = { [weak self] event in
+        prodViewModel.eventHandler = { [weak self] event in
             guard let self else {return}
             
             switch event {
@@ -55,7 +57,7 @@ class TableProdViewController: UIViewController {
                 print("Loading stopped...")
             case .dataLoaded:
                 print("Data Loaded...")
-                print(self.tabViewModel.products)
+                print(self.prodViewModel.products)
                 DispatchQueue.main.async {
                     self.TBtableView.reloadData()
                 }
