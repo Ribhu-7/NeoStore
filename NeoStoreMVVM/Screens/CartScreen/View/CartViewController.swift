@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol CartViewDelegate {
+    func showCartMenu()
+}
 
 class CartViewController: UIViewController {
     
@@ -18,13 +21,13 @@ class CartViewController: UIViewController {
     var cartViewModel = ListCartViewModel()
     var deleteCartModel = DeleteCartViewModel()
     var editCartViewModel = EditCartViewModel()
-    
+    //var cartviewCon = CartViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         self.navigationItem.title = "My Cart"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "homekit"), style: .plain, target: self, action: #selector(searchClicked))
         //tb = cartViewModel.products
         
         
@@ -94,7 +97,14 @@ class CartViewController: UIViewController {
     }
    
     @objc func searchClicked(){
-       
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let HomeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
+        self.navigationController?.pushViewController(HomeVC, animated: true)
+    }
+    func showCart(){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
+        self.navigationController?.pushViewController(cartVC, animated: true)
     }
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationItem.backButtonTitle = ""
@@ -106,22 +116,20 @@ class CartViewController: UIViewController {
         if arr.count != 0 {
             let addressList = sb.instantiateViewController(withIdentifier: "addressList")
             self.navigationController?.pushViewController(addressList, animated: true)
-           
+            
         } else {
             let addAddress = sb.instantiateViewController(withIdentifier: "addAddress")
             self.navigationController?.pushViewController(addAddress, animated: true)
         }
     }
     
-//    @objc func done(_ sender: UIBarButtonItem) {
-//        let row = pickerView.selectedRow(inComponent: 0)
-//        //education.text = quantityList.allCases[row].rawValue
-//        view.endEditing(true)
-//    }
+    
+}
 
-//    @objc func cancel(_ sender: UIBarButtonItem) {
-//        view.endEditing(true)
-//    }
-    
-    
+extension CartViewController: CartViewDelegate {
+    func showCartMenu() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
+        self.navigationController?.pushViewController(cartVC, animated: true)
+    }
 }

@@ -20,4 +20,9 @@ extension UIViewController {
         
     }
 
+    func showVC(name: String){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let VC = sb.instantiateViewController(withIdentifier: "name")
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
 }

@@ -48,7 +48,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.alpha = 1
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "homekit"), style: .plain, target: self, action: #selector(searchClicked))
         // Do any additional setup after loading the view.
         prodHeading.text = prodHead
         prodCategory.text = prodCatg
@@ -144,7 +144,9 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     }
     
     @objc func searchClicked(){
-        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let HomeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
+        self.navigationController?.pushViewController(HomeVC, animated: true)
     }
     
     @IBAction func shareBtn(_ sender: Any) {

@@ -98,7 +98,7 @@
 		18EA75E12C3BE53D009E3179 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 18EA75E02C3BE53D009E3179 /* Kingfisher */; };
 		18EA75E32C3BF04A009E3179 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA75E22C3BF049009E3179 /* APIHelper.swift */; };
 		18EB09552C4F656E00B3E4EC /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB09542C4F656E00B3E4EC /* LoginVM.swift */; };
-		18EB09572C4F72BD00B3E4EC /* Gotham Bold in Resources */ = {isa = PBXBuildFile; fileRef = 18EB09562C4F72BD00B3E4EC /* Gotham Bold */; };
+		18EB09572C4F72BD00B3E4EC /* Gotham in Resources */ = {isa = PBXBuildFile; fileRef = 18EB09562C4F72BD00B3E4EC /* Gotham */; };
 		18EB095A2C4F870D00B3E4EC /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB09592C4F870D00B3E4EC /* ProductViewModel.swift */; };
 		18EB095C2C4F879A00B3E4EC /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB095B2C4F879A00B3E4EC /* ProductViewController.swift */; };
 		18FE15542C3D3DD400DD9026 /* ProductExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE15532C3D3DD400DD9026 /* ProductExtension.swift */; };
@@ -198,7 +198,7 @@
 		18EA75C52C3BC330009E3179 /* HomeViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewExtension.swift; sourceTree = "<group>"; };
 		18EA75E22C3BF049009E3179 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		18EB09542C4F656E00B3E4EC /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
-		18EB09562C4F72BD00B3E4EC /* Gotham Bold */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Gotham Bold"; sourceTree = "<group>"; };
+		18EB09562C4F72BD00B3E4EC /* Gotham */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Gotham; sourceTree = "<group>"; };
 		18EB09592C4F870D00B3E4EC /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		18EB095B2C4F879A00B3E4EC /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		18FE15532C3D3DD400DD9026 /* ProductExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExtension.swift; sourceTree = "<group>"; };
@@ -555,7 +555,7 @@
 		18BC696C2C328BC5002A5425 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				18EB09562C4F72BD00B3E4EC /* Gotham Bold */,
+				18EB09562C4F72BD00B3E4EC /* Gotham */,
 				18BC695F2C328BAA002A5425 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -1003,7 +1003,7 @@
 				18BC69602C328BAA002A5425 /* Assets.xcassets in Resources */,
 				187807292C36D0B7006B2097 /* MyCollectionViewCell.xib in Resources */,
 				18D6393E2C48F9480060B282 /* OrderDetailsViewCell.xib in Resources */,
-				18EB09572C4F72BD00B3E4EC /* Gotham Bold in Resources */,
+				18EB09572C4F72BD00B3E4EC /* Gotham in Resources */,
 				18D2503D2C3D24A800D58CFF /* ProductTableViewCell.xib in Resources */,
 				180E412E2C469BB9002992DA /* AddressListCell.xib in Resources */,
 				18BC695B2C328BA8002A5425 /* Main.storyboard in Resources */,

@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewDataSource {
     
     @IBOutlet weak var dropdownTableView: UITableView!
@@ -22,6 +24,7 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
     
     @IBOutlet weak var cartCount: UIButton!
     
+    var cartViewDelegate: CartViewDelegate?
     
     @IBOutlet weak var cartPrice: UILabel!
     
@@ -83,16 +86,18 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
         
         
         let req = EditCartRequest(product_id: self.prodId, quantity: options[indexPath.row])
-        UserDefaults.standard.set(options[indexPath.row], forKey: "Prod \(String(describing: self.prodId))" )
-        UserDefaults.standard.set(options[indexPath.row] * self.prodCost, forKey: "ProdCost \(String(describing: prodId))")
+        UserDefaults.standard.set(options[indexPath.row], forKey: "ProdQuant \(String(describing: self.prodId))" )
+//        UserDefaults.standard.set(options[indexPath.row] * self.prodCost, forKey: "ProdCost \(String(describing: prodId))")
         EditCartViewModel().editCart(dataTab: req)
-//        DispatchQueue.main.async {
-//            CartViewController.cartTableView.reloadData()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+//         //   CartViewController.showCart(CartViewController)
+//            self.cartView.showCart()
 //        }
         
         dropdownTableView.isHidden = true
         isDropdownVisible = false
         dropdownTableView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        cartViewDelegate?.showCartMenu()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 30

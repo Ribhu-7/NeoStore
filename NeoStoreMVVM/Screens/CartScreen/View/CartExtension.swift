@@ -20,19 +20,27 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
        
         if indexPath.row < self.cartViewModel.products.count {
             let tb = self.cartViewModel.products[indexPath.row]
-            UserDefaults.standard.set(tb.quantity, forKey: "Prod \(String(describing: tb.product.id))" )
-            let itemPrice = Int(tb.product.cost) * UserDefaults.standard.integer(forKey: "Prod \(String(describing: tb.product.id))")
-            //self.totalCartAmt = self.totalCartAmt + itemPrice
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as! CartTableViewCell
+            
+            UserDefaults.standard.set(tb.quantity, forKey: "ProdQuant \(String(describing: tb.product_id))" )
+//            let itemPrice = Int(tb.product.cost) * UserDefaults.standard.integer(forKey: "Prod \(String(describing: tb.product.id))")
+            //self.totalCartAmt = self.totalCartAmt + itemPrice
+            
             //tb.product.id
-            UserDefaults.standard.set(tb.product.cost*tb.quantity, forKey: "ProdCost \(String(describing: tb.product_id))")
+            
+            UserDefaults.standard.set(tb.product.cost, forKey: "ProdCost \(String(describing: tb.product_id))")
+            
+            let cost = UserDefaults.standard.integer( forKey: "ProdCost \(String(describing: tb.product_id))")
+            let quant = UserDefaults.standard.integer(forKey: "ProdQuant \(String(describing: tb.product_id))")
+            let totalcost = cost*quant
             cell.prodId = tb.product.id
             cell.prodCost = tb.product.cost 
             cell.cartHead.text = tb.product.name
             cell.cartDesc.text = tb.product.product_category
-            cell.cartCount.setTitle(String(tb.quantity), for: .normal)
+            cell.cartCount.setTitle(String(quant), for: .normal)
             //cell.cartPrice.text = "Rs. \(itemPrice)"
-            cell.cartPrice.text = "Rs. \(UserDefaults.standard.integer(forKey: "ProdCost \(String(describing: tb.product_id))"))"
+//            cell.cartPrice.text = "Rs. \(UserDefaults.standard.integer(forKey: "ProdCost \(String(describing: tb.product_id))"))"
+            cell.cartPrice.text = "Rs. \(totalcost)"
             cell.cartImageView.setImage(with: tb.product.product_images)
             
             return cell
@@ -59,6 +67,15 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             return 120
         }
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row < self.cartViewModel.products.count {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
+            self.navigationController?.pushViewController(cartVC, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
