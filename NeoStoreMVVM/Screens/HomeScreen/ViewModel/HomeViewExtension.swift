@@ -35,6 +35,8 @@ extension HomeViewController {
                 self.navigationController?.pushViewController(productVC, animated: true)
             } else if parentView == touch.view {
                 self.hideSideMenu()
+            } else if rightsideView == touch.view {
+                self.hideSideMenu()
             }
             
         }

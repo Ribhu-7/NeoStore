@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController, SideViewControllerDelegate{
     
+    @IBOutlet weak var rightsideView: UIView!
     @IBOutlet weak var tableProdView: UIView!
     @IBOutlet weak var sofaProdView: UIView!
     @IBOutlet weak var chairProdView: UIView!
@@ -52,6 +53,7 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
         sideUIView.alpha = 0
         myPageControl.numberOfPages = sliderImages.count
         myPageControl.currentPage = 0
+        self.rightsideView.isHidden = true
     
     }
     
@@ -62,13 +64,14 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
     func hideSideMenu() {
         UIView.animate(withDuration: 0.2 , delay: 0.2 , options: .transitionFlipFromRight) {
             self.sideUIView.alpha = 0
-            
+            self.rightsideView.isHidden = true
         }
     }
     
     @objc func showMenu() {
         if sideUIView.alpha == 0 {
             UIView.animate(withDuration: 0.4, delay: 0.2 , options: .transitionFlipFromLeft) {
+                self.rightsideView.isHidden = false
                 self.sideUIView.alpha = 1
                 self.sideUIView.layer.zPosition = 1
                 DispatchQueue.main.async {
@@ -77,7 +80,9 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
             }
         } else {
             self.hideSideMenu()
+            //self.rightsideView.isHidden = false
         }
+        
     }
     
     @objc func searchClicked(){

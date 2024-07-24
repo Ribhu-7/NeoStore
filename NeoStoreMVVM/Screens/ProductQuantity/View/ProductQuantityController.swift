@@ -16,6 +16,10 @@ class ProductQuantityController: UIViewController {
    
     
 
+    @IBOutlet weak var topView: UIView!
+    
+    @IBOutlet weak var bottomView: UIView!
+    
     @IBOutlet weak var submitBtn: UIButton!
     
     @IBOutlet weak var quantityHead: UILabel!
@@ -42,6 +46,7 @@ class ProductQuantityController: UIViewController {
         //self.modalPresentationStyle = .overCurrentContext
         //quantityField.text
         
+        
     }
 
 //    override func prepare(for segue: UIStoryboardSegue , sender: Any?){
@@ -58,6 +63,15 @@ class ProductQuantityController: UIViewController {
 //            }
 //    }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            if  topView == touch.view {
+                dismiss(animated: true)
+            } else if bottomView == touch.view {
+                dismiss(animated: true)
+            }
+        }
+    }
     @objc func searchClicked(){
         
     }
