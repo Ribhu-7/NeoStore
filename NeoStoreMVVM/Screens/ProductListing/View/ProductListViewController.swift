@@ -103,7 +103,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
                     self.prodHeading.text = self.proddetailViewModel.products?.name
                     self.prodDesc.text = self.proddetailViewModel.products?.producer
                     self.prodPrice.text = "Rs \(self.proddetailViewModel.products?.cost ?? 0)"
-                    var prodRt = UserDefaults.standard.integer(forKey: "ProdRating: \(self.prodID ?? 0)")
+                    let prodRt = UserDefaults.standard.integer(forKey: "ProdRating: \(self.prodID ?? 0)")
                     self.prodRatingView.setStarRating(rating: prodRt)
                     self.prodRatingView.setStarRating(rating: self.proddetailViewModel.products?.rating ?? 0)
                     self.prodImageView.setImage(with: self.proddetailViewModel.products?.product_images?.first?.image ?? "")
@@ -117,23 +117,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
             }
         }
     }
-    override func prepare(for segue: UIStoryboardSegue , sender: Any?){
-//        if segue.identifier == "ratingSegue" {
-//            let popup = segue.destination as! ProductRatingController
-//            popup.prodLbl = prodHead
-//            popup.prodImg = prodImg
-//            popup.prodRate = prodRate
-//            popup.prodID = prodID
-//            //cartViewController?.delegate
-//
-//        }
-        //        else if segue.identifier == "quantitySegue" {
-        //            let popup = segue.destination as! ProductQuantityController
-        //            popup.prodLbl = prodHead
-        //            popup.prodImg = prodImg
-        //            popup.prodId = prodID
-        //        }
-    }
+
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationItem.backButtonTitle = ""
     }

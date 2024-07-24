@@ -56,19 +56,20 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
     }
     
     @IBAction func dropdownClick(_ sender: Any) {
-        if isDropdownVisible == false {
-            isDropdownVisible = true
-        } else if isDropdownVisible == true{
-            isDropdownVisible = false
-        }
-        dropdownTableView.isHidden = !isDropdownVisible
-        UIView.animate(withDuration: 0.3) {
-            self.dropdownTableView.heightAnchor.constraint(equalToConstant: self.isDropdownVisible ? CGFloat(self.options.count * 44) : 0).isActive = true
-            self.layoutIfNeeded()
-            self.dropdownTableView.layer.borderWidth = 1.0
-            self.dropdownTableView.layer.borderColor = UIColor.lightGray.cgColor
-            
-        }
+            if self.isDropdownVisible == false {
+                self.isDropdownVisible = true
+                self.dropdownTableView.heightAnchor.constraint(equalToConstant: self.isDropdownVisible ? CGFloat(self.options.count * 44) : 0).isActive = true
+            } else if self.isDropdownVisible == true{
+                self.isDropdownVisible = false
+            }
+            self.dropdownTableView.isHidden = !self.isDropdownVisible
+            UIView.animate(withDuration: 0.3) {
+                self.layoutIfNeeded()
+                self.dropdownTableView.layer.borderWidth = 1.0
+                self.dropdownTableView.layer.borderColor = UIColor.lightGray.cgColor
+                
+            }
+            self.dropdownTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,7 +93,7 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
         
         dropdownTableView.isHidden = true
         isDropdownVisible = false
-        dropdownTableView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+//        dropdownTableView.heightAnchor.constraint(equalToConstant: 0).isActive = true
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 30

@@ -1563,7 +1563,7 @@
                                     <constraint firstAttribute="height" constant="100" id="T0E-ZA-44Q"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SM8-Yb-I5K">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SM8-Yb-I5K">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ogf-FM-0Tj">
@@ -1598,13 +1598,35 @@
                                             <action selector="orderNow:" destination="0RK-so-hkR" eventType="touchUpInside" id="mfA-i9-nzV"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MAM-yS-JED">
+                                        <rect key="frame" x="0.0" y="100" width="393" height="752"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uXQ-Ai-iaC">
+                                                <rect key="frame" x="146.66666666666666" y="326" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="aIH-As-EV9"/>
+                                                    <constraint firstAttribute="height" constant="100" id="iB6-mu-0Yw"/>
+                                                </constraints>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="752" id="7jR-Py-4tI"/>
+                                            <constraint firstItem="uXQ-Ai-iaC" firstAttribute="centerX" secondItem="MAM-yS-JED" secondAttribute="centerX" id="nnX-iW-nsp"/>
+                                            <constraint firstItem="uXQ-Ai-iaC" firstAttribute="centerY" secondItem="MAM-yS-JED" secondAttribute="centerY" id="ulD-bQ-tqk"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="MAM-yS-JED" secondAttribute="bottom" id="CGj-Tr-7Vi"/>
                                     <constraint firstAttribute="trailing" secondItem="GMl-3D-A32" secondAttribute="trailing" constant="50" id="Gut-ij-gZJ"/>
                                     <constraint firstItem="Ogf-FM-0Tj" firstAttribute="top" secondItem="SM8-Yb-I5K" secondAttribute="top" constant="100" id="LG9-72-v6f"/>
                                     <constraint firstItem="GMl-3D-A32" firstAttribute="leading" secondItem="SM8-Yb-I5K" secondAttribute="leading" constant="50" id="ZxJ-NR-YTD"/>
                                     <constraint firstItem="Ogf-FM-0Tj" firstAttribute="leading" secondItem="SM8-Yb-I5K" secondAttribute="leading" id="aIJ-O2-OQR"/>
                                     <constraint firstItem="Ogf-FM-0Tj" firstAttribute="centerX" secondItem="SM8-Yb-I5K" secondAttribute="centerX" id="eyq-F9-fR0"/>
+                                    <constraint firstItem="MAM-yS-JED" firstAttribute="top" secondItem="SM8-Yb-I5K" secondAttribute="top" constant="100" id="hQJ-w6-7C8"/>
+                                    <constraint firstAttribute="trailing" secondItem="MAM-yS-JED" secondAttribute="trailing" id="ip2-1o-iNp"/>
+                                    <constraint firstItem="MAM-yS-JED" firstAttribute="leading" secondItem="SM8-Yb-I5K" secondAttribute="leading" id="k2i-CD-NvO"/>
                                     <constraint firstItem="GMl-3D-A32" firstAttribute="top" secondItem="Ogf-FM-0Tj" secondAttribute="bottom" constant="20" id="laQ-VU-MRD"/>
                                     <constraint firstAttribute="trailing" secondItem="Ogf-FM-0Tj" secondAttribute="trailing" id="mUN-o8-7Qt"/>
                                 </constraints>
@@ -1625,12 +1647,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="gLX-V1-BgM"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="uXQ-Ai-iaC" id="GKe-SB-J3C"/>
                         <outlet property="cartTableView" destination="Ogf-FM-0Tj" id="Lvd-Fu-VQ7"/>
+                        <outlet property="loadingView" destination="MAM-yS-JED" id="NXD-fA-cgo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Wd-is-IGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6419" y="-2"/>
+            <point key="canvasLocation" x="6417.5572519083971" y="-2.1126760563380285"/>
         </scene>
         <!--My Account View Controller-->
         <scene sceneID="lYj-Zy-4eh">

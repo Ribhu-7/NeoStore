@@ -36,6 +36,7 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
     }
     override func viewWillAppear(_ animated: Bool) {
         self.sideUIView.alpha = 0
+        self.rightsideView.isHidden = true
     }
     override func viewDidLoad() {
         super.viewDidLoad()

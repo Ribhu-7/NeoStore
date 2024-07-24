@@ -7,64 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D05AD49D-7343-40BA-A5B6-40D7A540CA6C"
-            shouldBeEnabled = "Yes"
+            uuid = "0F3257C7-E076-4D5C-95A1-5D7855CB0701"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NeoStoreMVVM/Helper/APIManager.swift"
+            filePath = "NeoStoreMVVM/Screens/CartScreen/View/CartTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "manager(modelType:type:requestModel:method:completion:)"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9079A8C7-BFAC-475C-9665-91F7FDB416D5"
+            uuid = "E6EBC5AB-8403-4BF0-9048-36441E52D2A4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NeoStoreMVVM/Helper/APIManager.swift"
+            filePath = "NeoStoreMVVM/Screens/CartScreen/View/CartTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "manager(modelType:type:requestModel:method:completion:)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "dropdownClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "87F3ADC2-FD32-4F51-88EF-4C27B64970D2"
+            uuid = "6261A59B-ED17-4EDC-A49D-683B13425275"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NeoStoreMVVM/Helper/APIManager.swift"
+            filePath = "NeoStoreMVVM/Screens/CartScreen/View/CartTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "manager(modelType:type:requestModel:method:completion:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "dropdownClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1BDA1427-6B0B-4495-83F3-FECE7DEFDCC2"
+            uuid = "FA9C8A69-D3A0-4039-8798-43660DF78512"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NeoStoreMVVM/Screens/Login/View Model/LoginViewModel.swift"
+            filePath = "NeoStoreMVVM/Screens/CartScreen/View/CartTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "getRequest(logs:)"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "dropdownClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
