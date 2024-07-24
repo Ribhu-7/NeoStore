@@ -34,6 +34,9 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     @IBOutlet weak var centerImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
     
+    @IBOutlet weak var loadingView: UIView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var prodHead : String!
     var prodCatg : String!
     var prodDes : String!
@@ -67,7 +70,8 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
         //rightImageView.setImage(with: prodImg)
         //prodPrice.text = prodPrc
         
-        
+        self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
+        self.activityIndicator.startAnimating()
         if prodViewCount == 0 {
             prodStock.isHidden = false
             hideImage.isHidden = false
@@ -106,6 +110,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
                     self.centerImageView.setImage(with: self.proddetailViewModel.products?.product_images?.first?.image ?? "")
                     self.leftImageView.setImage(with: self.proddetailViewModel.products?.product_images?.first?.image ?? "")
                     self.rightImageView.setImage(with: self.proddetailViewModel.products?.product_images?.first?.image ?? "")
+                    self.loadingView.isHidden = true
                 }
             case .error(let error):
                 print(error ?? "")

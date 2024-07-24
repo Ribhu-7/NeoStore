@@ -10,6 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingView: UIView!
     let sb = UIStoryboard(name: "Main", bundle: nil)
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passField: UITextField!
@@ -23,11 +25,17 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         navigationItem.backButtonTitle = ""
+        self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
+        
+        self.activityIndicator.startAnimating()
         let userN = UserDefaults.standard.string(forKey: "username")
         let userP = UserDefaults.standard.string(forKey: "password")
         if userN != nil && userP != nil {
             self.showHome()
+        } else {
+            self.loadingView.isHidden = true
         }
+        
         configuration()
     }
     override func viewWillAppear(_ animated: Bool) {

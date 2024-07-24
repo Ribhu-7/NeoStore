@@ -602,6 +602,7 @@
 		18BC69702C328C86002A5425 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				18CD2B822C510BE300BF3A07 /* NavigationController */,
 				18D639292C48D1030060B282 /* OrderDetails */,
 				1812E2D82C47DA3E00D05C0F /* MyOrders */,
 				1812E2CB2C47780200D05C0F /* AddAdress */,
@@ -825,6 +826,13 @@
 				18C424DF2C4503C6002E0CA1 /* ProductRatingController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		18CD2B822C510BE300BF3A07 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		18D639292C48D1030060B282 /* OrderDetails */ = {

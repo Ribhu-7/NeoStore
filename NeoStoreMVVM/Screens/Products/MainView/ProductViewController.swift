@@ -11,6 +11,10 @@ class ProductViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var loadingView: UIView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var prodTblView: UITableView!
     var prodCatId: Int!
     var prodViewModel = ProductViewModel()
@@ -19,11 +23,12 @@ class ProductViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         print(prodCatId ?? 0)
         let req = ProdRequest(product_category_id: prodCatId ?? 0, limit: 10, page: 1)
         self.searchBar.isHidden = true
 //        tabViewModel.fetchProducts(dataTab: req)
-        
+        self.activityIndicator.startAnimating()
         if prodCatId == 1{
             self.navigationItem.title = "Table"
             initViewModel(req: req, id: 1)
@@ -78,6 +83,7 @@ class ProductViewController: UIViewController {
                 print(self.prodViewModel.products)
                 DispatchQueue.main.async {
                     self.prodTblView.reloadData()
+                    self.loadingView.isHidden = true
                 }
             case .error(let error):
                 print(error ?? "")
