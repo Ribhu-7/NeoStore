@@ -9,6 +9,10 @@ import UIKit
 
 class ProductRatingController: UIViewController {
 
+    @IBOutlet weak var topView: UIView!
+    
+    @IBOutlet weak var bottomView: UIView!
+    
     @IBOutlet weak var prodratingLbl: UILabel!
     @IBOutlet var outerView: UIView!
     
@@ -55,9 +59,17 @@ class ProductRatingController: UIViewController {
     @IBAction func rateNowClick(_ sender: Any) {
         
         let req = RatingRequest(product_id: String(prodID), rating: selectedRate)
+        UserDefaults.standard.set(selectedRate, forKey: "ProdRating: \(prodID ?? 0)")
         self.rateRequest(logs: req)
         print("Rating::",UserDefaults.standard.integer(forKey: "prodRating"))
         dismiss(animated: true)
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            if topView == touch.view || bottomView == touch.view {
+                dismiss(animated: true)
+            }
+        }
+    }
 }

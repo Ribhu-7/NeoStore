@@ -20,7 +20,8 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     }
     
     @IBOutlet weak var prodHeading: UILabel!
-    
+    @IBOutlet weak var buyNowOutlet: UIButton!
+    @IBOutlet weak var rateUsOutlet: UIButton!
     @IBOutlet weak var hideImage: UIView!
     @IBOutlet weak var prodStock: UILabel!
     @IBOutlet weak var prodCategory: UILabel!
@@ -44,24 +45,27 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     var prodViewCount: Int!
     
     var cartViewModel = CartViewModel()
+    var proddetailViewModel = ProductDetailViewModel()
     var cartViewController : CartViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.alpha = 1
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "homekit"), style: .plain, target: self, action: #selector(searchClicked))
         // Do any additional setup after loading the view.
-        prodHeading.text = prodHead
+        //prodHeading.text = prodHead
         prodCategory.text = prodCatg
-        prodDesc.text = prodDes
-        prodRatingView.setStarRating(rating: prodRate)
-        prodImageView.setImage(with: prodImg)
-        leftImageView.setImage(with: prodImg)
+        buyNowOutlet.changeView()
+        rateUsOutlet.changeView()
+        //prodDesc.text = prodDes
+        //prodRatingView.setStarRating(rating: prodRate)
+        //prodImageView.setImage(with: prodImg)
+        //leftImageView.setImage(with: prodImg)
         leftImageView.setBorder(colour: .red)
         centerImageView.setBorder(colour: .lightGray)
         rightImageView.setBorder(colour: .green)
-        centerImageView.setImage(with: prodImg)
-        rightImageView.setImage(with: prodImg)
-        prodPrice.text = prodPrc
+        //centerImageView.setImage(with: prodImg)
+        //rightImageView.setImage(with: prodImg)
+        //prodPrice.text = prodPrc
         
         
         if prodViewCount == 0 {
@@ -71,9 +75,43 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
             prodStock.isHidden = true
             hideImage.isHidden = true
         }
-        
+        let req = ProductListRequest(product_id: String(self.prodID ?? 0))
+        initViewModel(req: req)
+        observeEvent()
     }
     
+    func initViewModel(req: ProductListRequest){
+        proddetailViewModel.fetchProducts(dataTab: req)
+    }
+    func observeEvent(){
+        proddetailViewModel.eventHandler = { [weak self] event in
+            guard let self else {return}
+            
+            switch event {
+            case .loading:
+                print("Loading...")
+            case .stopLoading:
+                print("Loading stopped...")
+            case .dataLoaded:
+                print("Data Loaded...")
+                print(self.proddetailViewModel.products ?? {})
+                DispatchQueue.main.async {
+                    self.prodHeading.text = self.proddetailViewModel.products?.name
+                    self.prodDesc.text = self.proddetailViewModel.products?.producer
+                    self.prodPrice.text = "Rs \(self.proddetailViewModel.products?.cost ?? 0)"
+                    var prodRt = UserDefaults.standard.integer(forKey: "ProdRating: \(self.prodID ?? 0)")
+                    self.prodRatingView.setStarRating(rating: prodRt)
+                    self.prodRatingView.setStarRating(rating: self.proddetailViewModel.products?.rating ?? 0)
+                    self.prodImageView.setImage(with: self.proddetailViewModel.products?.product_images?.first?.image ?? "")
+                    self.centerImageView.setImage(with: self.proddetailViewModel.products?.product_images?.first?.image ?? "")
+                    self.leftImageView.setImage(with: self.proddetailViewModel.products?.product_images?.first?.image ?? "")
+                    self.rightImageView.setImage(with: self.proddetailViewModel.products?.product_images?.first?.image ?? "")
+                }
+            case .error(let error):
+                print(error ?? "")
+            }
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue , sender: Any?){
 //        if segue.identifier == "ratingSegue" {
 //            let popup = segue.destination as! ProductRatingController
@@ -96,39 +134,16 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     }
     
     @IBAction func buyNow(_ sender: Any) {
-
+        
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let prodQuantity = sb.instantiateViewController(withIdentifier: "prodQuantity") as! ProductQuantityController
         prodQuantity.prodImg = prodImg
-        prodQuantity.prodLbl = prodHead
-        prodQuantity.prodId = prodID
+        prodQuantity.prodLbl = self.proddetailViewModel.products?.name
+        prodQuantity.prodId = self.proddetailViewModel.products?.id
         prodQuantity.productQuantityDelegate = self
         prodQuantity.modalPresentationStyle = .overFullScreen
         prodQuantity.modalTransitionStyle = .crossDissolve
         self.present(prodQuantity, animated: true)
-        
-        
-        //print(prodQuantity)
-        //print("Prod Quantity::::",prodQuantity)
-//        var quant = 0
-//        if prodQuantity != nil {
-//            quant = prodQuantity
-//        } else {
-//            quant = 1
-//        }
-//        let req = CartRequest(product_id: prodID, quantity: 1)
-//        cartViewModel.addtoCart(cartreq: req)
-//
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-//            self.showCart()
-//        }
-        //        let sb = UIStoryboard(name: "Main", bundle: nil)
-        //        let prodQuantity = sb.instantiateViewController(withIdentifier: "prodQuantity") as! ProductQuantityController
-        //        prodQuantity.prodImg = prodImg
-        //        prodQuantity.prodLbl = prodHead
-        //        prodQuantity.prodId = prodID
-        //        self.present(prodQuantity, animated: true)
     }
     
     @IBAction func rateNow(_ sender: Any) {
