@@ -8,7 +8,8 @@
 import UIKit
 
 protocol CartViewDelegate {
-    func showCartMenu()
+    //func showCartMenu()
+    func cardAdded(request:EditCartRequest)
 }
 
 class CartViewController: UIViewController {
@@ -16,6 +17,10 @@ class CartViewController: UIViewController {
 //    @IBOutlet weak var amountTableView: UITableView!
 //    @IBOutlet weak var amountView: UIView!
 
+    @IBOutlet weak var loadingView: UIView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var totalCartPrc: UILabel!
     var cartViewModel = ListCartViewModel()
@@ -26,6 +31,8 @@ class CartViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
+        self.activityIndicator.startAnimating()
         self.navigationItem.title = "My Cart"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "homekit"), style: .plain, target: self, action: #selector(searchClicked))
         //tb = cartViewModel.products
@@ -67,7 +74,7 @@ class CartViewController: UIViewController {
                 print(self.cartViewModel.products.count)
                 DispatchQueue.main.async {
                     self.cartTableView.reloadData()
-
+                    self.loadingView.isHidden = true
                 }
             case .error(let error):
                 print(error ?? "")
@@ -87,7 +94,9 @@ class CartViewController: UIViewController {
                 //print(self.cartViewModel.products)
                 //print(self.cartViewModel.products.count)
                 DispatchQueue.main.async {
-                    self.cartTableView.reloadData()
+                    let req = CartRequest(product_id: 1, quantity: 0)
+                    //amountView.isHidden = true
+                    self.initViewModel(req: req)
 
                 }
             case .error(let error):
@@ -127,9 +136,7 @@ class CartViewController: UIViewController {
 }
 
 extension CartViewController: CartViewDelegate {
-    func showCartMenu() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
-        self.navigationController?.pushViewController(cartVC, animated: true)
+    func cardAdded(request: EditCartRequest) {
+        self.editCartViewModel.editCart(dataTab: request)
     }
 }

@@ -23,10 +23,6 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = cartTableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as! CartTableViewCell
             
             UserDefaults.standard.set(tb.quantity, forKey: "ProdQuant \(String(describing: tb.product_id))" )
-//            let itemPrice = Int(tb.product.cost) * UserDefaults.standard.integer(forKey: "Prod \(String(describing: tb.product.id))")
-            //self.totalCartAmt = self.totalCartAmt + itemPrice
-            
-            //tb.product.id
             
             UserDefaults.standard.set(tb.product.cost, forKey: "ProdCost \(String(describing: tb.product_id))")
             
@@ -34,12 +30,11 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             let quant = UserDefaults.standard.integer(forKey: "ProdQuant \(String(describing: tb.product_id))")
             let totalcost = cost*quant
             cell.prodId = tb.product.id
+            cell.cartViewDelegate = self
             cell.prodCost = tb.product.cost 
             cell.cartHead.text = tb.product.name
             cell.cartDesc.text = tb.product.product_category
             cell.cartCount.setTitle(String(quant), for: .normal)
-            //cell.cartPrice.text = "Rs. \(itemPrice)"
-//            cell.cartPrice.text = "Rs. \(UserDefaults.standard.integer(forKey: "ProdCost \(String(describing: tb.product_id))"))"
             cell.cartPrice.text = "Rs. \(totalcost)"
             cell.cartImageView.setImage(with: tb.product.product_images)
             
@@ -69,15 +64,15 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if indexPath.row < self.cartViewModel.products.count {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
-            self.navigationController?.pushViewController(cartVC, animated: true)
-        }
-    }
-    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        if indexPath.row < self.cartViewModel.products.count {
+//            let sb = UIStoryboard(name: "Main", bundle: nil)
+//            let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
+//            self.navigationController?.pushViewController(cartVC, animated: true)
+//        }
+//    }
+//
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: ""){ (action , view , success ) in
             
