@@ -88,7 +88,7 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
         let req = EditCartRequest(product_id: self.prodId, quantity: options[indexPath.row])
         UserDefaults.standard.set(options[indexPath.row], forKey: "ProdQuant \(String(describing: self.prodId))" )
      //   EditCartViewModel().editCart(dataTab: req)
-        cartViewDelegate?.cardAdded(request: req)
+        cartViewDelegate?.cartAdded(request: req)
 
         
         dropdownTableView.isHidden = true

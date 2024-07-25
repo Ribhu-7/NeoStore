@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-extension ProductRatingController{
+final class ProductRatingVM{
     
     func rateRequest(logs: RatingRequest) {
         
@@ -17,7 +17,7 @@ extension ProductRatingController{
             result in
             switch result {
             case .success(let jsonData):
-                self.showAlert(message: "Success")
+                //self.showAlert(message: "Success")
                 print(jsonData)
                 if let Pid = Optional((jsonData as RatingResponse).data?.id){
                     if let rating = Optional((jsonData as RatingResponse).data?.rating) {
@@ -29,7 +29,7 @@ extension ProductRatingController{
 //                    self.showLogin()
 //                }
             case .failure(_):
-                self.showAlert(message: "Failed Update")
+                //self.showAlert(message: "Failed Update")
                 print("Error:")
             }
         }

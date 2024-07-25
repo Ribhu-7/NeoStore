@@ -26,7 +26,7 @@ final class APIManager {
     func manager<T: Codable , U: Codable>(
         modelType: T.Type,
         type: EndPointType,
-        requestModel: U,
+        requestModel: U?,
         method: HTTPMethod,
         completion: @escaping Handler<T>
     )

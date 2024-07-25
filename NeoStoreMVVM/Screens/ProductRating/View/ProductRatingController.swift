@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ProductRatingDelegate {
+    func ratingAdded(req: RatingRequest)
+}
+
 class ProductRatingController: UIViewController {
 
     @IBOutlet weak var topView: UIView!
@@ -27,8 +31,9 @@ class ProductRatingController: UIViewController {
     var prodLbl: String!
     var prodID: Int!
     
+    var productRatingDelegate: ProductRatingDelegate?
     let sb = UIStoryboard(name: "Main", bundle: nil)
-    
+    var prodRatingVM = ProductRatingVM()
     private var selectedRate: Int = 0
         
     override func viewDidLoad() {
@@ -60,9 +65,12 @@ class ProductRatingController: UIViewController {
         
         let req = RatingRequest(product_id: String(prodID), rating: selectedRate)
         UserDefaults.standard.set(selectedRate, forKey: "ProdRating: \(prodID ?? 0)")
-        self.rateRequest(logs: req)
+        //self.rateRequest(logs: req)
+        prodRatingVM.rateRequest(logs: req)
         print("Rating::",UserDefaults.standard.integer(forKey: "prodRating"))
+        self.productRatingDelegate?.ratingAdded(req: req)
         dismiss(animated: true)
+        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

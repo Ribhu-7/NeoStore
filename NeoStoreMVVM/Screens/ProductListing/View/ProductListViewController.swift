@@ -8,17 +8,8 @@
 import UIKit
 
 
-class ProductListViewController: UIViewController , UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate {
-    func showCartMenu() {
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5){
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let cartVC = sb.instantiateViewController(withIdentifier: "cartVC") as! CartViewController
-            self.navigationController?.pushViewController(cartVC, animated: true)
-            
-        }
-        
-    }
-    
+class ProductListViewController: UIViewController{
+
     @IBOutlet weak var prodHeading: UILabel!
     @IBOutlet weak var buyNowOutlet: UIButton!
     @IBOutlet weak var rateUsOutlet: UIButton!
@@ -50,6 +41,7 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
     var cartViewModel = CartViewModel()
     var proddetailViewModel = ProductDetailViewModel()
     var cartViewController : CartViewController?
+    var prodRatingVM: ProductRatingVM?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.alpha = 1
@@ -163,5 +155,11 @@ class ProductListViewController: UIViewController , UIPopoverControllerDelegate,
 extension ProductListViewController : ProductQuantityDelegate {
     func quantityAdded() {
         self.showCart()
+    }
+}
+
+extension ProductListViewController : ProductRatingDelegate {
+    func ratingAdded(req: RatingRequest) {
+        self.prodRatingVM?.rateRequest(logs: req)
     }
 }

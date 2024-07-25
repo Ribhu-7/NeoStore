@@ -9,7 +9,7 @@ import UIKit
 
 protocol CartViewDelegate {
     //func showCartMenu()
-    func cardAdded(request:EditCartRequest)
+    func cartAdded(request:EditCartRequest)
 }
 
 class CartViewController: UIViewController {
@@ -108,7 +108,8 @@ class CartViewController: UIViewController {
     @objc func searchClicked(){
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let HomeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
-        self.navigationController?.pushViewController(HomeVC, animated: true)
+        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.pushViewController(HomeVC, animated: true)
     }
     func showCart(){
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -136,7 +137,7 @@ class CartViewController: UIViewController {
 }
 
 extension CartViewController: CartViewDelegate {
-    func cardAdded(request: EditCartRequest) {
+    func cartAdded(request: EditCartRequest) {
         self.editCartViewModel.editCart(dataTab: request)
     }
 }
