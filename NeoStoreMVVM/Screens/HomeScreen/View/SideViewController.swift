@@ -34,7 +34,14 @@ class SideViewController: UIViewController {
         // Do any additional setup after loading the view.
         sideTableView.delegate = self
         sideTableView.dataSource = self
-        sideImageView.maskCircle(anyImage: (UIImage(named: "user_male")!))
+        if let imageData = UserDefaults.standard.object(forKey: "UserImage") as? Data,
+                    let image = UIImage(data: imageData) {
+                    //profilePic.image = image
+            sideImageView.maskCircle(anyImage: image)
+        } else {
+            sideImageView.maskCircle(anyImage: UIImage(named: "user_male")!)
+        }
+        //sideImageView.maskCircle(anyImage: (UIImage(named: "user_male")!))
         let nib = UINib(nibName: "SideTableViewCell", bundle: nil)
         sideTableView.register(nib, forCellReuseIdentifier: "SideTableViewCell")
         self.sideTableView.allowsSelection = true

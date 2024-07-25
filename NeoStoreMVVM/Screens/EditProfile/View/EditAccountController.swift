@@ -7,10 +7,12 @@
 
 import UIKit
 
-class EditAccountController: UIViewController {
+class EditAccountController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     
     @IBOutlet weak var editImage: UIImageView!
+    
+    //@IBOutlet weak var scrollView: UIScrollView!
     
     
     @IBOutlet weak var editFname: UITextField!
@@ -29,6 +31,7 @@ class EditAccountController: UIViewController {
     
     @IBOutlet weak var submitBtn: UIButton!
     
+    @IBOutlet weak var resetPass: UIButton!
     //var editAccountModel = EditAccountModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +42,8 @@ class EditAccountController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
         
         configuration()
+        //scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.height+100)
+
     }
     
     func configuration(){
@@ -49,7 +54,7 @@ class EditAccountController: UIViewController {
         editDob.setContent("DOB", "dob_icon")
         editImage.maskCircle(anyImage: (UIImage(named: "user_male")!))
         submitBtn.changeView()
-        
+        resetPass.changeView()
        
 //        let req = Request(product_category_id: 1, limit: 10, page: 1)
         
@@ -75,6 +80,7 @@ class EditAccountController: UIViewController {
         guard let dob = editDob.text else {return}
         let req = EditRequest(first_name: fname, last_name: lname, email: email, dob: dob, profile_pic: "",  phone_no: phone)
         self.editRequest(logs: req)
+        self.navigationController?.popViewController(animated: true)
         
     }
     
@@ -84,4 +90,56 @@ class EditAccountController: UIViewController {
         self.navigationController?.pushViewController(ResetVC, animated: true)
     }
     
+    @IBAction func editImgBtn(_ sender: Any) {
+        let ac = UIAlertController(title: "Select Image", message: "from ", preferredStyle: .actionSheet)
+        
+        let cameraBtn = UIAlertAction(title: "Camera", style: .default)
+        { [weak self]
+            (_) in print("camera pressed")
+            self?.showImagePicker(selectedSource: .camera)
+        }
+        
+        let libraryBtn = UIAlertAction(title: "Library", style: .default){
+            [weak self]
+            (_) in print("library pressed")
+            self?.showImagePicker(selectedSource: .photoLibrary)
+        }
+        
+        let cancelBtn = UIAlertAction(title: "Cancel", style: .cancel){
+            (_) in print("cancel pressed")
+        }
+        
+        ac.addAction(cameraBtn)
+        ac.addAction(libraryBtn)
+        ac.addAction(cancelBtn)
+        self.present(ac, animated: true)
+    }
+    func showImagePicker(selectedSource: UIImagePickerController.SourceType){
+        guard UIImagePickerController.isSourceTypeAvailable(selectedSource) else {
+            print("Selected source not there")
+            return
+        }
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = selectedSource
+        imagePickerController.allowsEditing = false
+        self.present(imagePickerController, animated: true)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[.originalImage] as? UIImage{
+            editImage.image = selectedImage
+           // let userN = UserDefaults.standard.string(forKey: "username")
+           // UserDefaults.standard.set(selectedImage, forKey: "UserImage")
+            if let pngRepresentation = selectedImage.pngData() {
+                        UserDefaults.standard.set(pngRepresentation, forKey: "UserImage")
+                }
+        } else {
+            print("image not found")
+        }
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
 }

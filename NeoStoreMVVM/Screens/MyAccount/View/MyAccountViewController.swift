@@ -39,7 +39,19 @@ class MyAccountViewController: UIViewController {
         emailId.setContent("", "email_icon")
         phoneNumber.setContent("", "email_icon")
         dateOfBirth.setContent("", "dob_icon")
-        profilePic.maskCircle(anyImage: (UIImage(named: "user_male")!))
+        //let userN = UserDefaults.standard.string(forKey: "username")
+//        if let img = UserDefaults.standard.(forKey: "UserImage") {
+//            profilePic.maskCircle(anyImage: UIImage(named: img)!)
+//        } else {
+//            profilePic.maskCircle(anyImage: UIImage(named: "user_male")!)
+//        }
+        if let imageData = UserDefaults.standard.object(forKey: "UserImage") as? Data,
+                    let image = UIImage(data: imageData) {
+                    //profilePic.image = image
+            profilePic.maskCircle(anyImage: image)
+        } else {
+            profilePic.maskCircle(anyImage: UIImage(named: "user_male")!)
+        }
         editProfile.changeView()
         
         let req = ProdRequest(product_category_id: 1, limit: 10, page: 1)

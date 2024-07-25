@@ -27,6 +27,12 @@ class LoginViewController: UIViewController {
         navigationItem.backButtonTitle = ""
         self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         
+        let toolbar = UIToolbar()
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneClicked))
+        toolbar.setItems([doneBtn], animated: true)
+        
+    
+    
         self.activityIndicator.startAnimating()
         let userN = UserDefaults.standard.string(forKey: "username")
         let userP = UserDefaults.standard.string(forKey: "password")
@@ -37,6 +43,11 @@ class LoginViewController: UIViewController {
         }
         
         configuration()
+        usernameField.inputAccessoryView = toolbar
+        passField.inputAccessoryView = toolbar
+    }
+    @objc func doneClicked(){
+        view.endEditing(true)
     }
     override func viewWillAppear(_ animated: Bool) {
         
@@ -45,6 +56,7 @@ class LoginViewController: UIViewController {
     func configuration(){
         usernameField.setContent("Username", "username_icon")
         passField.setContent("Password", "password_icon")
+    
         loginBtn.changeView()
     }
     
