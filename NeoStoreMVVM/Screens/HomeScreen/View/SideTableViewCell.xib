@@ -9,21 +9,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SideTableViewCell" customModule="NeoStoreMVVM" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="64" id="KGk-i7-Jjw" customClass="SideTableViewCell" customModule="NeoStoreMVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="64"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                <rect key="frame" x="0.0" y="0.0" width="340" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zQP-I1-oPH">
-                        <rect key="frame" x="20" y="5" width="28" height="30"/>
+                        <rect key="frame" x="20" y="5" width="28" height="49"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="28" id="PEc-LS-UE8"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyu-Cy-FsU">
-                        <rect key="frame" x="68" y="4" width="39.666666666666657" height="16"/>
+                        <rect key="frame" x="68" y="18" width="39.666666666666657" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="GGJ-zQ-4FR"/>
                         </constraints>
@@ -31,11 +31,12 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jD5-ot-onF">
-                        <rect key="frame" x="240" y="20" width="50" height="5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE3-wq-QOa">
+                        <rect key="frame" x="270" y="-1" width="50" height="50"/>
                         <color key="backgroundColor" red="1" green="0.01629760165" blue="0.060681154280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="JTb-sJ-0Xt"/>
+                            <constraint firstAttribute="width" constant="50" id="f7J-6M-rkO"/>
+                            <constraint firstAttribute="height" constant="50" id="nUl-uW-Or6"/>
                         </constraints>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
@@ -44,23 +45,22 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="EE3-wq-QOa" secondAttribute="trailing" constant="20" id="9U0-6a-vNy"/>
                     <constraint firstAttribute="bottom" secondItem="zQP-I1-oPH" secondAttribute="bottom" constant="10" id="Axd-Lt-fb9"/>
-                    <constraint firstAttribute="trailing" secondItem="jD5-ot-onF" secondAttribute="trailing" constant="30" id="B89-JX-9xj"/>
                     <constraint firstItem="Jyu-Cy-FsU" firstAttribute="leading" secondItem="zQP-I1-oPH" secondAttribute="trailing" constant="20" id="PsJ-ln-cr3"/>
-                    <constraint firstAttribute="bottom" secondItem="Jyu-Cy-FsU" secondAttribute="bottom" constant="25" id="bD0-Ci-e3I"/>
-                    <constraint firstItem="jD5-ot-onF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="g6b-xa-QP9"/>
+                    <constraint firstAttribute="bottom" secondItem="Jyu-Cy-FsU" secondAttribute="bottom" constant="30" id="bD0-Ci-e3I"/>
                     <constraint firstItem="zQP-I1-oPH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ixc-zY-fCb"/>
                     <constraint firstItem="zQP-I1-oPH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="qc2-94-BDl"/>
-                    <constraint firstAttribute="bottom" secondItem="jD5-ot-onF" secondAttribute="bottom" constant="20" id="zAR-Yp-fx3"/>
+                    <constraint firstAttribute="bottom" secondItem="EE3-wq-QOa" secondAttribute="bottom" constant="15" id="z6Q-Qo-VaD"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="sideCartBtn" destination="jD5-ot-onF" id="9fa-mk-GNW"/>
+                <outlet property="sideCartBtn" destination="EE3-wq-QOa" id="Rl8-d5-0Mn"/>
                 <outlet property="sideImg" destination="zQP-I1-oPH" id="LbZ-j0-apd"/>
                 <outlet property="sideLbl" destination="Jyu-Cy-FsU" id="isw-s2-NHJ"/>
             </connections>
-            <point key="canvasLocation" x="-38.167938931297705" y="19.366197183098592"/>
+            <point key="canvasLocation" x="-22.900763358778626" y="26.056338028169016"/>
         </tableViewCell>
     </objects>
 </document>

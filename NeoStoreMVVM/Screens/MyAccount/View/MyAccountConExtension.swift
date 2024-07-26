@@ -95,8 +95,14 @@ extension MyAccountViewController: UIImagePickerControllerDelegate,UINavigationC
         guard let email = self.emailId.text else {return}
         guard let phone = self.phoneNumber.text else {return}
         guard let dob = self.dateOfBirth.text else {return}
-        let req = EditRequest(first_name: fname, last_name: lname, email: email, dob: dob, profile_pic: "",  phone_no: phone)
-        self.editProfileVM.editRequest(logs: req)
+        if self.fName != fname || self.lName != lname || self.eId != email || self.pNum != phone || self.dob != dob {
+            let req = EditRequest(first_name: fname, last_name: lname, email: email, dob: dob, profile_pic: "",  phone_no: phone)
+            UserDefaults.standard.set(email, forKey: "username")
+            let fullname = fname + " " + lname
+            UserDefaults.standard.set(fullname, forKey: "fullname")
+            self.editProfileVM.editRequest(logs: req)
+        }
+        
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let HomeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
         self.navigationController?.pushViewController(HomeVC, animated: true)

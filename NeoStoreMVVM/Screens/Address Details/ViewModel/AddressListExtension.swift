@@ -16,7 +16,7 @@ extension AddressListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddressListCell") as! AddressListCell
       
-        cell.addressHead.text = UserDefaults.standard.string(forKey: "Name")
+        cell.addressHead.text = UserDefaults.standard.string(forKey: "fullname")
         cell.addressDesc.text = arr[indexPath.row] as? String
         cell.btnImage.image = UIImage(systemName: "circle")
         cell.selectionStyle = .none

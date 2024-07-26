@@ -22,7 +22,8 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
             let total = UserDefaults.standard.integer(forKey: "CartTotal")
             if total != 0 {
                 cell.sideCartBtn.isHidden = false
-                cell.sideCartBtn.layer.cornerRadius = 20
+                cell.sideCartBtn.layer.cornerRadius = 0.5 * cell.sideCartBtn.bounds.size.width
+                cell.sideCartBtn.clipsToBounds = true
                 print("Count of cart: ",cnt)
                 cell.sideCartBtn.setTitle(String(cnt), for: .normal)
             } else {

@@ -29,6 +29,11 @@ class MyAccountViewController: UIViewController {
     var editProfileVM = EditProfileVM()
     var btnValue = false
     let sb = UIStoryboard(name: "Main", bundle: nil)
+    var fName: String!
+    var lName: String!
+    var eId: String!
+    var pNum: String!
+    var dob: String!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +45,11 @@ class MyAccountViewController: UIViewController {
         emailId.setContent("", "email_icon")
         phoneNumber.setContent("", "email_icon")
         dateOfBirth.setContent("", "dob_icon")
+        fName = firstName.text
+        lName = lastName.text
+        eId = emailId.text
+        pNum = phoneNumber.text
+        dob = dateOfBirth.text
         let userN = UserDefaults.standard.string(forKey: "username")
         if let imageData = UserDefaults.standard.object(forKey: "UserImage of \(String(describing: userN))") as? Data,
                     let image = UIImage(data: imageData) {

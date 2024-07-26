@@ -35,6 +35,8 @@ class SideViewController: UIViewController {
         sideTableView.delegate = self
         sideTableView.dataSource = self
         let userN = UserDefaults.standard.string(forKey: "username")
+        self.userName.text = UserDefaults.standard.string(forKey: "fullname")
+        self.userEmail.text = UserDefaults.standard.string(forKey: "username")
         if let imageData = UserDefaults.standard.object(forKey: "UserImage of \(String(describing: userN))") as? Data,
                     let image = UIImage(data: imageData) {
                     //profilePic.image = image
@@ -75,10 +77,13 @@ class SideViewController: UIViewController {
                 //print(self.userDetailsViewModel.details)
 //                self.sideTableView.reloadData()
                 DispatchQueue.main.async {
-                    guard let userN = self.userDetailsViewModel.details?.user_data?.last_name else {return}
-                    guard let userF = self.userDetailsViewModel.details?.user_data?.first_name else {return}
-                    self.userName.text = userF + " " + userN
-                    self.userEmail.text = self.userDetailsViewModel.details?.user_data?.email
+//                    guard let userN = self.userDetailsViewModel.details?.user_data?.last_name else {return}
+//                    guard let userF = self.userDetailsViewModel.details?.user_data?.first_name else {return}
+//                    
+//                    let fullname = userF + " " + userN
+//                    UserDefaults.standard.set(fullname, forKey: "fullname")
+                    self.userName.text = UserDefaults.standard.string(forKey: "fullname")
+                    self.userEmail.text = UserDefaults.standard.string(forKey: "username")
                     self.sideTableView.reloadData()
                 }
             case .error(let error):

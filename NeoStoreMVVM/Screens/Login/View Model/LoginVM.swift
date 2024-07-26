@@ -25,6 +25,15 @@ final class LoginViewModel {
                     
                 }
 
+                if let fname = Optional((jsonData as LoginResponse).data?.first_name) {
+                    print(fname ?? "")
+                    
+                    if let lname = Optional((jsonData as LoginResponse).data?.last_name){
+                        let fullname = (fname ?? "") + " " + (lname ?? "")
+                        UserDefaults.standard.set(fullname, forKey: "fullname")
+                    }
+                    
+                }
                 self.eventHandler?(.dataLoaded)
             case .failure(let error):
                 //self.showAlert(message: "Invalid Credentials")
