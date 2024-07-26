@@ -26,7 +26,8 @@ class MyAccountViewController: UIViewController {
     @IBOutlet weak var resetPass: UIButton!
     
     var userDetailsViewModel = UserDetailsViewModel()
-    
+    var editProfileVM = EditProfileVM()
+    var btnValue = false
     let sb = UIStoryboard(name: "Main", bundle: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +57,29 @@ class MyAccountViewController: UIViewController {
     }
 
     @IBAction func editProfileClick(_ sender: Any) {
-        
-        let editProfileVC = sb.instantiateViewController(withIdentifier: "editAccount")
-        self.navigationController?.pushViewController(editProfileVC, animated: true)
+        if btnValue == false {
+            self.firstName.isUserInteractionEnabled = true
+            self.lastName.isUserInteractionEnabled = true
+            self.emailId.isUserInteractionEnabled = true
+            self.dateOfBirth.isUserInteractionEnabled = true
+            self.phoneNumber.isUserInteractionEnabled = true
+            self.editProfile.setTitle("SUBMIT", for: .normal)
+            addBtn(btnValue: btnValue)
+            btnValue = true
+        } else {
+            clickedSubmit()
+            self.firstName.isUserInteractionEnabled = false
+            self.lastName.isUserInteractionEnabled = false
+            self.emailId.isUserInteractionEnabled = false
+            self.dateOfBirth.isUserInteractionEnabled = false
+            self.phoneNumber.isUserInteractionEnabled = false
+            self.editProfile.setTitle("EDIT PROFILE", for: .normal)
+            addBtn(btnValue: btnValue)
+            btnValue = false
+            
+        }
+//        let editProfileVC = sb.instantiateViewController(withIdentifier: "editAccount")
+//        self.navigationController?.pushViewController(editProfileVC, animated: true)
     }
     
     @IBAction func resetPass(_ sender: Any) {
@@ -72,6 +93,10 @@ class MyAccountViewController: UIViewController {
     }
     @objc func searchClicked(){
         
+    }
+    
+    @objc func editImgBtn(){
+        print("edit image clicked")
     }
     
     func initViewModel(req: ProdRequest){

@@ -75,8 +75,9 @@ class SideViewController: UIViewController {
                 //print(self.userDetailsViewModel.details)
 //                self.sideTableView.reloadData()
                 DispatchQueue.main.async {
-                    guard let userN = self.userDetailsViewModel.details?.user_data?.username else {return}
-                    self.userName.text = userN
+                    guard let userN = self.userDetailsViewModel.details?.user_data?.last_name else {return}
+                    guard let userF = self.userDetailsViewModel.details?.user_data?.first_name else {return}
+                    self.userName.text = userF + " " + userN
                     self.userEmail.text = self.userDetailsViewModel.details?.user_data?.email
                     self.sideTableView.reloadData()
                 }
