@@ -128,8 +128,6 @@ class EditAccountController: UIViewController, UIImagePickerControllerDelegate,U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage{
             editImage.image = selectedImage
-           // let userN = UserDefaults.standard.string(forKey: "username")
-           // UserDefaults.standard.set(selectedImage, forKey: "UserImage")
             if let pngRepresentation = selectedImage.pngData() {
                         UserDefaults.standard.set(pngRepresentation, forKey: "UserImage")
                 }
