@@ -39,7 +39,8 @@ class MyAccountViewController: UIViewController {
         emailId.setContent("", "email_icon")
         phoneNumber.setContent("", "email_icon")
         dateOfBirth.setContent("", "dob_icon")
-        if let imageData = UserDefaults.standard.object(forKey: "UserImage") as? Data,
+        let userN = UserDefaults.standard.string(forKey: "username")
+        if let imageData = UserDefaults.standard.object(forKey: "UserImage of \(String(describing: userN))") as? Data,
                     let image = UIImage(data: imageData) {
                     //profilePic.image = image
             profilePic.maskCircle(anyImage: image)

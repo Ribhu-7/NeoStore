@@ -34,7 +34,8 @@ class SideViewController: UIViewController {
         // Do any additional setup after loading the view.
         sideTableView.delegate = self
         sideTableView.dataSource = self
-        if let imageData = UserDefaults.standard.object(forKey: "UserImage") as? Data,
+        let userN = UserDefaults.standard.string(forKey: "username")
+        if let imageData = UserDefaults.standard.object(forKey: "UserImage of \(String(describing: userN))") as? Data,
                     let image = UIImage(data: imageData) {
                     //profilePic.image = image
             sideImageView.maskCircle(anyImage: image)

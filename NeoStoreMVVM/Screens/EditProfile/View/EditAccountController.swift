@@ -80,7 +80,10 @@ class EditAccountController: UIViewController, UIImagePickerControllerDelegate,U
         guard let dob = editDob.text else {return}
         let req = EditRequest(first_name: fname, last_name: lname, email: email, dob: dob, profile_pic: "",  phone_no: phone)
         self.editRequest(logs: req)
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let HomeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
+        self.navigationController?.pushViewController(HomeVC, animated: true)
         
     }
     
@@ -128,8 +131,9 @@ class EditAccountController: UIViewController, UIImagePickerControllerDelegate,U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage{
             editImage.image = selectedImage
+            let userN = UserDefaults.standard.string(forKey: "username")
             if let pngRepresentation = selectedImage.pngData() {
-                        UserDefaults.standard.set(pngRepresentation, forKey: "UserImage")
+                UserDefaults.standard.set(pngRepresentation, forKey: "UserImage of \(String(describing: userN))")
                 }
         } else {
             print("image not found")
