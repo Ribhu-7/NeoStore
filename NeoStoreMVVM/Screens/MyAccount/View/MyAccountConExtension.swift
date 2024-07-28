@@ -21,19 +21,19 @@ extension MyAccountViewController: UIImagePickerControllerDelegate,UINavigationC
         if btnValue == false {
             self.profilePic.addSubview(button)
             NSLayoutConstraint.activate([
-             button.trailingAnchor.constraint(equalTo: self.profilePic.trailingAnchor,constant: -10),
-             button.bottomAnchor.constraint(equalTo: self.profilePic.bottomAnchor),
+                button.trailingAnchor.constraint(equalTo: self.profilePic.trailingAnchor,constant: -10),
+                button.bottomAnchor.constraint(equalTo: self.profilePic.bottomAnchor),
                 button.widthAnchor.constraint(equalToConstant: 50),
                 button.heightAnchor.constraint(equalToConstant: 50)
             ])
             
-        button.addTarget(self, action: #selector(editImageBtn), for: .touchUpInside)
+            button.addTarget(self, action: #selector(editImageBtn), for: .touchUpInside)
         } else if btnValue == true {
             button.isHidden = true
         }
-           
-           // Set constraints for the UIButton
-          
+        
+        // Set constraints for the UIButton
+        
     }
     @objc func editImageBtn(){
         print("btn clicked img")
@@ -75,38 +75,46 @@ extension MyAccountViewController: UIImagePickerControllerDelegate,UINavigationC
         if let selectedImage = info[.originalImage] as? UIImage{
             self.profilePic.image = selectedImage
             let userN = UserDefaults.standard.string(forKey: "username")
-            if let pngRepresentation = selectedImage.pngData() {
-                UserDefaults.standard.set(pngRepresentation, forKey: "UserImage of \(String(describing: userN))")
-                }
-        } else {
-            print("image not found")
+            //            if let pngRepresentation = selectedImage.pngData() {
+            //                UserDefaults.standard.set(pngRepresentation, forKey: "UserImage of \(String(describing: userN))")
+            //                }
+            //        } else {
+            //            print("image not found")
+            //        }
+            picker.dismiss(animated: true)
         }
-        picker.dismiss(animated: true)
     }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true)
-    }
-    
-    
-    func clickedSubmit(){
-        guard let fname = self.firstName.text else {return}
-        guard let lname = self.lastName.text else {return}
-        guard let email = self.emailId.text else {return}
-        guard let phone = self.phoneNumber.text else {return}
-        guard let dob = self.dateOfBirth.text else {return}
-        if self.fName != fname || self.lName != lname || self.eId != email || self.pNum != phone || self.dob != dob {
-            let req = EditRequest(first_name: fname, last_name: lname, email: email, dob: dob, profile_pic: "",  phone_no: phone)
-            UserDefaults.standard.set(email, forKey: "username")
-            let fullname = fname + " " + lname
-            UserDefaults.standard.set(fullname, forKey: "fullname")
-            self.editProfileVM.editRequest(logs: req)
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            picker.dismiss(animated: true)
         }
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let HomeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
-        self.navigationController?.pushViewController(HomeVC, animated: true)
+        
+        func clickedSubmit(){
+            guard let fname = self.firstName.text else {return}
+            guard let lname = self.lastName.text else {return}
+            guard let email = self.emailId.text else {return}
+            guard let phone = self.phoneNumber.text else {return}
+            guard let dob = self.dateOfBirth.text else {return}
+            if self.fName != fname || self.lName != lname || self.eId != email || self.pNum != phone || self.dob != dob {
+                let req = EditRequest(first_name: fname, last_name: lname, email: email, dob: dob, profile_pic: "",  phone_no: phone)
+                UserDefaults.standard.set(email, forKey: "username")
+                let fullname = fname + " " + lname
+                UserDefaults.standard.set(fullname, forKey: "fullname")
+                self.editProfileVM.editRequest(logs: req)
+            }
+            let userN = UserDefaults.standard.string(forKey: "username")
+            if let pngRepresentation = self.profilePic.image?.pngData() {
+                UserDefaults.standard.set(pngRepresentation, forKey: "UserImage of \(String(describing: userN))")
+            }
+            else {
+                print("image not found")
+            }
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let HomeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
+            self.navigationController?.pushViewController(HomeVC, animated: true)
+        }
+        
+        
     }
-    
-    
-}
+
