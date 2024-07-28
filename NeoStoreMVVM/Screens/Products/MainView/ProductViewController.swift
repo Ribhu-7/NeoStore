@@ -52,8 +52,8 @@ class ProductViewController: UIViewController {
         prodTblView.dataSource = self
         let nib = UINib(nibName: "ProductTableViewCell", bundle: nil)
         prodTblView.register(nib, forCellReuseIdentifier: "ProductTableViewCell")
-        filteredData = prodViewModel.products
-        print("Filtered Data::::",filteredData)
+//        filteredData = prodViewModel.products
+//        print("Filtered Data::::",filteredData)
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationItem.backButtonTitle = ""
