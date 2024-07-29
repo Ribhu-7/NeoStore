@@ -113,6 +113,7 @@ extension MyAccountViewController: UIImagePickerControllerDelegate,UINavigationC
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let HomeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
             self.navigationController?.pushViewController(HomeVC, animated: true)
+     //       self.sideViewDelegate?.accountUpdate()
         }
         
         

@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class MyAccountViewController: UIViewController {
 
     @IBOutlet weak var profilePic: UIImageView!
@@ -27,6 +28,7 @@ class MyAccountViewController: UIViewController {
     
     var userDetailsViewModel = UserDetailsViewModel()
     var editProfileVM = EditProfileVM()
+    var sideViewDelegate: SideViewDelegate?
     var btnValue = false
     let sb = UIStoryboard(name: "Main", bundle: nil)
     var fName: String!

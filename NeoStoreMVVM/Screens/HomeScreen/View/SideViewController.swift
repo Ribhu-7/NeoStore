@@ -10,6 +10,9 @@ import UIKit
 protocol SideViewControllerDelegate {
     func hideSideMenu()
 }
+protocol SideViewDelegate{
+    func accountUpdate()
+}
 
 class SideViewController: UIViewController {
     
@@ -92,4 +95,17 @@ class SideViewController: UIViewController {
         }
     }
 
+}
+
+extension SideViewController: SideViewDelegate{
+    func accountUpdate() {
+        let userN = UserDefaults.standard.string(forKey: "username")
+        self.userName.text = UserDefaults.standard.string(forKey: "fullname")
+        self.userEmail.text = UserDefaults.standard.string(forKey: "username")
+        if let imageData = UserDefaults.standard.object(forKey: "UserImage of \(String(describing: userN))") as? Data,
+                    let image = UIImage(data: imageData) {
+                    //profilePic.image = image
+            sideImageView.maskCircle(anyImage: image)
+        }
+    }
 }

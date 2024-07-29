@@ -34,6 +34,17 @@ class StoreViewController: UIViewController {
         
         let nib = UINib(nibName: "StoreTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "StoreTableViewCell")
+        
+        LocationManager.shared.getUserLocation{ [weak self]
+            location in
+            DispatchQueue.main.async {
+                guard let strongSelf = self else {return}
+                let pin = MKPointAnnotation()
+                pin.coordinate = location.coordinate
+                strongSelf.mapView.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)), animated: true)
+                strongSelf.mapView.addAnnotation(pin)
+            }
+        }
     }
     
 
