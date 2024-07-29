@@ -10,7 +10,8 @@ import UIKit
 
 extension HomeViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let productVC = sb.instantiateViewController(withIdentifier: "productVC") as! ProductViewController
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let productVC = appDelegate.storyboard.instantiateViewController(withIdentifier: "productVC") as! ProductViewController
         if let touch = touches.first {
             if tableProdView == touch.view {
 //                let tableVC = sb.instantiateViewController(withIdentifier: "tableVC")

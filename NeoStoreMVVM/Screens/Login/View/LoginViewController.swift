@@ -8,7 +8,7 @@
 import UIKit
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate{
     
    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loadingView: UIView!
@@ -27,10 +27,6 @@ class LoginViewController: UIViewController {
         navigationItem.backButtonTitle = ""
         self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         
-        let toolbar = UIToolbar()
-        let doneBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneClicked))
-        toolbar.setItems([doneBtn], animated: true)
-        
     
     
         self.activityIndicator.startAnimating()
@@ -41,18 +37,28 @@ class LoginViewController: UIViewController {
         } else {
             self.loadingView.isHidden = true
         }
-        
+        usernameField.delegate = self
+        passField.delegate = self
         configuration()
-        usernameField.inputAccessoryView = toolbar
-        passField.inputAccessoryView = toolbar
-    }
-    @objc func doneClicked(){
-        view.endEditing(true)
     }
     override func viewWillAppear(_ animated: Bool) {
-        
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
         self.navigationItem.hidesBackButton = true
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+            case usernameField:
+                passField.becomeFirstResponder()
+            default:
+                textField.resignFirstResponder()
+            }
+            return false
+    }
+    
     func configuration(){
         usernameField.setContent("Username", "username_icon")
         passField.setContent("Password", "password_icon")
@@ -61,7 +67,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginClick(_ sender: Any) {
-        
+        self.loadingView.isHidden = false
+        self.loadingView.alpha = 0.5
+        self.activityIndicator.startAnimating()
         guard let emailId = usernameField.text else {return}
         guard let password = passField.text else {return}
         if (emailId.isValidEmail && password.isValidPassword){
@@ -72,11 +80,14 @@ class LoginViewController: UIViewController {
         } else {
             self.showAlert(message: "Invalid details")
         }
+       
     }
     
     func initViewModel(req: LoginModel){
         loginViewModel.getRequest(logs: req)
     }
+    
+    
     
     func observeEvent(){
         loginViewModel.eventHandler = { [weak self] event in

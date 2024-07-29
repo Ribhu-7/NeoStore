@@ -34,10 +34,6 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
             }
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        self.sideUIView.alpha = 0
-        self.rightsideView.isHidden = true
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,10 +53,17 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
         self.rightsideView.isHidden = true
     
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+        self.sideUIView.alpha = 0
+        self.rightsideView.isHidden = true
+    }
     override func viewWillDisappear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
         self.navigationItem.backButtonTitle = ""
     }
+        
+    
     
     func hideSideMenu() {
         UIView.animate(withDuration: 0.2 , delay: 0.2 , options: .transitionFlipFromRight) {

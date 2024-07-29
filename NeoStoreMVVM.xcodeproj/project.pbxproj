@@ -234,16 +234,8 @@
 			children = (
 				180B1C8C2C366F1400607EB9 /* ViewModel */,
 				180B1C8B2C366F0E00607EB9 /* View */,
-				180B1C8A2C366F0800607EB9 /* Model */,
 			);
 			path = HomeScreen;
-			sourceTree = "<group>";
-		};
-		180B1C8A2C366F0800607EB9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		180B1C8B2C366F0E00607EB9 /* View */ = {
@@ -272,18 +264,9 @@
 		180E410E2C465157002992DA /* ProductQuantity */ = {
 			isa = PBXGroup;
 			children = (
-				180E41112C46517A002992DA /* ViewModel */,
 				180E41102C465172002992DA /* View */,
-				180E410F2C46516C002992DA /* Model */,
 			);
 			path = ProductQuantity;
-			sourceTree = "<group>";
-		};
-		180E410F2C46516C002992DA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		180E41102C465172002992DA /* View */ = {
@@ -292,13 +275,6 @@
 				180E41142C4651C9002992DA /* ProductQuantityController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		180E41112C46517A002992DA /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		180E41162C468A51002992DA /* Address Details */ = {
@@ -341,7 +317,6 @@
 		180E411C2C468D2A002992DA /* Store Locator */ = {
 			isa = PBXGroup;
 			children = (
-				180E411E2C468D61002992DA /* View Model */,
 				180E411D2C468D3D002992DA /* View */,
 			);
 			path = "Store Locator";
@@ -358,13 +333,6 @@
 				18841BD72C577A2900A90742 /* LocationManager.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		180E411E2C468D61002992DA /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Model";
 			sourceTree = "<group>";
 		};
 		1812E2CB2C47780200D05C0F /* AddAdress */ = {

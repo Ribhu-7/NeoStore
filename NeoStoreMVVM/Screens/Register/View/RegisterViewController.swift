@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var firstName: UITextField!
@@ -34,9 +34,21 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Register"
+        firstName.delegate = self
+        lastName.delegate = self
+        emailTxt.delegate = self
+        passwordField.delegate = self
+        confirmField.delegate = self
+        phoneNumber.delegate = self
         configuration()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
+        self.navigationItem.hidesBackButton = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
+    }
     
     func configuration(){
         
@@ -55,6 +67,25 @@ class RegisterViewController: UIViewController {
         checkBtn.setImage(UIImage.init(named: "checked_icon"), for: .selected)
         registerBtn.layer.cornerRadius = 20
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+            case firstName:
+                lastName.becomeFirstResponder()
+            case lastName:
+                emailTxt.becomeFirstResponder()
+            case emailTxt:
+                passwordField.becomeFirstResponder()
+            case passwordField:
+                confirmField.becomeFirstResponder()
+            case confirmField:
+            phoneNumber.becomeFirstResponder()
+            default:
+                textField.resignFirstResponder()
+            }
+            return false
+    
     }
     
     @IBAction func btnSelect(_ sender: UIButton) {
