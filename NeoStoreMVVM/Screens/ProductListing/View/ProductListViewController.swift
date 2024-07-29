@@ -76,6 +76,13 @@ class ProductListViewController: UIViewController{
         observeEvent()
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+            return .portrait
+        }
+
+        override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+            return .portrait
+        }
     func initViewModel(req: ProductListRequest){
         proddetailViewModel.fetchProducts(dataTab: req)
     }
