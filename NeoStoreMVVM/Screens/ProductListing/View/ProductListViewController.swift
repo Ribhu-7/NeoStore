@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LinkPresentation
 
 
 class ProductListViewController: UIViewController{
@@ -155,6 +156,24 @@ class ProductListViewController: UIViewController{
     @IBAction func shareBtn(_ sender: Any) {
         print("Share Item")
         
+        guard let content = self.prodHeading.text else {return}
+//       guard let url = URL(string: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/9dc6234da018916e545011fa1.jpeg") else {
+//                    print("Invalid URL")
+//                   return
+//               }
+      //let array:[Any] = [content]
+       let activityViewController = UIActivityViewController(activityItems: [content], applicationActivities: nil)
+        
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func activityViewControllerLinkMetadata(_ activityViewController: UIActivityViewController) -> LPLinkMetadata? {
+        let shareImage =  prodImageView.image
+        let imageProvider = NSItemProvider(object: shareImage ?? UIImage())
+        let metadata = LPLinkMetadata()
+        metadata.imageProvider = imageProvider
+        metadata.title = "Title"
+        return metadata
     }
     
 }
