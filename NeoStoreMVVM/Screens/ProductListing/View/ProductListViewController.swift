@@ -9,8 +9,9 @@ import UIKit
 import LinkPresentation
 
 
-class ProductListViewController: UIViewController{
 
+class ProductListViewController: UIViewController{
+    
     @IBOutlet weak var prodHeading: UILabel!
     @IBOutlet weak var buyNowOutlet: UIButton!
     @IBOutlet weak var rateUsOutlet: UIButton!
@@ -83,7 +84,7 @@ class ProductListViewController: UIViewController{
     override func viewWillDisappear(_ animated: Bool) {
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.all)
     }
-
+    
     func initViewModel(req: ProductListRequest){
         proddetailViewModel.fetchProducts(dataTab: req)
     }
@@ -117,7 +118,7 @@ class ProductListViewController: UIViewController{
             }
         }
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationItem.backButtonTitle = ""
     }
@@ -155,25 +156,10 @@ class ProductListViewController: UIViewController{
     
     @IBAction func shareBtn(_ sender: Any) {
         print("Share Item")
-        
         guard let content = self.prodHeading.text else {return}
-//       guard let url = URL(string: "http://staging.php-dev.in:8844/trainingapp/uploads/prod_img/thumb/medium/9dc6234da018916e545011fa1.jpeg") else {
-//                    print("Invalid URL")
-//                   return
-//               }
-      //let array:[Any] = [content]
-       let activityViewController = UIActivityViewController(activityItems: [content], applicationActivities: nil)
-        
-        present(activityViewController, animated: true, completion: nil)
-    }
-    
-    func activityViewControllerLinkMetadata(_ activityViewController: UIActivityViewController) -> LPLinkMetadata? {
-        let shareImage =  prodImageView.image
-        let imageProvider = NSItemProvider(object: shareImage ?? UIImage())
-        let metadata = LPLinkMetadata()
-        metadata.imageProvider = imageProvider
-        metadata.title = "Title"
-        return metadata
+        guard let stickerImage = self.prodImageView.image else { return }
+        let ac = UIActivityViewController(activityItems: [ItemDetailSource(name: content, image: stickerImage)], applicationActivities: nil)
+        self.present(ac, animated: true)
     }
     
 }
