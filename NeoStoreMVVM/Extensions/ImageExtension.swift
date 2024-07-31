@@ -16,8 +16,5 @@ extension UIImageView {
     self.clipsToBounds = true
     self.image = anyImage
   }
-    func addButton(){
-       
-        
-    }
+   
 }

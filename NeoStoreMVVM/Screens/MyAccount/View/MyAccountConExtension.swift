@@ -74,7 +74,7 @@ extension MyAccountViewController: UIImagePickerControllerDelegate,UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage{
             self.profilePic.image = selectedImage
-            let userN = UserDefaults.standard.string(forKey: "username")
+           // let userN = UserDefaults.standard.string(forKey: "username")
             //            if let pngRepresentation = selectedImage.pngData() {
             //                UserDefaults.standard.set(pngRepresentation, forKey: "UserImage of \(String(describing: userN))")
             //                }

@@ -13,9 +13,5 @@ extension UIButton {
 //        self.layer.borderWidth
         self.layer.cornerRadius = 20
     }
-    
-    func setText(name: String){
-        
-    }
 
 }
