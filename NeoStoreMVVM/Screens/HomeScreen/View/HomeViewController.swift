@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
     @IBOutlet var parentView: UIView!
     @IBOutlet weak var myPageControl: UIPageControl!
     
+    @IBOutlet weak var leadingConstraintSideView: NSLayoutConstraint!
+    
     let sb = UIStoryboard(name: "Main", bundle: nil)
     
     var sliderImages = ["slider_img1", "slider_img2","slider_img3","slider_img4"]
@@ -68,6 +70,8 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
     func hideSideMenu() {
         UIView.animate(withDuration: 0.2 , delay: 0.2 , options: .transitionFlipFromRight) {
             self.sideUIView.alpha = 0
+            self.leadingConstraintSideView.constant = -280
+            self.view.layoutIfNeeded()
             self.rightsideView.isHidden = true
         }
     }
@@ -77,6 +81,8 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
             UIView.animate(withDuration: 0.4, delay: 0.2 , options: .transitionFlipFromLeft) {
                 self.rightsideView.isHidden = false
                 self.sideUIView.alpha = 1
+                self.leadingConstraintSideView.constant = 0
+                self.view.layoutIfNeeded()
                 self.sideUIView.layer.zPosition = 1
                 DispatchQueue.main.async {
                     self.sideViewController?.sideTableView.reloadData()

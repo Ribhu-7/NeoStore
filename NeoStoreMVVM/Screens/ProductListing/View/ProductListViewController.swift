@@ -47,6 +47,7 @@ class ProductListViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.alpha = 1
+        self.loadingView.isHidden = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "homekit"), style: .plain, target: self, action: #selector(searchClicked))
         // Do any additional setup after loading the view.
         //prodHeading.text = prodHead

@@ -807,7 +807,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6U0-xX-5xs">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="852"/>
+                                <rect key="frame" x="-280" y="0.0" width="280" height="852"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKP-aW-hmK">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="818"/>
@@ -826,7 +826,7 @@
                                 </constraints>
                             </view>
                             <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOR-Lh-1EB">
-                                <rect key="frame" x="280" y="0.0" width="113" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RjL-dL-fnG">
@@ -846,7 +846,7 @@
                             <constraint firstItem="TeF-8S-dgU" firstAttribute="bottom" secondItem="WSE-i0-1aN" secondAttribute="bottom" id="HVT-ht-Mb8"/>
                             <constraint firstItem="WSE-i0-1aN" firstAttribute="bottom" secondItem="bKP-aW-hmK" secondAttribute="bottom" id="J4y-Ac-JqE"/>
                             <constraint firstAttribute="trailing" secondItem="RjL-dL-fnG" secondAttribute="trailing" id="KG5-cP-gYe"/>
-                            <constraint firstItem="6U0-xX-5xs" firstAttribute="leading" secondItem="WSE-i0-1aN" secondAttribute="leading" id="Opi-9A-AYb"/>
+                            <constraint firstItem="6U0-xX-5xs" firstAttribute="leading" secondItem="WSE-i0-1aN" secondAttribute="leading" constant="-280" id="Opi-9A-AYb"/>
                             <constraint firstItem="TeF-8S-dgU" firstAttribute="top" secondItem="oDv-le-gRc" secondAttribute="bottom" constant="10" id="Qlx-WB-91r"/>
                             <constraint firstItem="oDv-le-gRc" firstAttribute="trailing" secondItem="WSE-i0-1aN" secondAttribute="trailing" id="Vjv-sU-9Gi"/>
                             <constraint firstItem="oDv-le-gRc" firstAttribute="leading" secondItem="WSE-i0-1aN" secondAttribute="leading" id="YKe-QN-WT8"/>
@@ -872,6 +872,7 @@
                         <outlet property="chairProdView" destination="8Dl-gv-gey" id="ctu-Jw-0He"/>
                         <outlet property="collectionView" destination="5Y7-81-dfM" id="GXz-Tq-e6x"/>
                         <outlet property="cupboardView" destination="q4I-x4-gUS" id="3tz-eO-ieH"/>
+                        <outlet property="leadingConstraintSideView" destination="Opi-9A-AYb" id="Pbg-aL-bz4"/>
                         <outlet property="myPageControl" destination="5Yn-MF-WCG" id="asg-b1-nOs"/>
                         <outlet property="parentView" destination="Kpd-Nm-lue" id="LST-gH-Arz"/>
                         <outlet property="rightsideView" destination="jOR-Lh-1EB" id="wN0-mx-iBE"/>
@@ -1348,7 +1349,7 @@
                                     <constraint firstAttribute="bottom" secondItem="4Kz-Cv-LdQ" secondAttribute="bottom" constant="20" id="oXR-5E-nxx"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-to-AoC">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-to-AoC">
                                 <rect key="frame" x="0.0" y="100" width="393" height="752"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wbE-Sa-38V">
@@ -1397,7 +1398,7 @@
                         <outlet property="centerImageView" destination="GKt-sU-Nta" id="wam-df-jJ1"/>
                         <outlet property="hideImage" destination="rAj-2y-vTP" id="brV-rf-Z1u"/>
                         <outlet property="leftImageView" destination="fgJ-fi-EQD" id="D5W-OE-fZA"/>
-                        <outlet property="loadingView" destination="zUP-to-AoC" id="aPt-cv-S3I"/>
+                        <outlet property="loadingView" destination="zUP-to-AoC" id="sZG-SA-uPq"/>
                         <outlet property="prodCategory" destination="tAt-mM-Uvp" id="jaJ-CS-cWE"/>
                         <outlet property="prodDesc" destination="fPi-Hs-PWA" id="IdL-im-Edp"/>
                         <outlet property="prodHeading" destination="j2W-3T-fwI" id="JSe-Ut-3wV"/>
@@ -1422,7 +1423,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="jWk-OO-nOk">
-                                <rect key="frame" x="-12" y="-17" width="393" height="855"/>
+                                <rect key="frame" x="-15" y="-18" width="393" height="854"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6v4-R3-2AX">
@@ -1502,7 +1503,7 @@
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     </view>
                                     <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Euk-nA-6yf">
-                                        <rect key="frame" x="0.0" y="634" width="393" height="201"/>
+                                        <rect key="frame" x="0.0" y="634" width="393" height="202"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     </view>
                                 </subviews>
