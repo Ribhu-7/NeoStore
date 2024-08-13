@@ -32,11 +32,16 @@ final class LoginViewModel {
                         let fullname = (fname ?? "") + " " + (lname ?? "")
                         UserDefaults.standard.set(fullname, forKey: "fullname")
                     }
-                    
+                    if let email = Optional((jsonData as LoginResponse).data?.email) {
+                        print(email ?? "")
+                        UserDefaults.standard.set(email, forKey: "username")
+                        
+                    }
+                  
                 }
                 self.eventHandler?(.dataLoaded)
             case .failure(let error):
-                //self.showAlert(message: "Invalid Credentials")
+                LoginViewController().showAlert(message: "Invalid Credentials")
                 print("Error:")
                 self.eventHandler?(.error(error))
             }

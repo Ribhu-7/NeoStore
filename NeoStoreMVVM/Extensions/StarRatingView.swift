@@ -17,7 +17,8 @@ extension UIView {
         starStackView.spacing = 10
         var arrImageViews = [UIImageView]()
         for i in 1...5 {
-            let imageView = UIImageView()
+            //let imageView = UIImageView()
+            let imageView = UIImageView(image: UIImage(named: "star_unchek"), highlightedImage: UIImage(named: "star_check"))
             imageView.contentMode = .scaleAspectFit
             if i <= rating {
                 imageView.image = UIImage(named: "star_check")
@@ -35,7 +36,7 @@ extension UIView {
             }
             starImageView.isHighlighted = starImageView.tag <= rating
         }
-        //
+        
         starStackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(starStackView)
         starStackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

@@ -67,9 +67,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func loginClick(_ sender: Any) {
-        self.loadingView.isHidden = false
-        self.loadingView.alpha = 0.5
-        self.activityIndicator.startAnimating()
+//        self.loadingView.isHidden = false
+//        self.loadingView.alpha = 0.5
+//        self.activityIndicator.startAnimating()
         guard let emailId = usernameField.text else {return}
         guard let password = passField.text else {return}
         if (emailId.isValidEmail && password.isValidPassword){
@@ -79,6 +79,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             observeEvent()
         } else {
             self.showAlert(message: "Invalid details")
+            self.loadingView.isHidden = true
         }
        
     }
@@ -97,18 +98,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             case .loading:
                 print("Loading...")
             case .stopLoading:
+                self.loadingView.isHidden = false
+                self.loadingView.alpha = 0.5
+                self.activityIndicator.startAnimating()
                 print("Loading stopped...")
             case .dataLoaded:
                 print("Data Loaded...")
                 DispatchQueue.main.async {
                     self.showHome()
-                    guard let email = self.usernameField.text else {return}
+//                    guard let email = self.usernameField.text else {return}
                     guard let pass = self.passField.text else {return}
-                    UserDefaults.standard.set(email, forKey: "username")
+//                    UserDefaults.standard.set(email, forKey: "username")
                     UserDefaults.standard.set(pass,forKey: "password")
                 }
             case .error(let error):
                 print(error ?? "")
+                self.showAlert(message: "Invalid details")
+                self.loadingView.isHidden = true
             }
         }
     }
