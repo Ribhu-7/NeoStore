@@ -10,7 +10,7 @@ import UIKit
 extension UIView {
 
     //private lazy var starStackView = UIStackView()
-    func setStarRating(rating: Int){
+    func setStarRate(rating: Int){
         let starStackView = UIStackView()
         starStackView.alignment = .fill
         starStackView.distribution = .fillEqually
@@ -25,17 +25,15 @@ extension UIView {
                 imageView.image = UIImage(named: "star_unchek")
             }
             imageView.tag = i
-            starStackView.addArrangedSubview(imageView)
+            //starStackView.addArrangedSubview(imageView)
+            starStackView.arrangedSubviews.forEach { subview in
+                guard let starImageView = subview as? UIImageView else {
+                    return
+                }
+                starImageView.isHighlighted = starImageView.tag <= rating
+            }
             arrImageViews.append(imageView)
         }
-        //
-        starStackView.arrangedSubviews.forEach { subview in
-            guard let starImageView = subview as? UIImageView else {
-                return
-            }
-            starImageView.isHighlighted = starImageView.tag <= rating
-        }
-        //
         starStackView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(starStackView)
         starStackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
@@ -61,9 +59,9 @@ extension UIView {
 //        }
     }
     
-    func handleTouch(withTouches touches: Set<UITouch>){
-        
-    }
+//    func handleTouch(withTouches touches: Set<UITouch>){
+//        
+//    }
     
 //    @objc func starClicked(gesture: UITapGestureRecognizer){
 //        let location = gesture.location(in: starSta)

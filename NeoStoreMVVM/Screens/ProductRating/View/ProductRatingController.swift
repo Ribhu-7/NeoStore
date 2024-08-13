@@ -17,6 +17,7 @@ class ProductRatingController: UIViewController {
     
     @IBOutlet weak var bottomView: UIView!
     
+  //  @IBOutlet weak var prodRatings: StarRatingView!
     @IBOutlet weak var prodratingLbl: UILabel!
     @IBOutlet var outerView: UIView!
     
@@ -40,6 +41,7 @@ class ProductRatingController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //prodRating.setStarRating(rating: self.selectedRate)
         prodRating.setStarRating(rating: self.selectedRate)
         prodRatingImg.setImage(with: prodImg)
         prodratingLbl.text = prodLbl
@@ -56,6 +58,7 @@ class ProductRatingController: UIViewController {
                let rate = Int(location.x / starWidth) + 1
                print(rate)
                if rate != self.selectedRate {
+                   
                    prodRating.setStarRating(rating: rate)
                    self.selectedRate = rate
                }

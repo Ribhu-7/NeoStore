@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4g6-nX-hDK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4g6-nX-hDK">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -191,6 +192,7 @@
                                     <constraint firstAttribute="bottom" secondItem="4Nr-VA-WhJ" secondAttribute="bottom" id="QYH-4b-ZIc"/>
                                     <constraint firstItem="4Nr-VA-WhJ" firstAttribute="top" secondItem="NvV-s9-idB" secondAttribute="top" id="hyI-pL-XxR"/>
                                     <constraint firstAttribute="trailing" secondItem="4Nr-VA-WhJ" secondAttribute="trailing" id="nwu-S4-ttq"/>
+                                    <constraint firstItem="4Nr-VA-WhJ" firstAttribute="height" secondItem="NvV-s9-idB" secondAttribute="height" id="rba-eT-xLZ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -202,7 +204,6 @@
                             <constraint firstAttribute="bottom" secondItem="NvV-s9-idB" secondAttribute="bottom" id="ao6-an-a64"/>
                             <constraint firstItem="NvV-s9-idB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bbz-yJ-PQM"/>
                             <constraint firstItem="NvV-s9-idB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="euC-V7-lni"/>
-                            <constraint firstItem="4Nr-VA-WhJ" firstAttribute="height" secondItem="NvV-s9-idB" secondAttribute="height" id="rba-eT-xLZ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
@@ -660,7 +661,7 @@
                                         </connections>
                                     </collectionView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="5Yn-MF-WCG">
-                                        <rect key="frame" x="124" y="274" width="145" height="26"/>
+                                        <rect key="frame" x="124" y="274.33333333333331" width="145" height="25.666666666666686"/>
                                         <color key="pageIndicatorTintColor" red="1" green="0.01629760165" blue="0.060681154280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
@@ -2132,7 +2133,7 @@
                         <outlet property="bottomView" destination="UIR-N5-Fj9" id="enN-N4-lYm"/>
                         <outlet property="innerView" destination="l6U-US-OeH" id="of2-P6-dbN"/>
                         <outlet property="outerView" destination="QdJ-81-vvO" id="2TI-po-XYP"/>
-                        <outlet property="prodRating" destination="9Fm-x3-Xbj" id="Mih-s7-VeL"/>
+                        <outlet property="prodRating" destination="9Fm-x3-Xbj" id="ABO-DG-aAT"/>
                         <outlet property="prodRatingImg" destination="LNt-1a-NIj" id="HKP-nF-JOQ"/>
                         <outlet property="prodratingLbl" destination="OKD-zP-caa" id="qYH-hT-0fv"/>
                         <outlet property="rateNow" destination="fkW-yk-emf" id="Ogn-Y8-ZFm"/>
@@ -2589,7 +2590,7 @@
         <image name="tableicon" width="178" height="178"/>
         <image name="user_male" width="128" height="128"/>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
