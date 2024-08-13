@@ -16,9 +16,10 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = orderTblView.dequeueReusableCell(withIdentifier: "OrderListViewCell", for: indexPath) as! OrderListViewCell
         let od = self.orderListViewModel.details[indexPath.row]
-        cell.orderId.text = String(od.id)
-        cell.orderDate.text = od.created
-        cell.orderAmt.text = String(od.cost)
+//        cell.orderId.text = String(od.id)
+//        cell.orderDate.text = od.created
+//        cell.orderAmt.text = String(od.cost)
+        cell.order = od
         return cell
     }
     
@@ -28,7 +29,7 @@ extension OrderListViewController: UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let od = self.orderListViewModel.details[indexPath.row]
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard().getStoryBoard()
         let orderDetails = sb.instantiateViewController(withIdentifier: "orderDetails") as! OrderDetailsViewController
         orderDetails.orderDetailsId = od.id
         self.navigationController?.pushViewController(orderDetails, animated: true)

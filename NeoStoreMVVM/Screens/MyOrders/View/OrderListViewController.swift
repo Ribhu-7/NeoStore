@@ -9,7 +9,12 @@ import UIKit
 
 class OrderListViewController: UIViewController {
 
-    @IBOutlet weak var orderTblView: UITableView!
+    @IBOutlet weak var orderTblView: UITableView! {
+        didSet {
+            orderTblView.delegate = self
+            orderTblView.dataSource = self
+        }
+    }
     var orderListViewModel = OrderListViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,13 +22,11 @@ class OrderListViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationItem.title = "My Orders"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
-        orderTblView.delegate = self
-        orderTblView.dataSource = self
+        
         let nib = UINib(nibName: "OrderListViewCell", bundle: nil)
         orderTblView.register(nib, forCellReuseIdentifier: "OrderListViewCell")
         
         let req = ProdRequest(product_category_id: 1, limit: 10, page: 1)
-        //amountView.isHidden = true
         initViewModel(req: req)
         observeEvent()
     }
@@ -42,10 +45,8 @@ class OrderListViewController: UIViewController {
                 print("Loading stopped...")
             case .dataLoaded:
                 print("Data Loaded...")
-                //print(self.userDetailsViewModel.details)
                 DispatchQueue.main.async {
                     self.orderTblView.reloadData()
-                    
                 }
             case .error(let error):
                 print(error ?? "")

@@ -27,6 +27,11 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
     
     @IBOutlet weak var cartPrice: UILabel!
     
+    var cartData: ListCartData? {
+        didSet{
+            cartConfiguration()
+        }
+    }
     
     var prodId: Int!
     var prodCost: Int!
@@ -42,6 +47,7 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
         
     }
     
+    
     func setupViews(){
         dropdownTableView.delegate = self
         dropdownTableView.dataSource = self
@@ -55,21 +61,33 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
         // Configure the view for the selected state
     }
     
+    func cartConfiguration(){
+        let cost = UserDefaults.standard.integer( forKey: "ProdCost \(String(describing: cartData?.product_id))")
+        let quant = UserDefaults.standard.integer(forKey: "ProdQuant \(String(describing: cartData?.product_id))")
+        //let totalcost = cost*quant
+        prodId = cartData?.product.id
+        prodCost = cartData?.product.cost
+        cartHead.text = cartData?.product.name
+        cartDesc.text = cartData?.product.product_category
+        //cartCount.setTitle(String(quant), for: .normal)
+        //cartPrice.text = "Rs. \(totalcost)"
+        cartImageView.setImage(with: cartData?.product.product_images ?? "")
+    }
     @IBAction func dropdownClick(_ sender: Any) {
-            if self.isDropdownVisible == false {
-                self.isDropdownVisible = true
-                self.dropdownTableView.heightAnchor.constraint(equalToConstant: self.isDropdownVisible ? CGFloat(self.options.count * 44) : 0).isActive = true
-            } else if self.isDropdownVisible == true{
-                self.isDropdownVisible = false
-            }
-            self.dropdownTableView.isHidden = !self.isDropdownVisible
-            UIView.animate(withDuration: 0.3) {
-                self.layoutIfNeeded()
-                self.dropdownTableView.layer.borderWidth = 1.0
-                self.dropdownTableView.layer.borderColor = UIColor.lightGray.cgColor
-                
-            }
-            self.dropdownTableView.reloadData()
+        if self.isDropdownVisible == false {
+            self.isDropdownVisible = true
+            self.dropdownTableView.heightAnchor.constraint(equalToConstant: self.isDropdownVisible ? CGFloat(self.options.count * 44) : 0).isActive = true
+        } else if self.isDropdownVisible == true{
+            self.isDropdownVisible = false
+        }
+        self.dropdownTableView.isHidden = !self.isDropdownVisible
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+            self.dropdownTableView.layer.borderWidth = 1.0
+            self.dropdownTableView.layer.borderColor = UIColor.lightGray.cgColor
+            
+        }
+        self.dropdownTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,18 +100,15 @@ class CartTableViewCell: UITableViewCell , UITableViewDelegate , UITableViewData
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         cartCount.setTitle(String(options[indexPath.row]), for: .normal)
-        
-        
         let req = EditCartRequest(product_id: self.prodId, quantity: options[indexPath.row])
         UserDefaults.standard.set(options[indexPath.row], forKey: "ProdQuant \(String(describing: self.prodId))" )
-     //   EditCartViewModel().editCart(dataTab: req)
-        cartViewDelegate?.cartAdded(request: req)
-
         
+        cartViewDelegate?.cartAdded(request: req)
         dropdownTableView.isHidden = true
         isDropdownVisible = false
-//        dropdownTableView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 30

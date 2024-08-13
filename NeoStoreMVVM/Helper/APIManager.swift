@@ -22,7 +22,7 @@ typealias Handler<T> = (Result<T,DataError>) -> Void
 final class APIManager {
     static let shared = APIManager()
     private init() {}
-    var userDetailsViewModel = UserDetailsViewModel()
+    
     func manager<T: Codable , U: Codable>(
         modelType: T.Type,
         type: EndPointType,
@@ -31,10 +31,8 @@ final class APIManager {
         completion: @escaping Handler<T>
     )
     {
-//        let access = userDetailsViewModel.details?.user_data?.access_token
-        let headers: HTTPHeaders = [
-            "access_token" : UserDefaults.standard.string(forKey: "accessToken") ?? ""
-        ]
+        
+        let headers = type.header
         guard let url = type.url else{
             completion(.failure(.invalidURL))
             return
@@ -42,34 +40,20 @@ final class APIManager {
         
         AF.request(url , method: method,parameters: requestModel,encoder: URLEncodedFormParameterEncoder.default, headers: headers).response{
             response in
-            //debugPrint(response)
             
             switch response.result {
             case .success(let data):
-                
-                    do{
-                        if response.response?.statusCode == 200 {
-//                           let jsonData = try JSONSerialization.jsonObject(with: data!,options: [])
-                            
-                            let decoder = JSONDecoder()
-                            if let decoded = try? decoder.decode(T.self, from: data!) {
-                                //print("Value of decoder == \(String(describing: (decoded as! LoginResponse).data?.access_token))")
-                                completion(.success(decoded))
-                                }
-                            
-                            //print(jsonData)
-                            
-//                            let resData = try JSONDecoder().decode(modelType, from: data!)
-                            
-                          //  completion(.success(T.self as! T))
+                do{
+                    if response.response?.statusCode == 200 {
+                        let decoder = JSONDecoder()
+                        if let decoded = try? decoder.decode(T.self, from: data!) {
+                            completion(.success(decoded))
                         }
-                        
-                    } catch{
-                        completion(.failure(.invalidData))
-                        print(error.localizedDescription)
+                        else {
+                            completion(.failure(.invalidData))
+                        }
                     }
-                
-                
+                }
                 
             case .failure:
                 completion(.failure(.network("invalid")))

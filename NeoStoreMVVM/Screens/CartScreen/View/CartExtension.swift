@@ -25,19 +25,13 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             UserDefaults.standard.set(tb.quantity, forKey: "ProdQuant \(String(describing: tb.product_id))" )
             
             UserDefaults.standard.set(tb.product.cost, forKey: "ProdCost \(String(describing: tb.product_id))")
-            
+            cell.cartViewDelegate = self
             let cost = UserDefaults.standard.integer( forKey: "ProdCost \(String(describing: tb.product_id))")
             let quant = UserDefaults.standard.integer(forKey: "ProdQuant \(String(describing: tb.product_id))")
             let totalcost = cost*quant
-            cell.prodId = tb.product.id
-            cell.cartViewDelegate = self
-            cell.prodCost = tb.product.cost 
-            cell.cartHead.text = tb.product.name
-            cell.cartDesc.text = tb.product.product_category
             cell.cartCount.setTitle(String(quant), for: .normal)
             cell.cartPrice.text = "Rs. \(totalcost)"
-            cell.cartImageView.setImage(with: tb.product.product_images)
-            
+            cell.cartData = tb
             return cell
         }
         else {
@@ -64,15 +58,6 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        if indexPath.row < self.cartViewModel.products.count {
-//            let sb = UIStoryboard(name: "Main", bundle: nil)
-//            let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
-//            self.navigationController?.pushViewController(cartVC, animated: true)
-//        }
-//    }
-//
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: ""){ (action , view , success ) in
             
@@ -80,7 +65,6 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             let total = UserDefaults.standard.integer(forKey: "CartAmt")
             UserDefaults.standard.set(total - (item.product.cost*item.quantity), forKey: "CartAmt")
             self.deleteCartModel.deleteCart(cartreq: DelCartRequest(product_id: item.product_id))
-            
             self.cartViewModel.products.remove(at: indexPath.row)
             self.cartTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
             self.cartTableView.reloadData()
@@ -92,9 +76,5 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         let swipeActions = UISwipeActionsConfiguration(actions: [delete])
         return swipeActions
     }
-    
-//    @objc func addQuantity(id: Int){
-//
-//    }
     
 }

@@ -8,40 +8,38 @@
 import UIKit
 
 protocol CartViewDelegate {
-    //func showCartMenu()
     func cartAdded(request:EditCartRequest)
 }
 
 class CartViewController: UIViewController {
-    
-//    @IBOutlet weak var amountTableView: UITableView!
-//    @IBOutlet weak var amountView: UIView!
 
     @IBOutlet weak var loadingView: UIView!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var totalCartPrc: UILabel!
+    
     var cartViewModel = ListCartViewModel()
     var deleteCartModel = DeleteCartViewModel()
     var editCartViewModel = EditCartViewModel()
-    //var cartviewCon = CartViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        configuration()
+    }
+
+    func configuration() {
+        
         self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         self.activityIndicator.startAnimating()
         self.navigationItem.title = "My Cart"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "homekit"), style: .plain, target: self, action: #selector(searchClicked))
-        //tb = cartViewModel.products
-        
         
         cartTableView.delegate = self
         cartTableView.dataSource = self
-//        amountTableView.delegate = self
-//        amountTableView.dataSource = self
+
         let nib = UINib(nibName: "CartTableViewCell", bundle: nil)
         cartTableView.register(nib, forCellReuseIdentifier: "CartTableViewCell")
         
@@ -49,12 +47,11 @@ class CartViewController: UIViewController {
         cartTableView.register(nib1, forCellReuseIdentifier: "AmountTableViewCell")
         
         let req = CartRequest(product_id: 1, quantity: 0)
-        //amountView.isHidden = true
         initViewModel(req: req)
         observeEvent()
       
     }
-
+    
     func initViewModel(req: CartRequest){
         cartViewModel.fetchCart(dataTab: req)
     }
@@ -70,7 +67,6 @@ class CartViewController: UIViewController {
                 print("Loading stopped...")
             case .dataLoaded:
                 print("Data Loaded...")
-                //print(self.cartViewModel.products)
                 print(self.cartViewModel.products.count)
                 DispatchQueue.main.async {
                     self.cartTableView.reloadData()
@@ -91,11 +87,8 @@ class CartViewController: UIViewController {
                 print("Loading stopped...")
             case .dataLoaded:
                 print("Data Loaded...")
-                //print(self.cartViewModel.products)
-                //print(self.cartViewModel.products.count)
                 DispatchQueue.main.async {
                     let req = CartRequest(product_id: 1, quantity: 0)
-                    //amountView.isHidden = true
                     self.initViewModel(req: req)
 
                 }
@@ -106,10 +99,8 @@ class CartViewController: UIViewController {
     }
    
     @objc func searchClicked(){
-        
-       // let HomeVC = sb.instantiateViewController(withIdentifier: "HomeVC")
         self.navigationController?.popViewController(animated: true)
-        //self.navigationController?.pushViewController(HomeVC, animated: true)
+     
     }
     func showCart(){
         let sb = UIStoryboard(name: "Main", bundle: nil)

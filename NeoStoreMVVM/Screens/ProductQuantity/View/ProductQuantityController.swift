@@ -27,6 +27,7 @@ class ProductQuantityController: UIViewController {
     @IBOutlet weak var quantityImg: UIImageView!
     
     @IBOutlet weak var quantityField: UITextField!
+    
     var productQuantityDelegate: ProductQuantityDelegate?
     
     var cartViewController: CartViewController?
@@ -41,27 +42,12 @@ class ProductQuantityController: UIViewController {
         // Do any additional setup after loading the view.
         quantityImg.setImage(with: prodImg)
         quantityHead.text = prodLbl
+        quantityField.keyboardType = .numberPad
         print(prodId!)
-        
-        //self.modalPresentationStyle = .overCurrentContext
-        //quantityField.text
-        
         
     }
 
-//    override func prepare(for segue: UIStoryboardSegue , sender: Any?){
-//        if segue.identifier == "cartSegue" {
-//            if let nextDestination = segue.destination as? CartViewController {
-//                self.cartViewController = nextDestination
-//                //self.cartViewController = self
-//                self.cartViewController = nextDestination
-//                self.cartViewController?.delegate = self
-//            }
-//            //dismiss(animated: true)
-//
-//
-//            }
-//    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
@@ -82,10 +68,6 @@ class ProductQuantityController: UIViewController {
         let prodListVC = sb.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
         prodListVC.prodQuantity = quantTotal
         cartViewModel.addtoCart(cartreq: req)
-//        let sb = UIStoryboard(name: "Main", bundle: nil)
-//        let cartVC = sb.instantiateViewController(withIdentifier: "cartVC")
-//        self.navigationController?.pushViewController(cartVC, animated: true)
-       
         dismiss(animated: true)
         productQuantityDelegate?.quantityAdded()
         

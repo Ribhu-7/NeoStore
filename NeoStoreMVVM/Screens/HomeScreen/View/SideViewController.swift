@@ -27,6 +27,7 @@ class SideViewController: UIViewController {
     var cartViewModel = ListCartViewModel()
     
     var userDetailsViewModel = UserDetailsViewModel()
+    
     @IBOutlet weak var sideImageView: UIImageView!
     
     @IBOutlet weak var sideTableView: UITableView!
@@ -42,25 +43,18 @@ class SideViewController: UIViewController {
         self.userEmail.text = UserDefaults.standard.string(forKey: "username")
         if let imageData = UserDefaults.standard.object(forKey: "UserImage of \(String(describing: userN))") as? Data,
                     let image = UIImage(data: imageData) {
-                    //profilePic.image = image
             sideImageView.maskCircle(anyImage: image)
         } else {
             sideImageView.maskCircle(anyImage: UIImage(named: "user_male")!)
         }
-        //sideImageView.maskCircle(anyImage: (UIImage(named: "user_male")!))
+
         let nib = UINib(nibName: "SideTableViewCell", bundle: nil)
         sideTableView.register(nib, forCellReuseIdentifier: "SideTableViewCell")
         self.sideTableView.allowsSelection = true
-        //print(sideTableView.isUserInteractionEnabled)
         let req = ProdRequest(product_category_id: 1, limit: 10, page: 1)
-//        tabViewModel.fetchProducts(dataTab: req)
         initViewModel(req: req)
         observeEvent()
     }
-    
-//    @IBAction func clickOnButton(_ sender: Any){
-//        self.delegate?.hideSideMenu()
-//    }
 
     func initViewModel(req: ProdRequest){
         userDetailsViewModel.getDetails(dataTab: req)
@@ -77,14 +71,9 @@ class SideViewController: UIViewController {
                 print("Loading stopped...")
             case .dataLoaded:
                 print("Data Loaded...")
-                //print(self.userDetailsViewModel.details)
-//                self.sideTableView.reloadData()
+                
                 DispatchQueue.main.async {
-//                    guard let userN = self.userDetailsViewModel.details?.user_data?.last_name else {return}
-//                    guard let userF = self.userDetailsViewModel.details?.user_data?.first_name else {return}
-//                    
-//                    let fullname = userF + " " + userN
-//                    UserDefaults.standard.set(fullname, forKey: "fullname")
+
                     self.userName.text = UserDefaults.standard.string(forKey: "fullname")
                     self.userEmail.text = UserDefaults.standard.string(forKey: "username")
                     self.sideTableView.reloadData()
@@ -99,12 +88,12 @@ class SideViewController: UIViewController {
 
 extension SideViewController: SideViewDelegate{
     func accountUpdate() {
+        
         let userN = UserDefaults.standard.string(forKey: "username")
         self.userName.text = UserDefaults.standard.string(forKey: "fullname")
         self.userEmail.text = UserDefaults.standard.string(forKey: "username")
         if let imageData = UserDefaults.standard.object(forKey: "UserImage of \(String(describing: userN))") as? Data,
                     let image = UIImage(data: imageData) {
-                    //profilePic.image = image
             sideImageView.maskCircle(anyImage: image)
         }
     }

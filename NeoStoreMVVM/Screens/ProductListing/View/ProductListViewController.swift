@@ -28,8 +28,8 @@ class ProductListViewController: UIViewController{
     @IBOutlet weak var rightImageView: UIImageView!
     
     @IBOutlet weak var loadingView: UIView!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var prodHead : String!
     var prodCatg : String!
     var prodDes : String!
@@ -44,26 +44,24 @@ class ProductListViewController: UIViewController{
     var proddetailViewModel = ProductDetailViewModel()
     var cartViewController : CartViewController?
     var prodRatingVM: ProductRatingVM?
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        configuration()
+    }
+    
+    func configuration(){
         self.view.alpha = 1
         self.loadingView.isHidden = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "homekit"), style: .plain, target: self, action: #selector(searchClicked))
         // Do any additional setup after loading the view.
-        //prodHeading.text = prodHead
         prodCategory.text = prodCatg
         buyNowOutlet.changeView()
         rateUsOutlet.changeView()
-        //prodDesc.text = prodDes
-        //prodRatingView.setStarRating(rating: prodRate)
-        //prodImageView.setImage(with: prodImg)
-        //leftImageView.setImage(with: prodImg)
         leftImageView.setBorder(colour: .red)
         centerImageView.setBorder(colour: .lightGray)
         rightImageView.setBorder(colour: .green)
-        //centerImageView.setImage(with: prodImg)
-        //rightImageView.setImage(with: prodImg)
-        //prodPrice.text = prodPrc
         
         self.activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         self.activityIndicator.startAnimating()
@@ -78,7 +76,6 @@ class ProductListViewController: UIViewController{
         initViewModel(req: req)
         observeEvent()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
     }

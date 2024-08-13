@@ -15,10 +15,10 @@ final class ListCartViewModel {
     var eventHandler: ((_ event: Event) -> Void)?
     
     func fetchCart(dataTab: CartRequest){
-//        APIHelper.shared.helpRequest(modelType: ListCartModel.self, type: EndPointItems.getCart
-//        )
-        APIManager.shared.manager(modelType: ListCartModel.self, type: EndPointItems.getCart, requestModel: dataTab, method: .get)
-        {response in
+
+        APIManager.shared.manager(modelType: ListCartModel.self, type: EndPointItems.getCart, requestModel: emptyRequest(), method: .get)
+            {
+              response in
             self.eventHandler?(.stopLoading)
             switch response {
             case .success(let products):

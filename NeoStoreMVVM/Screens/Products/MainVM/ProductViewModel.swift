@@ -14,8 +14,7 @@ final class ProductViewModel {
     var eventHandler: ((_ event: Event) -> Void)?
     
     func fetchProducts(dataTab: ProdRequest, id: Int){
-//        APIHelper.shared.helpRequest(modelType: Product.self, type: EndPointItems.getProduct(id)
-//        )
+        
         APIManager.shared.manager(modelType: Product.self, type: EndPointItems.getProduct(id), requestModel: dataTab, method: .get)
             {response in
             self.eventHandler?(.stopLoading)

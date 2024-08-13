@@ -15,9 +15,9 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideTableViewCell", for: indexPath) as! SideTableViewCell
         let cnt = UserDefaults.standard.integer(forKey: "CartTotal")
-        //print(cnt)
         if indexPath.row == 0 {
             let total = UserDefaults.standard.integer(forKey: "CartTotal")
             if total != 0 {
@@ -33,9 +33,9 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
             cell.sideCartBtn.isHidden = true
         }
         cell.sideImg.image = UIImage(named: sideImgItems[indexPath.row])
-        //print(cell.isUserInteractionEnabled)
         cell.sideLbl.text = sideItems[indexPath.row]
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,6 +43,7 @@ extension SideViewController :  UITableViewDelegate, UITableViewDataSource{
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         for recognizer in sideTableView.gestureRecognizers ?? [] {
             recognizer.cancelsTouchesInView = false
         }

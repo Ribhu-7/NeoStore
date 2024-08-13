@@ -11,8 +11,8 @@ import UIKit
 
 final class LoginViewModel {
     var eventHandler: ((_ event: Event) -> Void)?
+    
     func getRequest(logs: LoginModel) {
-        
         APIManager.shared.manager(modelType: LoginResponse.self, type: EndPointItems.login, requestModel: logs, method: .post){
             result in self.eventHandler?(.stopLoading)
             switch result {

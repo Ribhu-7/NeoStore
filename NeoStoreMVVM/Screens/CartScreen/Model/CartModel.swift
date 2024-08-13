@@ -28,3 +28,7 @@ struct EditCartRequest: Codable {
    let product_id: Int
    let quantity: Int
 }
+
+struct emptyRequest: Codable{
+    
+}

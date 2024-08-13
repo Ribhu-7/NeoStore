@@ -15,6 +15,12 @@ class OrderListViewCell: UITableViewCell {
     
     @IBOutlet weak var orderAmt: UILabel!
     
+    var order: OrderData? {
+        didSet {
+            configuration()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,6 +30,14 @@ class OrderListViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configuration(){
+        guard let order else {return}
+        
+        orderId.text = String(order.id)
+        orderDate.text = order.created
+        orderAmt.text = String(order.cost)
     }
     
 }

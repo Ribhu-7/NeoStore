@@ -8,7 +8,7 @@
 import UIKit
 
 
-class LoginViewController: UIViewController, UITextFieldDelegate{
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loadingView: UIView!
@@ -106,9 +106,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                 print("Data Loaded...")
                 DispatchQueue.main.async {
                     self.showHome()
-//                    guard let email = self.usernameField.text else {return}
                     guard let pass = self.passField.text else {return}
-//                    UserDefaults.standard.set(email, forKey: "username")
                     UserDefaults.standard.set(pass,forKey: "password")
                 }
             case .error(let error):
@@ -119,7 +117,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         }
     }
     @IBAction func forgotPass(_ sender: Any) {
-        
         let forgotVC = sb.instantiateViewController(withIdentifier: "ForgotVC")
         self.navigationController?.pushViewController(forgotVC, animated: true)
     }

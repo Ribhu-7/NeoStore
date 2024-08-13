@@ -7,17 +7,18 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, SideViewControllerDelegate{
+class HomeViewController: UIViewController, SideViewControllerDelegate {
     
+    @IBOutlet var parentView: UIView!
     @IBOutlet weak var rightsideView: UIView!
     @IBOutlet weak var tableProdView: UIView!
     @IBOutlet weak var sofaProdView: UIView!
     @IBOutlet weak var chairProdView: UIView!
-    
     @IBOutlet weak var cupboardView: UIView!
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var sideUIView: UIView!
-    @IBOutlet var parentView: UIView!
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var myPageControl: UIPageControl!
     
     @IBOutlet weak var leadingConstraintSideView: NSLayoutConstraint!
@@ -42,8 +43,6 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = true
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu_icon"), style: .plain, target: self, action: #selector(showMenu))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
-        //        parentView.bringSubviewToFront(sideView)
         let nib = UINib(nibName: "MyCollectionViewCell", bundle: nil)
         self.collectionView.register(nib, forCellWithReuseIdentifier: "MyCollectionViewCell")
         
@@ -69,6 +68,7 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
     
     func hideSideMenu() {
         UIView.animate(withDuration: 0.2 , delay: 0.2 , options: .transitionFlipFromRight) {
+            
             self.sideUIView.alpha = 0
             self.leadingConstraintSideView.constant = -280
             self.view.layoutIfNeeded()
@@ -90,19 +90,7 @@ class HomeViewController: UIViewController, SideViewControllerDelegate{
             }
         } else {
             self.hideSideMenu()
-            //self.rightsideView.isHidden = false
         }
         
     }
-    
-    @objc func searchClicked(){
-        
-    }
-    
-    @IBAction func tapGestureClicked(_ sender: Any) {
-        //self.hideSideMenu()
-    }
-    
-    
-    
 }

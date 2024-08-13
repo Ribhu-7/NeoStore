@@ -11,11 +11,12 @@ import UIKit
 extension ProductViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return self.prodViewModel.products.count
-        //return self.filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = prodTblView.dequeueReusableCell(withIdentifier: "ProductTableViewCell") as! ProductTableViewCell
         let tb = self.prodViewModel.products[indexPath.row]
         cell.prodTblImg.setImage(with: tb.product_images)
@@ -28,9 +29,9 @@ extension ProductViewController : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        let sb = UIStoryboard().getStoryBoard()
         let prodVC = sb.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
-        //let ratingVC = sb.instantiateViewController(withIdentifier: "productRating") as! ProductRatingController
         let tb = self.prodViewModel.products[indexPath.row]
         prodVC.navigationItem.title = tb.name
         prodVC.prodHead = tb.name
@@ -50,9 +51,6 @@ extension ProductViewController : UITableViewDelegate , UITableViewDataSource {
         prodVC.prodImg = tb.product_images
         prodVC.prodID = tb.id
         prodVC.prodViewCount =  tb.view_count
-//        ratingVC.prodLbl = tb.name
-//        ratingVC.prodRate = tb.rating
-//        ratingVC.prodImg = tb.product_images
         self.navigationController?.pushViewController(prodVC, animated: true)
     }
 }

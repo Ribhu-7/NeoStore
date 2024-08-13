@@ -14,6 +14,7 @@ protocol EndPointType: Codable {
     var path: String { get }
     var baseURl: String { get }
     var url: URL? { get }
+    var header: HTTPHeaders { get }
 }
 
 enum EndPointItems {
@@ -36,6 +37,12 @@ enum EndPointItems {
 }
 
 extension EndPointItems: EndPointType{
+    var header: Alamofire.HTTPHeaders {
+    let headers: HTTPHeaders = [
+            "access_token" : UserDefaults.standard.string(forKey: "accessToken") ?? ""]
+        return headers
+    }
+    
     var path: String {
         switch self {
         case .register:
@@ -81,4 +88,6 @@ extension EndPointItems: EndPointType{
     var url: URL? {
         return URL(string: "\(baseURl)\(path)")
     }
+    
+    
 }

@@ -828,7 +828,7 @@
                             </view>
                             <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOR-Lh-1EB">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" red="0.82421238207333858" green="0.82801730588238398" blue="0.83943207730951996" alpha="0.40889246934125212" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RjL-dL-fnG">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="55"/>
@@ -865,9 +865,6 @@
                             <constraint firstItem="ReP-kp-oOn" firstAttribute="trailing" secondItem="WSE-i0-1aN" secondAttribute="trailing" id="u2t-Be-7YR"/>
                             <constraint firstItem="ReP-kp-oOn" firstAttribute="leading" secondItem="WSE-i0-1aN" secondAttribute="leading" id="vL2-zg-hVA"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="LXy-h3-qlC" appends="YES" id="CN0-sd-5zs"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="chairProdView" destination="8Dl-gv-gey" id="ctu-Jw-0He"/>
@@ -883,11 +880,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDd-P7-SVy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer enabled="NO" id="LXy-h3-qlC">
-                    <connections>
-                        <action selector="tapGestureClicked:" destination="a1h-j2-Nvm" id="ul9-os-Kpq"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer enabled="NO" id="LXy-h3-qlC"/>
             </objects>
             <point key="canvasLocation" x="3130.5343511450378" y="-4.2253521126760569"/>
         </scene>

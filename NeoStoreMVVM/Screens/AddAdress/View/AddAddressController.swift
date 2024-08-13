@@ -30,8 +30,9 @@ class AddAddressController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        zipCode.keyboardType = .numberPad
         self.navigationItem.title = "Add Address"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon"), style: .plain, target: self, action: #selector(searchClicked))
         addressBtn.changeView()
         AddressArr = UserDefaults.standard.stringArray(forKey: "Address") ?? []
         print(AddressArr)

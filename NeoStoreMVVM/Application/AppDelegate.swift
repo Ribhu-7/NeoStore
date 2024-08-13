@@ -11,7 +11,7 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var storyboard = UIStoryboard(name: "Main", bundle: nil)
+   // var storyboard = UIStoryboard().getStoryBoard()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -82,7 +82,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return self.orientationLock
     }
     struct AppUtility {
-        
         static func lockOrientation(_ orientation: UIInterfaceOrientationMask) {
             if let delegate = UIApplication.shared.delegate as? AppDelegate {
                 delegate.orientationLock = orientation
